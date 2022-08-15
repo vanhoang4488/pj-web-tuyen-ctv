@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="20 seconds">
+    <jmxConfigurator />
+
+    <springProperty scope="context" name="logback.name" source="logging.prefix" defaultValue="def_app_name"/>
+
+    <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter"/>
+    <conversionRule conversionWord="wex" converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter"/>
+    <conversionRule conversionWord="wEx" converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter"/>
+
+    <property name="LOG_FILE_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5p [%thread] %-40.40logger{40} : %m%n %wEx"/>
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %clr(%-5p){cyan} %clr(${PID:-}){magenta} %clr([%15.15t]){faint} %clr(%-40.40logger{60}){yellow} : %m%n %wEx</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="businessLogFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${catalina}/${logback.name}/business/${logback.name}_business.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${catalina}/${logback.name}/business/${logback.name}_business-%d{yyyy-MM-dd}_%i.log.zip</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>10GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${LOG_FILE_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="errorLogFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${catalina}/${logback.name}/error/${logback.name}_error.log</file>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${catalina}/${logback.name}/error/${logback.name}_error-%d{yyyy-MM-dd}_%i.log.zip</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>10GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${LOG_FILE_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <!--    mức nhật ký mặc định của dự án-->
+    <logger name="pj.hoangnv" level="DEBUG"/>
+
+    <logger name="com.alibaba.cloud.nacos" level="DEBUG"/>
+
+    <logger name="com.os" level="DEBUG"/>
+
+    <springProfile name="common-config-dev">
+        <root level="INFO">
+            <appender-ref ref="console"/>
+            <appender-ref ref="businessLogFile"/>
+            <appender-ref ref="errorLogFile"/>
+        </root>
+    </springProfile>
+</configuration>

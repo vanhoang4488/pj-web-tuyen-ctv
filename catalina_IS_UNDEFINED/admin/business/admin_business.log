@@ -1,0 +1,859 @@
+2022-07-29 10:59:51.149 INFO  [main] c.a.n.c.c.impl.LocalConfigInfoProcessor  : LOCAL_SNAPSHOT_PATH:/home/nguyen/nacos/config
+ 2022-07-29 10:59:51.203 INFO  [main] c.a.nacos.client.config.impl.Limiter     : limitTime:5.0
+ 2022-07-29 10:59:51.249 INFO  [main] c.a.nacos.client.config.utils.JvmUtil    : isMultiInstance:false
+ 2022-07-29 10:59:51.251 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'gateway.properties', group: 'WEB_CTV', data: gateway.port=20003
+
+gateway.application.name=gateway
+
+gateway.context-path=/
+
+gateway.redis.database=0
+ 2022-07-29 10:59:51.265 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'apply-admin.properties', group: 'WEB_CTV', data: apply-admin.port=20004
+
+apply-admin.application.name=admin
+
+apply-admin.context-path=/
+ 2022-07-29 10:59:51.276 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'apply-api.properties', group: 'WEB_CTV', data: apply-api.port=20005
+
+apply-api.application.name=api
+
+apply-api.context-path=/
+ 2022-07-29 10:59:51.291 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'manage.properties', group: 'WEB_CTV', data: manage.port=20008
+
+manage.application.name=manage
+
+manage.context-path=/
+
+# database
+manage.db.host=localhost
+manage.db.port=3306
+manage.db.database=mysql
+manage.db.username=root
+manage.db.password=thaibinh
+
+# redis
+manage.redis.database=0
+ 2022-07-29 10:59:51.301 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'library-major.properties', group: 'WEB_CTV', data: 
+#logback-spring
+logging.config=classpath:logback-spring.xml
+
+# spring.datasource.drive-class-name
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+# có sử dụng unicode hay không?
+userUnicode=true
+# mã hóa ký tự
+characterEncoding=UTF-8
+
+# redis
+common.redis.host=localhost
+common.redis.port=4488
+common.redis.password=thaibinh
+common.redis.database=0
+ 2022-07-29 10:59:51.318 WARN  [main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[library-major.properties.properties] & group[WEB_CTV]
+ 2022-07-29 10:59:51.330 WARN  [main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[library-major.properties-common-config-dev.properties] & group[WEB_CTV]
+ 2022-07-29 10:59:51.332 INFO  [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-library-major.properties-common-config-dev.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-library-major.properties.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-library-major.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-manage.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-apply-api.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-apply-admin.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-gateway.properties,WEB_CTV'}]
+ 2022-07-29 10:59:51.370 INFO  [main] com.os.ApplyAdminApplication             : The following profiles are active: common-config-dev
+ 2022-07-29 10:59:55.101 INFO  [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-07-29 10:59:55.103 INFO  [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+ 2022-07-29 10:59:55.788 INFO  [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12ms. Found 0 Redis repository interfaces.
+ 2022-07-29 10:59:56.217 INFO  [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=879dddd6-081a-3ec3-be7f-d1ed241071cb
+ 2022-07-29 10:59:56.716 INFO  [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.os.manage.login.SysUserLoginService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ 2022-07-29 10:59:56.808 INFO  [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ 2022-07-29 10:59:56.812 INFO  [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactiveLoadBalancerConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactiveLoadBalancerConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ 2022-07-29 10:59:56.814 INFO  [main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ 2022-07-29 10:59:59.166 WARN  [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+ 2022-07-29 11:00:01.029 INFO  [main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+ 2022-07-29 11:00:01.030 INFO  [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 9604 ms
+ 2022-07-29 11:00:02.613 WARN  [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+ 2022-07-29 11:00:02.614 INFO  [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+ 2022-07-29 11:00:02.627 INFO  [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@19ee1ae6
+ 2022-07-29 11:00:02.638 DEBUG [main] com.os.config.FeignAuthConfig            : Current Hystrix plugins configuration is [concurrencyStrategy [com.netflix.hystrix.strategy.concurrency.HystrixConcurrencyStrategyDefault@5c7668ba],eventNotifier [com.netflix.hystrix.strategy.eventnotifier.HystrixEventNotifierDefault@26221bad],metricPublisher [com.netflix.hystrix.strategy.metrics.HystrixMetricsPublisherDefault@158f4cfe],propertiesStrategy [com.netflix.hystrix.strategy.properties.HystrixPropertiesStrategyDefault@35f639fa],]
+ 2022-07-29 11:00:02.638 DEBUG [main] com.os.config.FeignAuthConfig            : Registering Sleuth Hystrix Concurrency Strategy.
+ 2022-07-29 11:00:03.128 WARN  [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+ 2022-07-29 11:00:03.128 INFO  [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+ 2022-07-29 11:00:03.652 INFO  [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+ 2022-07-29 11:00:04.048 INFO  [main] o.s.s.concurrent.ThreadPoolTaskScheduler : Initializing ExecutorService 'taskScheduler'
+ 2022-07-29 11:00:05.282 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
+ 2022-07-29 11:00:05.289 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Environment :null
+ 2022-07-29 11:00:05.291 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
+ 2022-07-29 11:00:05.548 INFO  [main] com.alibaba.nacos.client.naming          : [LISTENER] adding WEB_CTV@@admin with DEFAULT to listener map
+ 2022-07-29 11:00:05.570 INFO  [main] io.undertow                              : starting server: Undertow - 2.1.4.Final
+ 2022-07-29 11:00:05.584 INFO  [main] org.xnio                                 : XNIO version 3.8.0.Final
+ 2022-07-29 11:00:05.594 INFO  [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.8.0.Final
+ 2022-07-29 11:00:05.644 INFO  [main] org.jboss.threads                        : JBoss Threads version 3.1.0.Final
+ 2022-07-29 11:00:05.701 INFO  [main] o.s.b.w.e.undertow.UndertowWebServer     : Undertow started on port(s) 20004 (http)
+ 2022-07-29 11:00:05.773 INFO  [main] com.alibaba.nacos.client.naming          : [BEAT] adding beat: BeatInfo{port=20004, ip='192.168.4.123', weight=1.0, serviceName='WEB_CTV@@admin', cluster='DEFAULT', metadata={preserved.register.source=SPRING_CLOUD}, scheduled=false, period=5000, stopped=false} to beat map.
+ 2022-07-29 11:00:05.780 INFO  [main] com.alibaba.nacos.client.naming          : [REGISTER-SERVICE] 25df333f-6d49-4053-9ecd-207058071611 registering service WEB_CTV@@admin with instance: Instance{instanceId='null', ip='192.168.4.123', port=20004, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={preserved.register.source=SPRING_CLOUD}}
+ 2022-07-29 11:00:05.798 INFO  [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, WEB_CTV admin 192.168.4.123:20004 register finished
+ 2022-07-29 11:00:05.901 INFO  [main] com.os.ApplyAdminApplication             : Started ApplyAdminApplication in 16.8 seconds (JVM running for 17.986)
+ 2022-07-29 11:00:05.907 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] gateway.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
+ 2022-07-29 11:00:05.909 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=gateway.properties, group=WEB_CTV, cnt=1
+ 2022-07-29 11:00:05.910 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] library-major.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
+ 2022-07-29 11:00:05.910 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=library-major.properties, group=WEB_CTV, cnt=1
+ 2022-07-29 11:00:05.910 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] apply-admin.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
+ 2022-07-29 11:00:05.911 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=apply-admin.properties, group=WEB_CTV, cnt=1
+ 2022-07-29 11:00:05.911 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] library-major.properties-common-config-dev.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
+ 2022-07-29 11:00:05.911 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=library-major.properties-common-config-dev.properties, group=WEB_CTV, cnt=1
+ 2022-07-29 11:00:05.911 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] library-major.properties.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
+ 2022-07-29 11:00:05.911 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=library-major.properties.properties, group=WEB_CTV, cnt=1
+ 2022-07-29 11:00:05.912 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] manage.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
+ 2022-07-29 11:00:05.913 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=manage.properties, group=WEB_CTV, cnt=1
+ 2022-07-29 11:00:05.914 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] apply-api.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
+ 2022-07-29 11:00:05.914 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=apply-api.properties, group=WEB_CTV, cnt=1
+ 2022-07-29 11:00:06.026 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"WEB_CTV@@admin\",\"clusters\":\"DEFAULT\",\"cacheMillis\":10000,\"hosts\":[{\"instanceId\":\"192.168.4.123#20004#DEFAULT#WEB_CTV@@admin\",\"ip\":\"192.168.4.123\",\"port\":20004,\"weight\":1.0,\"healthy\":true,\"enabled\":true,\"ephemeral\":true,\"clusterName\":\"DEFAULT\",\"serviceName\":\"WEB_CTV@@admin\",\"metadata\":{\"preserved.register.source\":\"SPRING_CLOUD\"},\"instanceHeartBeatInterval\":5000,\"instanceHeartBeatTimeOut\":15000,\"ipDeleteTimeout\":30000}],\"lastRefTime\":1659067206023,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":679844571985} from /127.0.0.1
+ 2022-07-29 11:00:06.132 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : new ips(1) service: WEB_CTV@@admin@@DEFAULT -> [{"instanceId":"192.168.4.123#20004#DEFAULT#WEB_CTV@@admin","ip":"192.168.4.123","port":20004,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@admin","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
+ 2022-07-29 11:00:06.226 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : current ips:(1) service: WEB_CTV@@admin@@DEFAULT -> [{"instanceId":"192.168.4.123#20004#DEFAULT#WEB_CTV@@admin","ip":"192.168.4.123","port":20004,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@admin","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
+ 2022-07-29 11:00:07.707 INFO  [main] c.netflix.config.ChainedDynamicProperty  : Flipping property: admin.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+ 2022-07-29 11:00:07.725 INFO  [main] c.netflix.loadbalancer.BaseLoadBalancer  : Client: admin instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=admin,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+ 2022-07-29 11:00:07.791 INFO  [main] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+ 2022-07-29 11:00:07.814 INFO  [main] com.alibaba.nacos.client.naming          : new ips(1) service: WEB_CTV@@admin -> [{"instanceId":"192.168.4.123#20004#DEFAULT#WEB_CTV@@admin","ip":"192.168.4.123","port":20004,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@admin","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
+ 2022-07-29 11:00:07.847 INFO  [main] com.alibaba.nacos.client.naming          : current ips:(1) service: WEB_CTV@@admin -> [{"instanceId":"192.168.4.123#20004#DEFAULT#WEB_CTV@@admin","ip":"192.168.4.123","port":20004,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@admin","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
+ 2022-07-29 11:00:07.862 INFO  [main] c.netflix.config.ChainedDynamicProperty  : Flipping property: admin.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+ 2022-07-29 11:00:07.865 INFO  [main] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client admin initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=admin,current list of Servers=[192.168.4.123:20004],Load balancer stats=Zone stats: {unknown=[Zone:unknown;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:192.168.4.123:20004;	Zone:UNKNOWN;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 ICT 1970;	First connection made: Thu Jan 01 08:00:00 ICT 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:com.alibaba.cloud.nacos.ribbon.NacosServerList@6f315b08
+ 2022-07-29 11:00:08.797 INFO  [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: admin.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+ 2022-07-29 11:00:16.026 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"WEB_CTV@@admin\",\"clusters\":\"DEFAULT\",\"cacheMillis\":10000,\"hosts\":[{\"instanceId\":\"192.168.4.123#20004#DEFAULT#WEB_CTV@@admin\",\"ip\":\"192.168.4.123\",\"port\":20004,\"weight\":1.0,\"healthy\":true,\"enabled\":true,\"ephemeral\":true,\"clusterName\":\"DEFAULT\",\"serviceName\":\"WEB_CTV@@admin\",\"metadata\":{\"preserved.register.source\":\"SPRING_CLOUD\"},\"instanceHeartBeatInterval\":5000,\"instanceHeartBeatTimeOut\":15000,\"ipDeleteTimeout\":30000}],\"lastRefTime\":1659067206023,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":679844571985} from /127.0.0.1
+ 2022-07-29 11:00:16.026 WARN  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : out of date data received, old-t: 1659067206557, new-t: 1659067206023
+ 2022-07-29 11:05:59.606 INFO  [XNIO-1 task-1] io.undertow.servlet                      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+ 2022-07-29 11:05:59.606 INFO  [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+ 2022-07-29 11:05:59.612 INFO  [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+ 2022-07-29 11:05:59.905 INFO  [hystrix-manage-1] c.o.c.AttributesHeaderRequestInterceptor : =====> request uri: /sys/user/login
+ 2022-07-29 11:05:59.905 DEBUG [hystrix-manage-1] c.o.c.AttributesHeaderRequestInterceptor : =====> tenantId: null
+ 2022-07-29 11:05:59.946 INFO  [hystrix-manage-1] c.netflix.config.ChainedDynamicProperty  : Flipping property: manage.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+ 2022-07-29 11:05:59.949 INFO  [hystrix-manage-1] c.netflix.loadbalancer.BaseLoadBalancer  : Client: manage instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=manage,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+ 2022-07-29 11:05:59.951 INFO  [hystrix-manage-1] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+ 2022-07-29 11:05:59.954 INFO  [hystrix-manage-1] com.alibaba.nacos.client.naming          : new ips(1) service: WEB_CTV@@manage -> [{"instanceId":"192.168.4.123#20008#DEFAULT#WEB_CTV@@manage","ip":"192.168.4.123","port":20008,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@manage","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
+ 2022-07-29 11:05:59.955 INFO  [hystrix-manage-1] com.alibaba.nacos.client.naming          : current ips:(1) service: WEB_CTV@@manage -> [{"instanceId":"192.168.4.123#20008#DEFAULT#WEB_CTV@@manage","ip":"192.168.4.123","port":20008,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@manage","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
+ 2022-07-29 11:05:59.956 INFO  [hystrix-manage-1] c.netflix.config.ChainedDynamicProperty  : Flipping property: manage.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+ 2022-07-29 11:05:59.957 INFO  [hystrix-manage-1] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client manage initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=manage,current list of Servers=[192.168.4.123:20008],Load balancer stats=Zone stats: {unknown=[Zone:unknown;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:192.168.4.123:20008;	Zone:UNKNOWN;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 ICT 1970;	First connection made: Thu Jan 01 08:00:00 ICT 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:com.alibaba.cloud.nacos.ribbon.NacosServerList@4a49c12
+ 2022-07-29 11:06:00.513 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"WEB_CTV@@manage\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[{\"instanceId\":\"192.168.4.123#20008#DEFAULT#WEB_CTV@@manage\",\"ip\":\"192.168.4.123\",\"port\":20008,\"weight\":1.0,\"healthy\":true,\"enabled\":true,\"ephemeral\":true,\"clusterName\":\"DEFAULT\",\"serviceName\":\"WEB_CTV@@manage\",\"metadata\":{\"preserved.register.source\":\"SPRING_CLOUD\"},\"instanceHeartBeatInterval\":5000,\"instanceHeartBeatTimeOut\":15000,\"ipDeleteTimeout\":30000}],\"lastRefTime\":1659067560512,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":1034332931336} from /127.0.0.1
+ 2022-07-29 11:06:00.952 INFO  [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: manage.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+ 2022-07-29 11:06:10.513 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"WEB_CTV@@manage\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[{\"instanceId\":\"192.168.4.123#20008#DEFAULT#WEB_CTV@@manage\",\"ip\":\"192.168.4.123\",\"port\":20008,\"weight\":1.0,\"healthy\":true,\"enabled\":true,\"ephemeral\":true,\"clusterName\":\"DEFAULT\",\"serviceName\":\"WEB_CTV@@manage\",\"metadata\":{\"preserved.register.source\":\"SPRING_CLOUD\"},\"instanceHeartBeatInterval\":5000,\"instanceHeartBeatTimeOut\":15000,\"ipDeleteTimeout\":30000}],\"lastRefTime\":1659067560512,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":1034332931336} from /127.0.0.1
+ 2022-07-29 11:06:10.513 WARN  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : out of date data received, old-t: 1659067560957, new-t: 1659067560512
+ 2022-07-29 11:07:06.759 INFO  [hystrix-manage-2] c.o.c.AttributesHeaderRequestInterceptor : =====> request uri: /sys/user/login
+ 2022-07-29 11:07:06.759 DEBUG [hystrix-manage-2] c.o.c.AttributesHeaderRequestInterceptor : =====> tenantId: null
+ 2022-07-29 11:09:40.741 INFO  [hystrix-manage-3] c.o.c.AttributesHeaderRequestInterceptor : =====> request uri: /sys/user/login
+ 2022-07-29 11:09:40.741 DEBUG [hystrix-manage-3] c.o.c.AttributesHeaderRequestInterceptor : =====> tenantId: null
+ 2022-07-29 11:16:16.203 INFO  [hystrix-manage-4] c.o.c.AttributesHeaderRequestInterceptor : =====> request uri: /sys/user/login
+ 2022-07-29 11:16:16.203 DEBUG [hystrix-manage-4] c.o.c.AttributesHeaderRequestInterceptor : =====> tenantId: null
+ 2022-07-29 11:25:14.121 INFO  [hystrix-manage-5] c.o.c.AttributesHeaderRequestInterceptor : =====> request uri: /sys/user/login
+ 2022-07-29 11:25:14.122 DEBUG [hystrix-manage-5] c.o.c.AttributesHeaderRequestInterceptor : =====> tenantId: null
+ 2022-07-29 11:27:04.759 INFO  [hystrix-manage-6] c.o.c.AttributesHeaderRequestInterceptor : =====> request uri: /sys/user/login
+ 2022-07-29 11:27:04.759 DEBUG [hystrix-manage-6] c.o.c.AttributesHeaderRequestInterceptor : =====> tenantId: null
+ 2022-07-29 11:28:15.859 INFO  [Thread-56] c.n.l.PollingServerListUpdater           : Shutting down the Executor Pool for PollingServerListUpdater
+ 2022-07-29 11:28:15.939 INFO  [SpringContextShutdownHook] io.undertow                              : stopping server: Undertow - 2.1.4.Final
+ 2022-07-29 11:28:15.944 INFO  [SpringContextShutdownHook] io.undertow.servlet                      : Destroying Spring FrameworkServlet 'dispatcherServlet'
+ 2022-07-29 11:28:15.952 INFO  [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskScheduler : Shutting down ExecutorService 'taskScheduler'
+ 2022-07-29 11:28:15.955 WARN  [SpringContextShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Failed to stop bean 'nacosWatch'
+ 
+java.lang.NullPointerException: null
+	at io.undertow.servlet.spec.ServletContextImpl.getInitParameterNames(ServletContextImpl.java:430)
+	at org.springframework.web.context.support.ServletContextPropertySource.getPropertyNames(ServletContextPropertySource.java:41)
+	at com.alibaba.spring.util.PropertySourcesUtils.getPropertyNames(PropertySourcesUtils.java:130)
+	at com.alibaba.spring.util.PropertySourcesUtils.getSubProperties(PropertySourcesUtils.java:103)
+	at com.alibaba.spring.util.PropertySourcesUtils.getSubProperties(PropertySourcesUtils.java:57)
+	at com.alibaba.cloud.nacos.NacosDiscoveryProperties.enrichNacosDiscoveryProperties(NacosDiscoveryProperties.java:616)
+	at com.alibaba.cloud.nacos.NacosDiscoveryProperties.getNacosProperties(NacosDiscoveryProperties.java:610)
+	at com.alibaba.cloud.nacos.discovery.NacosWatch.stop(NacosWatch.java:166)
+	at com.alibaba.cloud.nacos.discovery.NacosWatch.stop(NacosWatch.java:98)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStop(DefaultLifecycleProcessor.java:238)
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$300(DefaultLifecycleProcessor.java:53)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.stop(DefaultLifecycleProcessor.java:377)
+	at org.springframework.context.support.DefaultLifecycleProcessor.stopBeans(DefaultLifecycleProcessor.java:210)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onClose(DefaultLifecycleProcessor.java:128)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1022)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:170)
+	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:949)
+
+2022-07-29 11:28:45.966 INFO  [SpringContextShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Failed to shut down 1 bean with phase value 0 within timeout of 30000ms: [nacosWatch]
+ 2022-07-29 11:28:46.022 INFO  [SpringContextShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+ 2022-07-29 11:28:46.022 WARN  [SpringContextShutdownHook] .s.c.a.CommonAnnotationBeanPostProcessor : Destroy method on bean with name 'nacosAutoServiceRegistration' threw an exception: java.lang.NullPointerException
+ 2022-07-29 11:28:46.022 INFO  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.beat.BeatReactor do shutdown begin
+ 2022-07-29 11:28:47.047 INFO  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.beat.BeatReactor do shutdown stop
+ 2022-07-29 11:28:47.048 INFO  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.core.EventDispatcher do shutdown begin
+ 2022-07-29 11:28:50.048 INFO  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.core.EventDispatcher do shutdown stop
+ 2022-07-29 11:28:50.049 INFO  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.core.HostReactor do shutdown begin
+ 2022-07-29 11:28:53.050 INFO  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.core.PushReceiver do shutdown begin
+ 2022-07-29 11:28:56.051 INFO  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.core.PushReceiver do shutdown stop
+ 2022-07-29 11:28:56.052 INFO  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown begin
+ 2022-07-29 11:28:56.052 INFO  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown stop
+ 2022-07-29 11:28:56.113 INFO  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.core.HostReactor do shutdown stop
+ 2022-07-29 11:28:56.051 ERROR [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : [NA] error while receiving push data
+ 
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.receive0(Native Method)
+	at java.net.AbstractPlainDatagramSocketImpl.receive(AbstractPlainDatagramSocketImpl.java:149)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:812)
+	at com.alibaba.nacos.client.naming.core.PushReceiver.run(PushReceiver.java:83)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+
+2022-07-29 11:28:56.113 INFO  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.net.NamingProxy do shutdown begin
+ 2022-07-29 11:28:56.126 WARN  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : [NamingHttpClientManager] Start destroying NacosRestTemplate
+ 2022-07-29 11:28:56.127 WARN  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : [NamingHttpClientManager] Destruction of the end
+ 2022-07-29 11:28:56.127 INFO  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.net.NamingProxy do shutdown stop
+ 2022-07-29 11:28:56.127 INFO  [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskScheduler : Shutting down ExecutorService 'taskScheduler'
+ 2022-07-29 11:28:56.127 INFO  [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+ 2022-07-29 13:31:15.291 INFO  [main] c.a.n.c.c.impl.LocalConfigInfoProcessor  : LOCAL_SNAPSHOT_PATH:/home/nguyen/nacos/config
+ 2022-07-29 13:31:15.338 INFO  [main] c.a.nacos.client.config.impl.Limiter     : limitTime:5.0
+ 2022-07-29 13:31:15.368 INFO  [main] c.a.nacos.client.config.utils.JvmUtil    : isMultiInstance:false
+ 2022-07-29 13:31:15.370 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'gateway.properties', group: 'WEB_CTV', data: gateway.port=20003
+
+gateway.application.name=gateway
+
+gateway.context-path=/
+
+gateway.redis.database=0
+ 2022-07-29 13:31:15.376 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'apply-admin.properties', group: 'WEB_CTV', data: apply-admin.port=20004
+
+apply-admin.application.name=admin
+
+apply-admin.context-path=/
+ 2022-07-29 13:31:15.381 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'apply-api.properties', group: 'WEB_CTV', data: apply-api.port=20005
+
+apply-api.application.name=api
+
+apply-api.context-path=/
+ 2022-07-29 13:31:15.386 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'manage.properties', group: 'WEB_CTV', data: manage.port=20008
+
+manage.application.name=manage
+
+manage.context-path=/
+
+# database
+manage.db.host=localhost
+manage.db.port=3306
+manage.db.database=mysql
+manage.db.username=root
+manage.db.password=thaibinh
+
+# redis
+manage.redis.database=0
+ 2022-07-29 13:31:15.390 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'library-major.properties', group: 'WEB_CTV', data: 
+#logback-spring
+logging.config=classpath:logback-spring.xml
+
+# spring.datasource.drive-class-name
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+# có sử dụng unicode hay không?
+userUnicode=true
+# mã hóa ký tự
+characterEncoding=UTF-8
+
+# redis
+common.redis.host=localhost
+common.redis.port=4488
+common.redis.password=thaibinh
+common.redis.database=0
+ 2022-07-29 13:31:15.398 WARN  [main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[library-major.properties.properties] & group[WEB_CTV]
+ 2022-07-29 13:31:15.402 WARN  [main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[library-major.properties-common-config-dev.properties] & group[WEB_CTV]
+ 2022-07-29 13:31:15.403 INFO  [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-library-major.properties-common-config-dev.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-library-major.properties.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-library-major.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-manage.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-apply-api.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-apply-admin.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-gateway.properties,WEB_CTV'}]
+ 2022-07-29 13:31:15.453 INFO  [main] com.os.ApplyAdminApplication             : The following profiles are active: common-config-dev
+ 2022-07-29 13:31:16.594 INFO  [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=56ec502c-1362-35a6-9541-893b5404550c
+ 2022-07-29 13:31:20.038 WARN  [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+ 2022-07-29 13:31:20.090 INFO  [main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+ 2022-07-29 13:31:20.090 INFO  [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4595 ms
+ 2022-07-29 13:31:20.371 WARN  [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+ 2022-07-29 13:31:20.372 INFO  [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+ 2022-07-29 13:31:20.383 INFO  [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@604b1e1d
+ 2022-07-29 13:31:20.390 DEBUG [main] com.os.config.FeignAuthConfig            : Current Hystrix plugins configuration is [concurrencyStrategy [com.netflix.hystrix.strategy.concurrency.HystrixConcurrencyStrategyDefault@58e85c6f],eventNotifier [com.netflix.hystrix.strategy.eventnotifier.HystrixEventNotifierDefault@a137d7a],metricPublisher [com.netflix.hystrix.strategy.metrics.HystrixMetricsPublisherDefault@6ac0b715],propertiesStrategy [com.netflix.hystrix.strategy.properties.HystrixPropertiesStrategyDefault@468be356],]
+ 2022-07-29 13:31:20.390 DEBUG [main] com.os.config.FeignAuthConfig            : Registering Sleuth Hystrix Concurrency Strategy.
+ 2022-07-29 13:31:20.774 WARN  [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+ 2022-07-29 13:31:20.774 INFO  [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+ 2022-07-29 13:31:20.936 INFO  [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+ 2022-07-29 13:31:21.199 INFO  [main] o.s.s.concurrent.ThreadPoolTaskScheduler : Initializing ExecutorService 'taskScheduler'
+ 2022-07-29 13:31:21.540 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
+ 2022-07-29 13:31:21.541 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Environment :null
+ 2022-07-29 13:31:21.542 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
+ 2022-07-29 13:31:21.790 INFO  [main] com.alibaba.nacos.client.naming          : [LISTENER] adding WEB_CTV@@admin with DEFAULT to listener map
+ 2022-07-29 13:31:21.810 INFO  [main] io.undertow                              : starting server: Undertow - 2.1.4.Final
+ 2022-07-29 13:31:21.818 INFO  [main] org.xnio                                 : XNIO version 3.8.0.Final
+ 2022-07-29 13:31:21.824 INFO  [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.8.0.Final
+ 2022-07-29 13:31:21.848 INFO  [main] org.jboss.threads                        : JBoss Threads version 3.1.0.Final
+ 2022-07-29 13:31:21.888 INFO  [main] o.s.b.w.e.undertow.UndertowWebServer     : Undertow started on port(s) 20004 (http)
+ 2022-07-29 13:31:21.894 INFO  [main] com.alibaba.nacos.client.naming          : [BEAT] adding beat: BeatInfo{port=20004, ip='192.168.4.123', weight=1.0, serviceName='WEB_CTV@@admin', cluster='DEFAULT', metadata={preserved.register.source=SPRING_CLOUD}, scheduled=false, period=5000, stopped=false} to beat map.
+ 2022-07-29 13:31:21.895 INFO  [main] com.alibaba.nacos.client.naming          : [REGISTER-SERVICE] 25df333f-6d49-4053-9ecd-207058071611 registering service WEB_CTV@@admin with instance: Instance{instanceId='null', ip='192.168.4.123', port=20004, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={preserved.register.source=SPRING_CLOUD}}
+ 2022-07-29 13:31:21.901 INFO  [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, WEB_CTV admin 192.168.4.123:20004 register finished
+ 2022-07-29 13:31:21.984 INFO  [main] com.os.ApplyAdminApplication             : Started ApplyAdminApplication in 8.434 seconds (JVM running for 9.849)
+ 2022-07-29 13:31:21.990 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] gateway.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
+ 2022-07-29 13:31:21.991 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=gateway.properties, group=WEB_CTV, cnt=1
+ 2022-07-29 13:31:21.992 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] library-major.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
+ 2022-07-29 13:31:21.992 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=library-major.properties, group=WEB_CTV, cnt=1
+ 2022-07-29 13:31:21.993 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] apply-admin.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
+ 2022-07-29 13:31:21.993 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=apply-admin.properties, group=WEB_CTV, cnt=1
+ 2022-07-29 13:31:21.993 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] library-major.properties-common-config-dev.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
+ 2022-07-29 13:31:21.993 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=library-major.properties-common-config-dev.properties, group=WEB_CTV, cnt=1
+ 2022-07-29 13:31:21.993 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] library-major.properties.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
+ 2022-07-29 13:31:21.993 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=library-major.properties.properties, group=WEB_CTV, cnt=1
+ 2022-07-29 13:31:21.994 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] manage.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
+ 2022-07-29 13:31:21.996 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=manage.properties, group=WEB_CTV, cnt=1
+ 2022-07-29 13:31:21.996 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] apply-api.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
+ 2022-07-29 13:31:21.997 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=apply-api.properties, group=WEB_CTV, cnt=1
+ 2022-07-29 13:31:22.186 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"WEB_CTV@@admin\",\"clusters\":\"DEFAULT\",\"cacheMillis\":10000,\"hosts\":[{\"instanceId\":\"192.168.4.123#20004#DEFAULT#WEB_CTV@@admin\",\"ip\":\"192.168.4.123\",\"port\":20004,\"weight\":1.0,\"healthy\":true,\"enabled\":true,\"ephemeral\":true,\"clusterName\":\"DEFAULT\",\"serviceName\":\"WEB_CTV@@admin\",\"metadata\":{\"preserved.register.source\":\"SPRING_CLOUD\"},\"instanceHeartBeatInterval\":5000,\"instanceHeartBeatTimeOut\":15000,\"ipDeleteTimeout\":30000}],\"lastRefTime\":1659076282185,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":4152396088071} from /127.0.0.1
+ 2022-07-29 13:31:22.235 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : new ips(1) service: WEB_CTV@@admin@@DEFAULT -> [{"instanceId":"192.168.4.123#20004#DEFAULT#WEB_CTV@@admin","ip":"192.168.4.123","port":20004,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@admin","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
+ 2022-07-29 13:31:22.275 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : current ips:(1) service: WEB_CTV@@admin@@DEFAULT -> [{"instanceId":"192.168.4.123#20004#DEFAULT#WEB_CTV@@admin","ip":"192.168.4.123","port":20004,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@admin","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
+ 2022-07-29 13:31:22.694 INFO  [main] c.netflix.config.ChainedDynamicProperty  : Flipping property: admin.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+ 2022-07-29 13:31:22.721 INFO  [main] c.netflix.loadbalancer.BaseLoadBalancer  : Client: admin instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=admin,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+ 2022-07-29 13:31:22.730 INFO  [main] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+ 2022-07-29 13:31:22.741 INFO  [main] com.alibaba.nacos.client.naming          : new ips(1) service: WEB_CTV@@admin -> [{"instanceId":"192.168.4.123#20004#DEFAULT#WEB_CTV@@admin","ip":"192.168.4.123","port":20004,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@admin","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
+ 2022-07-29 13:31:22.765 INFO  [main] com.alibaba.nacos.client.naming          : current ips:(1) service: WEB_CTV@@admin -> [{"instanceId":"192.168.4.123#20004#DEFAULT#WEB_CTV@@admin","ip":"192.168.4.123","port":20004,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@admin","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
+ 2022-07-29 13:31:22.785 INFO  [main] c.netflix.config.ChainedDynamicProperty  : Flipping property: admin.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+ 2022-07-29 13:31:22.788 INFO  [main] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client admin initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=admin,current list of Servers=[192.168.4.123:20004],Load balancer stats=Zone stats: {unknown=[Zone:unknown;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:192.168.4.123:20004;	Zone:UNKNOWN;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 ICT 1970;	First connection made: Thu Jan 01 08:00:00 ICT 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:com.alibaba.cloud.nacos.ribbon.NacosServerList@6a15b73
+ 2022-07-29 13:31:23.736 INFO  [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: admin.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+ 2022-07-29 13:31:32.186 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"WEB_CTV@@admin\",\"clusters\":\"DEFAULT\",\"cacheMillis\":10000,\"hosts\":[{\"instanceId\":\"192.168.4.123#20004#DEFAULT#WEB_CTV@@admin\",\"ip\":\"192.168.4.123\",\"port\":20004,\"weight\":1.0,\"healthy\":true,\"enabled\":true,\"ephemeral\":true,\"clusterName\":\"DEFAULT\",\"serviceName\":\"WEB_CTV@@admin\",\"metadata\":{\"preserved.register.source\":\"SPRING_CLOUD\"},\"instanceHeartBeatInterval\":5000,\"instanceHeartBeatTimeOut\":15000,\"ipDeleteTimeout\":30000}],\"lastRefTime\":1659076282185,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":4152396088071} from /127.0.0.1
+ 2022-07-29 13:31:32.187 WARN  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : out of date data received, old-t: 1659076282794, new-t: 1659076282185
+ 2022-07-29 13:36:17.914 INFO  [Thread-36] c.n.l.PollingServerListUpdater           : Shutting down the Executor Pool for PollingServerListUpdater
+ 2022-07-29 13:36:17.917 INFO  [SpringContextShutdownHook] io.undertow                              : stopping server: Undertow - 2.1.4.Final
+ 2022-07-29 13:36:17.924 INFO  [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskScheduler : Shutting down ExecutorService 'taskScheduler'
+ 2022-07-29 13:36:17.926 WARN  [SpringContextShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Failed to stop bean 'nacosWatch'
+ 
+java.lang.NullPointerException: null
+	at io.undertow.servlet.spec.ServletContextImpl.getInitParameterNames(ServletContextImpl.java:430)
+	at org.springframework.web.context.support.ServletContextPropertySource.getPropertyNames(ServletContextPropertySource.java:41)
+	at com.alibaba.spring.util.PropertySourcesUtils.getPropertyNames(PropertySourcesUtils.java:130)
+	at com.alibaba.spring.util.PropertySourcesUtils.getSubProperties(PropertySourcesUtils.java:103)
+	at com.alibaba.spring.util.PropertySourcesUtils.getSubProperties(PropertySourcesUtils.java:57)
+	at com.alibaba.cloud.nacos.NacosDiscoveryProperties.enrichNacosDiscoveryProperties(NacosDiscoveryProperties.java:616)
+	at com.alibaba.cloud.nacos.NacosDiscoveryProperties.getNacosProperties(NacosDiscoveryProperties.java:610)
+	at com.alibaba.cloud.nacos.discovery.NacosWatch.stop(NacosWatch.java:166)
+	at com.alibaba.cloud.nacos.discovery.NacosWatch.stop(NacosWatch.java:98)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStop(DefaultLifecycleProcessor.java:238)
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$300(DefaultLifecycleProcessor.java:53)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.stop(DefaultLifecycleProcessor.java:377)
+	at org.springframework.context.support.DefaultLifecycleProcessor.stopBeans(DefaultLifecycleProcessor.java:210)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onClose(DefaultLifecycleProcessor.java:128)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1022)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:170)
+	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:949)
+
+2022-07-29 13:37:12.077 INFO  [main] c.a.n.c.c.impl.LocalConfigInfoProcessor  : LOCAL_SNAPSHOT_PATH:/home/nguyen/nacos/config
+ 2022-07-29 13:37:12.123 INFO  [main] c.a.nacos.client.config.impl.Limiter     : limitTime:5.0
+ 2022-07-29 13:37:12.192 INFO  [main] c.a.nacos.client.config.utils.JvmUtil    : isMultiInstance:false
+ 2022-07-29 13:37:12.194 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'gateway.properties', group: 'WEB_CTV', data: gateway.port=20003
+
+gateway.application.name=gateway
+
+gateway.context-path=/
+
+gateway.redis.database=0
+ 2022-07-29 13:37:12.208 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'apply-admin.properties', group: 'WEB_CTV', data: apply-admin.port=20004
+
+apply-admin.application.name=admin
+
+apply-admin.context-path=/
+ 2022-07-29 13:37:12.216 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'apply-api.properties', group: 'WEB_CTV', data: apply-api.port=20005
+
+apply-api.application.name=api
+
+apply-api.context-path=/
+ 2022-07-29 13:37:12.220 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'manage.properties', group: 'WEB_CTV', data: manage.port=20008
+
+manage.application.name=manage
+
+manage.context-path=/
+
+# database
+manage.db.host=localhost
+manage.db.port=3306
+manage.db.database=mysql
+manage.db.username=root
+manage.db.password=thaibinh
+
+# redis
+manage.redis.database=0
+ 2022-07-29 13:37:12.224 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'library-major.properties', group: 'WEB_CTV', data: 
+#logback-spring
+logging.config=classpath:logback-spring.xml
+
+# spring.datasource.drive-class-name
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+# có sử dụng unicode hay không?
+userUnicode=true
+# mã hóa ký tự
+characterEncoding=UTF-8
+
+# redis
+common.redis.host=localhost
+common.redis.port=4488
+common.redis.password=thaibinh
+common.redis.database=0
+ 2022-07-29 13:37:12.229 WARN  [main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[library-major.properties.properties] & group[WEB_CTV]
+ 2022-07-29 13:37:12.232 WARN  [main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[library-major.properties-common-config-dev.properties] & group[WEB_CTV]
+ 2022-07-29 13:37:12.233 INFO  [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-library-major.properties-common-config-dev.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-library-major.properties.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-library-major.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-manage.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-apply-api.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-apply-admin.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-gateway.properties,WEB_CTV'}]
+ 2022-07-29 13:37:12.266 INFO  [main] com.os.ApplyAdminApplication             : The following profiles are active: common-config-dev
+ 2022-07-29 13:37:13.383 INFO  [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=56ec502c-1362-35a6-9541-893b5404550c
+ 2022-07-29 13:37:13.860 WARN  [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+ 2022-07-29 13:37:13.879 INFO  [main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+ 2022-07-29 13:37:13.879 INFO  [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1554 ms
+ 2022-07-29 13:37:13.967 WARN  [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+ 2022-07-29 13:37:13.967 INFO  [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+ 2022-07-29 13:37:13.973 INFO  [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@604b1e1d
+ 2022-07-29 13:37:13.977 DEBUG [main] com.os.config.FeignAuthConfig            : Current Hystrix plugins configuration is [concurrencyStrategy [com.netflix.hystrix.strategy.concurrency.HystrixConcurrencyStrategyDefault@58e85c6f],eventNotifier [com.netflix.hystrix.strategy.eventnotifier.HystrixEventNotifierDefault@a137d7a],metricPublisher [com.netflix.hystrix.strategy.metrics.HystrixMetricsPublisherDefault@6ac0b715],propertiesStrategy [com.netflix.hystrix.strategy.properties.HystrixPropertiesStrategyDefault@468be356],]
+ 2022-07-29 13:37:13.978 DEBUG [main] com.os.config.FeignAuthConfig            : Registering Sleuth Hystrix Concurrency Strategy.
+ 2022-07-29 13:37:14.203 WARN  [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+ 2022-07-29 13:37:14.203 INFO  [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+ 2022-07-29 13:37:14.293 INFO  [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+ 2022-07-29 13:37:14.585 INFO  [main] o.s.s.concurrent.ThreadPoolTaskScheduler : Initializing ExecutorService 'taskScheduler'
+ 2022-07-29 13:37:14.953 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
+ 2022-07-29 13:37:14.953 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Environment :null
+ 2022-07-29 13:37:14.953 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
+ 2022-07-29 13:37:15.117 INFO  [main] com.alibaba.nacos.client.naming          : new ips(1) service: WEB_CTV@@admin@@DEFAULT -> [{"instanceId":"192.168.4.123#20004#DEFAULT#WEB_CTV@@admin","ip":"192.168.4.123","port":20004,"weight":1.0,"healthy":false,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@admin","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
+ 2022-07-29 13:37:15.121 INFO  [main] com.alibaba.nacos.client.naming          : current ips:(1) service: WEB_CTV@@admin@@DEFAULT -> [{"instanceId":"192.168.4.123#20004#DEFAULT#WEB_CTV@@admin","ip":"192.168.4.123","port":20004,"weight":1.0,"healthy":false,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@admin","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
+ 2022-07-29 13:37:15.122 INFO  [main] com.alibaba.nacos.client.naming          : [LISTENER] adding WEB_CTV@@admin with DEFAULT to listener map
+ 2022-07-29 13:37:15.128 INFO  [main] io.undertow                              : starting server: Undertow - 2.1.4.Final
+ 2022-07-29 13:37:15.133 INFO  [main] org.xnio                                 : XNIO version 3.8.0.Final
+ 2022-07-29 13:37:15.138 INFO  [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.8.0.Final
+ 2022-07-29 13:37:15.164 INFO  [main] org.jboss.threads                        : JBoss Threads version 3.1.0.Final
+ 2022-07-29 13:37:15.212 INFO  [main] o.s.b.w.e.undertow.UndertowWebServer     : Undertow started on port(s) 20004 (http)
+ 2022-07-29 13:37:15.216 INFO  [main] com.alibaba.nacos.client.naming          : [BEAT] adding beat: BeatInfo{port=20004, ip='192.168.4.123', weight=1.0, serviceName='WEB_CTV@@admin', cluster='DEFAULT', metadata={preserved.register.source=SPRING_CLOUD}, scheduled=false, period=5000, stopped=false} to beat map.
+ 2022-07-29 13:37:15.218 INFO  [main] com.alibaba.nacos.client.naming          : [REGISTER-SERVICE] 25df333f-6d49-4053-9ecd-207058071611 registering service WEB_CTV@@admin with instance: Instance{instanceId='null', ip='192.168.4.123', port=20004, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={preserved.register.source=SPRING_CLOUD}}
+ 2022-07-29 13:37:15.221 INFO  [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, WEB_CTV admin 192.168.4.123:20004 register finished
+ 2022-07-29 13:37:15.311 INFO  [main] com.os.ApplyAdminApplication             : Started ApplyAdminApplication in 5.34 seconds (JVM running for 6.173)
+ 2022-07-29 13:37:15.314 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] gateway.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
+ 2022-07-29 13:37:15.315 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=gateway.properties, group=WEB_CTV, cnt=1
+ 2022-07-29 13:37:15.316 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] library-major.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
+ 2022-07-29 13:37:15.316 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=library-major.properties, group=WEB_CTV, cnt=1
+ 2022-07-29 13:37:15.316 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] apply-admin.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
+ 2022-07-29 13:37:15.316 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=apply-admin.properties, group=WEB_CTV, cnt=1
+ 2022-07-29 13:37:15.316 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] library-major.properties-common-config-dev.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
+ 2022-07-29 13:37:15.316 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=library-major.properties-common-config-dev.properties, group=WEB_CTV, cnt=1
+ 2022-07-29 13:37:15.317 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] library-major.properties.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
+ 2022-07-29 13:37:15.317 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=library-major.properties.properties, group=WEB_CTV, cnt=1
+ 2022-07-29 13:37:15.318 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] manage.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
+ 2022-07-29 13:37:15.318 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=manage.properties, group=WEB_CTV, cnt=1
+ 2022-07-29 13:37:15.319 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] apply-api.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
+ 2022-07-29 13:37:15.319 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=apply-api.properties, group=WEB_CTV, cnt=1
+ 2022-07-29 13:37:15.603 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"WEB_CTV@@admin\",\"clusters\":\"DEFAULT\",\"cacheMillis\":10000,\"hosts\":[{\"instanceId\":\"192.168.4.123#20004#DEFAULT#WEB_CTV@@admin\",\"ip\":\"192.168.4.123\",\"port\":20004,\"weight\":1.0,\"healthy\":true,\"enabled\":true,\"ephemeral\":true,\"clusterName\":\"DEFAULT\",\"serviceName\":\"WEB_CTV@@admin\",\"metadata\":{\"preserved.register.source\":\"SPRING_CLOUD\"},\"instanceHeartBeatInterval\":5000,\"instanceHeartBeatTimeOut\":15000,\"ipDeleteTimeout\":30000}],\"lastRefTime\":1659076635587,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":4505798304268} from /127.0.0.1
+ 2022-07-29 13:37:15.609 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : [BEAT] adding beat: BeatInfo{port=20004, ip='192.168.4.123', weight=1.0, serviceName='WEB_CTV@@admin', cluster='DEFAULT', metadata={preserved.register.source=SPRING_CLOUD}, scheduled=false, period=5000, stopped=false} to beat map.
+ 2022-07-29 13:37:15.617 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : modified ips(1) service: WEB_CTV@@admin@@DEFAULT -> [{"instanceId":"192.168.4.123#20004#DEFAULT#WEB_CTV@@admin","ip":"192.168.4.123","port":20004,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@admin","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
+ 2022-07-29 13:37:15.618 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : current ips:(1) service: WEB_CTV@@admin@@DEFAULT -> [{"instanceId":"192.168.4.123#20004#DEFAULT#WEB_CTV@@admin","ip":"192.168.4.123","port":20004,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@admin","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
+ 2022-07-29 13:37:15.711 INFO  [main] c.netflix.config.ChainedDynamicProperty  : Flipping property: admin.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+ 2022-07-29 13:37:15.724 INFO  [main] c.netflix.loadbalancer.BaseLoadBalancer  : Client: admin instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=admin,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+ 2022-07-29 13:37:15.730 INFO  [main] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+ 2022-07-29 13:37:15.735 INFO  [main] com.alibaba.nacos.client.naming          : new ips(1) service: WEB_CTV@@admin -> [{"instanceId":"192.168.4.123#20004#DEFAULT#WEB_CTV@@admin","ip":"192.168.4.123","port":20004,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@admin","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
+ 2022-07-29 13:37:15.735 INFO  [main] com.alibaba.nacos.client.naming          : current ips:(1) service: WEB_CTV@@admin -> [{"instanceId":"192.168.4.123#20004#DEFAULT#WEB_CTV@@admin","ip":"192.168.4.123","port":20004,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@admin","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
+ 2022-07-29 13:37:15.742 INFO  [main] c.netflix.config.ChainedDynamicProperty  : Flipping property: admin.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+ 2022-07-29 13:37:15.744 INFO  [main] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client admin initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=admin,current list of Servers=[192.168.4.123:20004],Load balancer stats=Zone stats: {unknown=[Zone:unknown;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:192.168.4.123:20004;	Zone:UNKNOWN;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 ICT 1970;	First connection made: Thu Jan 01 08:00:00 ICT 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:com.alibaba.cloud.nacos.ribbon.NacosServerList@5ff00507
+ 2022-07-29 13:37:16.733 INFO  [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: admin.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+ 2022-07-29 13:37:25.590 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"WEB_CTV@@admin\",\"clusters\":\"DEFAULT\",\"cacheMillis\":10000,\"hosts\":[{\"instanceId\":\"192.168.4.123#20004#DEFAULT#WEB_CTV@@admin\",\"ip\":\"192.168.4.123\",\"port\":20004,\"weight\":1.0,\"healthy\":true,\"enabled\":true,\"ephemeral\":true,\"clusterName\":\"DEFAULT\",\"serviceName\":\"WEB_CTV@@admin\",\"metadata\":{\"preserved.register.source\":\"SPRING_CLOUD\"},\"instanceHeartBeatInterval\":5000,\"instanceHeartBeatTimeOut\":15000,\"ipDeleteTimeout\":30000}],\"lastRefTime\":1659076635587,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":4505798304268} from /127.0.0.1
+ 2022-07-29 13:37:25.591 WARN  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : out of date data received, old-t: 1659076636124, new-t: 1659076635587
+ 2022-07-29 13:55:36.209 INFO  [main] c.a.n.c.c.impl.LocalConfigInfoProcessor  : LOCAL_SNAPSHOT_PATH:/home/nguyen/nacos/config
+ 2022-07-29 13:55:36.243 INFO  [main] c.a.nacos.client.config.impl.Limiter     : limitTime:5.0
+ 2022-07-29 13:55:36.275 INFO  [main] c.a.nacos.client.config.utils.JvmUtil    : isMultiInstance:false
+ 2022-07-29 13:55:36.276 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'gateway.properties', group: 'WEB_CTV', data: gateway.port=20003
+
+gateway.application.name=gateway
+
+gateway.context-path=/
+
+gateway.redis.database=0
+ 2022-07-29 13:55:36.282 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'apply-admin.properties', group: 'WEB_CTV', data: apply-admin.port=20004
+
+apply-admin.application.name=admin
+
+apply-admin.context-path=/
+ 2022-07-29 13:55:36.286 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'apply-api.properties', group: 'WEB_CTV', data: apply-api.port=20005
+
+apply-api.application.name=api
+
+apply-api.context-path=/
+ 2022-07-29 13:55:36.290 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'manage.properties', group: 'WEB_CTV', data: manage.port=20008
+
+manage.application.name=manage
+
+manage.context-path=/
+
+# database
+manage.db.host=localhost
+manage.db.port=3306
+manage.db.database=mysql
+manage.db.username=root
+manage.db.password=thaibinh
+
+# redis
+manage.redis.database=0
+ 2022-07-29 13:55:36.296 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'library-major.properties', group: 'WEB_CTV', data: 
+#logback-spring
+logging.config=classpath:logback-spring.xml
+
+# spring.datasource.drive-class-name
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+# có sử dụng unicode hay không?
+userUnicode=true
+# mã hóa ký tự
+characterEncoding=UTF-8
+
+# redis
+common.redis.host=localhost
+common.redis.port=4488
+common.redis.password=thaibinh
+common.redis.database=0
+ 2022-07-29 13:55:36.301 WARN  [main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[library-major.properties.properties] & group[WEB_CTV]
+ 2022-07-29 13:55:36.304 WARN  [main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[library-major.properties-common-config-dev.properties] & group[WEB_CTV]
+ 2022-07-29 13:55:36.305 INFO  [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-library-major.properties-common-config-dev.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-library-major.properties.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-library-major.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-manage.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-apply-api.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-apply-admin.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-gateway.properties,WEB_CTV'}]
+ 2022-07-29 13:55:36.340 INFO  [main] com.os.ApplyAdminApplication             : The following profiles are active: common-config-dev
+ 2022-07-29 13:55:37.173 INFO  [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=c36a4aae-064d-353d-aecd-0d012ea2dd94
+ 2022-07-29 13:55:37.558 WARN  [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+ 2022-07-29 13:55:37.583 INFO  [main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+ 2022-07-29 13:55:37.584 INFO  [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1218 ms
+ 2022-07-29 13:55:37.688 WARN  [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+ 2022-07-29 13:55:37.689 INFO  [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+ 2022-07-29 13:55:37.697 INFO  [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@4dbad37
+ 2022-07-29 13:55:37.705 DEBUG [main] com.os.config.FeignAuthConfig            : Current Hystrix plugins configuration is [concurrencyStrategy [com.netflix.hystrix.strategy.concurrency.HystrixConcurrencyStrategyDefault@2264e43c],eventNotifier [com.netflix.hystrix.strategy.eventnotifier.HystrixEventNotifierDefault@3bec2275],metricPublisher [com.netflix.hystrix.strategy.metrics.HystrixMetricsPublisherDefault@31da3d60],propertiesStrategy [com.netflix.hystrix.strategy.properties.HystrixPropertiesStrategyDefault@60acd609],]
+ 2022-07-29 13:55:37.705 DEBUG [main] com.os.config.FeignAuthConfig            : Registering Sleuth Hystrix Concurrency Strategy.
+ 2022-07-29 13:55:38.038 WARN  [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+ 2022-07-29 13:55:38.038 INFO  [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+ 2022-07-29 13:55:38.166 INFO  [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+ 2022-07-29 13:55:38.335 INFO  [main] o.s.s.concurrent.ThreadPoolTaskScheduler : Initializing ExecutorService 'taskScheduler'
+ 2022-07-29 13:55:38.530 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
+ 2022-07-29 13:55:38.531 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Environment :null
+ 2022-07-29 13:55:38.532 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
+ 2022-07-29 13:55:38.878 INFO  [main] com.alibaba.nacos.client.naming          : [LISTENER] adding WEB_CTV@@admin with DEFAULT to listener map
+ 2022-07-29 13:55:38.891 INFO  [main] io.undertow                              : starting server: Undertow - 2.1.4.Final
+ 2022-07-29 13:55:38.899 INFO  [main] org.xnio                                 : XNIO version 3.8.0.Final
+ 2022-07-29 13:55:38.909 INFO  [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.8.0.Final
+ 2022-07-29 13:55:38.950 INFO  [main] org.jboss.threads                        : JBoss Threads version 3.1.0.Final
+ 2022-07-29 13:55:39.019 INFO  [main] o.s.b.w.e.undertow.UndertowWebServer     : Undertow started on port(s) 20004 (http)
+ 2022-07-29 13:55:39.027 INFO  [main] com.alibaba.nacos.client.naming          : [BEAT] adding beat: BeatInfo{port=20004, ip='192.168.4.123', weight=1.0, serviceName='WEB_CTV@@admin', cluster='DEFAULT', metadata={preserved.register.source=SPRING_CLOUD}, scheduled=false, period=5000, stopped=false} to beat map.
+ 2022-07-29 13:55:39.028 INFO  [main] com.alibaba.nacos.client.naming          : [REGISTER-SERVICE] 25df333f-6d49-4053-9ecd-207058071611 registering service WEB_CTV@@admin with instance: Instance{instanceId='null', ip='192.168.4.123', port=20004, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={preserved.register.source=SPRING_CLOUD}}
+ 2022-07-29 13:55:39.033 INFO  [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, WEB_CTV admin 192.168.4.123:20004 register finished
+ 2022-07-29 13:55:39.131 INFO  [main] com.os.ApplyAdminApplication             : Started ApplyAdminApplication in 4.37 seconds (JVM running for 5.184)
+ 2022-07-29 13:55:39.137 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
+ 2022-07-29 13:55:39.137 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Environment :null
+ 2022-07-29 13:55:39.137 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
+ 2022-07-29 13:55:39.141 INFO  [main] com.os.nacos.NacosConfig                 : =====> appId: 127.0.1.1
+ 2022-07-29 13:55:39.141 INFO  [main] com.alibaba.nacos.client.naming          : [BEAT] adding beat: BeatInfo{port=20004, ip='127.0.1.1', weight=1.0, serviceName='WEB_CTV@@admin', cluster='DEFAULT', metadata={}, scheduled=false, period=5000, stopped=false} to beat map.
+ 2022-07-29 13:55:39.142 INFO  [main] com.alibaba.nacos.client.naming          : [REGISTER-SERVICE] 25df333f-6d49-4053-9ecd-207058071611 registering service WEB_CTV@@admin with instance: Instance{instanceId='null', ip='127.0.1.1', port=20004, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={}}
+ 2022-07-29 13:55:39.148 INFO  [main] com.os.nacos.NacosConfig                 : =====> all instance of (admin) is: []
+ 2022-07-29 13:55:39.149 INFO  [main] com.alibaba.nacos.client.naming          : [LISTENER] adding DEFAULT_GROUP@@admin with  to listener map
+ 2022-07-29 13:55:39.153 INFO  [com.alibaba.nacos.naming.client.listener] com.os.nacos.NacosConfig                 : =====> serviceName: DEFAULT_GROUP@@admin
+ 2022-07-29 13:55:39.153 INFO  [com.alibaba.nacos.naming.client.listener] com.os.nacos.NacosConfig                 : =====> instances of: []
+ 2022-07-29 13:55:39.154 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] gateway.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
+ 2022-07-29 13:55:39.155 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=gateway.properties, group=WEB_CTV, cnt=1
+ 2022-07-29 13:55:39.156 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] library-major.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
+ 2022-07-29 13:55:39.156 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=library-major.properties, group=WEB_CTV, cnt=1
+ 2022-07-29 13:55:39.157 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] apply-admin.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
+ 2022-07-29 13:55:39.157 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=apply-admin.properties, group=WEB_CTV, cnt=1
+ 2022-07-29 13:55:39.157 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] library-major.properties-common-config-dev.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
+ 2022-07-29 13:55:39.158 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=library-major.properties-common-config-dev.properties, group=WEB_CTV, cnt=1
+ 2022-07-29 13:55:39.158 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] library-major.properties.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
+ 2022-07-29 13:55:39.159 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=library-major.properties.properties, group=WEB_CTV, cnt=1
+ 2022-07-29 13:55:39.160 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] manage.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
+ 2022-07-29 13:55:39.160 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=manage.properties, group=WEB_CTV, cnt=1
+ 2022-07-29 13:55:39.161 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] apply-api.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
+ 2022-07-29 13:55:39.161 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=apply-api.properties, group=WEB_CTV, cnt=1
+ 2022-07-29 13:55:39.178 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"WEB_CTV@@admin\",\"clusters\":\"DEFAULT\",\"cacheMillis\":10000,\"hosts\":[{\"instanceId\":\"192.168.4.123#20004#DEFAULT#WEB_CTV@@admin\",\"ip\":\"192.168.4.123\",\"port\":20004,\"weight\":1.0,\"healthy\":true,\"enabled\":true,\"ephemeral\":true,\"clusterName\":\"DEFAULT\",\"serviceName\":\"WEB_CTV@@admin\",\"metadata\":{\"preserved.register.source\":\"SPRING_CLOUD\"},\"instanceHeartBeatInterval\":5000,\"instanceHeartBeatTimeOut\":15000,\"ipDeleteTimeout\":30000},{\"instanceId\":\"127.0.1.1#20004#DEFAULT#WEB_CTV@@admin\",\"ip\":\"127.0.1.1\",\"port\":20004,\"weight\":1.0,\"healthy\":true,\"enabled\":true,\"ephemeral\":true,\"clusterName\":\"DEFAULT\",\"serviceName\":\"WEB_CTV@@admin\",\"metadata\":{},\"instanceIdGenerator\":\"simple\",\"instanceHeartBeatInterval\":5000,\"instanceHeartBeatTimeOut\":15000,\"ipDeleteTimeout\":30000}],\"lastRefTime\":1659077739177,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":5609388033361} from /127.0.0.1
+ 2022-07-29 13:55:39.199 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : new ips(2) service: WEB_CTV@@admin@@DEFAULT -> [{"instanceId":"192.168.4.123#20004#DEFAULT#WEB_CTV@@admin","ip":"192.168.4.123","port":20004,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@admin","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000},{"instanceId":"127.0.1.1#20004#DEFAULT#WEB_CTV@@admin","ip":"127.0.1.1","port":20004,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@admin","metadata":{},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"instanceIdGenerator":"simple"}]
+ 2022-07-29 13:55:39.232 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : current ips:(2) service: WEB_CTV@@admin@@DEFAULT -> [{"instanceId":"192.168.4.123#20004#DEFAULT#WEB_CTV@@admin","ip":"192.168.4.123","port":20004,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@admin","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000},{"instanceId":"127.0.1.1#20004#DEFAULT#WEB_CTV@@admin","ip":"127.0.1.1","port":20004,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@admin","metadata":{},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"instanceIdGenerator":"simple"}]
+ 2022-07-29 13:55:39.685 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1659077739684,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":5609895429241} from /127.0.0.1
+ 2022-07-29 13:55:39.761 INFO  [main] c.netflix.config.ChainedDynamicProperty  : Flipping property: admin.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+ 2022-07-29 13:55:39.786 INFO  [main] c.netflix.loadbalancer.BaseLoadBalancer  : Client: admin instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=admin,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+ 2022-07-29 13:55:39.799 INFO  [main] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+ 2022-07-29 13:55:39.816 INFO  [main] com.alibaba.nacos.client.naming          : new ips(2) service: WEB_CTV@@admin -> [{"instanceId":"192.168.4.123#20004#DEFAULT#WEB_CTV@@admin","ip":"192.168.4.123","port":20004,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@admin","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000},{"instanceId":"127.0.1.1#20004#DEFAULT#WEB_CTV@@admin","ip":"127.0.1.1","port":20004,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@admin","metadata":{},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"instanceIdGenerator":"simple"}]
+ 2022-07-29 13:55:39.817 INFO  [main] com.alibaba.nacos.client.naming          : current ips:(2) service: WEB_CTV@@admin -> [{"instanceId":"192.168.4.123#20004#DEFAULT#WEB_CTV@@admin","ip":"192.168.4.123","port":20004,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@admin","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000},{"instanceId":"127.0.1.1#20004#DEFAULT#WEB_CTV@@admin","ip":"127.0.1.1","port":20004,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@admin","metadata":{},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"instanceIdGenerator":"simple"}]
+ 2022-07-29 13:55:39.831 INFO  [main] c.netflix.config.ChainedDynamicProperty  : Flipping property: admin.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+ 2022-07-29 13:55:39.834 INFO  [main] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client admin initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=admin,current list of Servers=[192.168.4.123:20004, 127.0.1.1:20004],Load balancer stats=Zone stats: {unknown=[Zone:unknown;	Instance count:2;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:127.0.1.1:20004;	Zone:UNKNOWN;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 ICT 1970;	First connection made: Thu Jan 01 08:00:00 ICT 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+, [Server:192.168.4.123:20004;	Zone:UNKNOWN;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 ICT 1970;	First connection made: Thu Jan 01 08:00:00 ICT 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:com.alibaba.cloud.nacos.ribbon.NacosServerList@10850d17
+ 2022-07-29 13:55:40.804 INFO  [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: admin.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+ 2022-07-29 13:55:49.178 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"WEB_CTV@@admin\",\"clusters\":\"DEFAULT\",\"cacheMillis\":10000,\"hosts\":[{\"instanceId\":\"192.168.4.123#20004#DEFAULT#WEB_CTV@@admin\",\"ip\":\"192.168.4.123\",\"port\":20004,\"weight\":1.0,\"healthy\":true,\"enabled\":true,\"ephemeral\":true,\"clusterName\":\"DEFAULT\",\"serviceName\":\"WEB_CTV@@admin\",\"metadata\":{\"preserved.register.source\":\"SPRING_CLOUD\"},\"instanceHeartBeatInterval\":5000,\"instanceHeartBeatTimeOut\":15000,\"ipDeleteTimeout\":30000},{\"instanceId\":\"127.0.1.1#20004#DEFAULT#WEB_CTV@@admin\",\"ip\":\"127.0.1.1\",\"port\":20004,\"weight\":1.0,\"healthy\":true,\"enabled\":true,\"ephemeral\":true,\"clusterName\":\"DEFAULT\",\"serviceName\":\"WEB_CTV@@admin\",\"metadata\":{},\"instanceIdGenerator\":\"simple\",\"instanceHeartBeatInterval\":5000,\"instanceHeartBeatTimeOut\":15000,\"ipDeleteTimeout\":30000}],\"lastRefTime\":1659077739177,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":5609388033361} from /127.0.0.1
+ 2022-07-29 13:55:49.179 WARN  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : out of date data received, old-t: 1659077739890, new-t: 1659077739177
+ 2022-07-29 13:55:49.685 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1659077739684,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":5609895429241} from /127.0.0.1
+ 2022-07-29 13:55:49.686 WARN  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : out of date data received, old-t: 1659077746162, new-t: 1659077739684
+ 2022-07-29 13:56:08.857 INFO  [XNIO-1 task-1] io.undertow.servlet                      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+ 2022-07-29 13:56:08.857 INFO  [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+ 2022-07-29 13:56:08.862 INFO  [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+ 2022-07-29 13:56:09.148 INFO  [hystrix-manage-1] c.o.c.AttributesHeaderRequestInterceptor : =====> request uri: /sys/user/login
+ 2022-07-29 13:56:09.148 DEBUG [hystrix-manage-1] c.o.c.AttributesHeaderRequestInterceptor : =====> tenantId: null
+ 2022-07-29 13:56:09.182 INFO  [hystrix-manage-1] c.netflix.config.ChainedDynamicProperty  : Flipping property: manage.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+ 2022-07-29 13:56:09.184 INFO  [hystrix-manage-1] c.netflix.loadbalancer.BaseLoadBalancer  : Client: manage instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=manage,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+ 2022-07-29 13:56:09.186 INFO  [hystrix-manage-1] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+ 2022-07-29 13:56:09.189 INFO  [hystrix-manage-1] com.alibaba.nacos.client.naming          : new ips(2) service: WEB_CTV@@manage -> [{"instanceId":"192.168.4.123#20008#DEFAULT#WEB_CTV@@manage","ip":"192.168.4.123","port":20008,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@manage","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000},{"instanceId":"127.0.1.1#20008#DEFAULT#WEB_CTV@@manage","ip":"127.0.1.1","port":20008,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@manage","metadata":{},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"instanceIdGenerator":"simple"}]
+ 2022-07-29 13:56:09.190 INFO  [hystrix-manage-1] com.alibaba.nacos.client.naming          : current ips:(2) service: WEB_CTV@@manage -> [{"instanceId":"192.168.4.123#20008#DEFAULT#WEB_CTV@@manage","ip":"192.168.4.123","port":20008,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@manage","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000},{"instanceId":"127.0.1.1#20008#DEFAULT#WEB_CTV@@manage","ip":"127.0.1.1","port":20008,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@manage","metadata":{},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"instanceIdGenerator":"simple"}]
+ 2022-07-29 13:56:09.191 INFO  [hystrix-manage-1] c.netflix.config.ChainedDynamicProperty  : Flipping property: manage.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+ 2022-07-29 13:56:09.192 INFO  [hystrix-manage-1] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client manage initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=manage,current list of Servers=[192.168.4.123:20008, 127.0.1.1:20008],Load balancer stats=Zone stats: {unknown=[Zone:unknown;	Instance count:2;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:192.168.4.123:20008;	Zone:UNKNOWN;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 ICT 1970;	First connection made: Thu Jan 01 08:00:00 ICT 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+, [Server:127.0.1.1:20008;	Zone:UNKNOWN;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 ICT 1970;	First connection made: Thu Jan 01 08:00:00 ICT 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:com.alibaba.cloud.nacos.ribbon.NacosServerList@29ad50d9
+ 2022-07-29 13:56:09.533 ERROR [hystrix-manage-1] com.os.config.SpecialErrorDecoder        : =====> methodKey: SysUserLoginService#loginByLoginName(String)
+ 2022-07-29 13:56:09.592 ERROR [hystrix-manage-1] com.os.config.SpecialErrorDecoder        : =======> message: {"timestamp":"2022-07-29T06:56:09.376+00:00","status":500,"error":"Internal Server Error","message":"","path":"/sys/user/login"}
+ 2022-07-29 13:56:09.733 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"WEB_CTV@@manage\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[{\"instanceId\":\"192.168.4.123#20008#DEFAULT#WEB_CTV@@manage\",\"ip\":\"192.168.4.123\",\"port\":20008,\"weight\":1.0,\"healthy\":true,\"enabled\":true,\"ephemeral\":true,\"clusterName\":\"DEFAULT\",\"serviceName\":\"WEB_CTV@@manage\",\"metadata\":{\"preserved.register.source\":\"SPRING_CLOUD\"},\"instanceHeartBeatInterval\":5000,\"instanceHeartBeatTimeOut\":15000,\"ipDeleteTimeout\":30000},{\"instanceId\":\"127.0.1.1#20008#DEFAULT#WEB_CTV@@manage\",\"ip\":\"127.0.1.1\",\"port\":20008,\"weight\":1.0,\"healthy\":true,\"enabled\":true,\"ephemeral\":true,\"clusterName\":\"DEFAULT\",\"serviceName\":\"WEB_CTV@@manage\",\"metadata\":{},\"instanceIdGenerator\":\"simple\",\"instanceHeartBeatInterval\":5000,\"instanceHeartBeatTimeOut\":15000,\"ipDeleteTimeout\":30000}],\"lastRefTime\":1659077769732,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":5639943045025} from /127.0.0.1
+ 2022-07-29 13:56:10.187 INFO  [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: manage.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+ 2022-07-29 13:56:19.733 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"WEB_CTV@@manage\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[{\"instanceId\":\"192.168.4.123#20008#DEFAULT#WEB_CTV@@manage\",\"ip\":\"192.168.4.123\",\"port\":20008,\"weight\":1.0,\"healthy\":true,\"enabled\":true,\"ephemeral\":true,\"clusterName\":\"DEFAULT\",\"serviceName\":\"WEB_CTV@@manage\",\"metadata\":{\"preserved.register.source\":\"SPRING_CLOUD\"},\"instanceHeartBeatInterval\":5000,\"instanceHeartBeatTimeOut\":15000,\"ipDeleteTimeout\":30000},{\"instanceId\":\"127.0.1.1#20008#DEFAULT#WEB_CTV@@manage\",\"ip\":\"127.0.1.1\",\"port\":20008,\"weight\":1.0,\"healthy\":true,\"enabled\":true,\"ephemeral\":true,\"clusterName\":\"DEFAULT\",\"serviceName\":\"WEB_CTV@@manage\",\"metadata\":{},\"instanceIdGenerator\":\"simple\",\"instanceHeartBeatInterval\":5000,\"instanceHeartBeatTimeOut\":15000,\"ipDeleteTimeout\":30000}],\"lastRefTime\":1659077769732,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":5639943045025} from /127.0.0.1
+ 2022-07-29 13:56:19.734 WARN  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : out of date data received, old-t: 1659077770193, new-t: 1659077769732
+ 2022-07-29 13:57:42.678 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1659077862677,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":5732887905545} from /127.0.0.1
+ 2022-07-29 13:57:52.679 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1659077862677,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":5732887905545} from /127.0.0.1
+ 2022-07-29 13:58:42.687 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1659077922685,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":5792896722012} from /127.0.0.1
+ 2022-07-29 13:58:52.687 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1659077922685,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":5792896722012} from /127.0.0.1
+ 2022-07-29 13:59:42.774 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1659077982773,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":5852984354317} from /127.0.0.1
+ 2022-07-29 13:59:52.774 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1659077982773,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":5852984354317} from /127.0.0.1
+ 2022-07-29 14:00:42.765 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1659078042764,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":5912975467645} from /127.0.0.1
+ 2022-07-29 14:00:52.766 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1659078042764,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":5912975467645} from /127.0.0.1
+ 2022-07-29 14:01:42.746 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1659078102745,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":5972956437955} from /127.0.0.1
+ 2022-07-29 14:01:52.747 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1659078102745,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":5972956437955} from /127.0.0.1
+ 2022-07-29 14:02:42.729 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1659078162727,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":6032938773778} from /127.0.0.1
+ 2022-07-29 14:02:52.729 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1659078162727,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":6032938773778} from /127.0.0.1
+ 2022-07-29 14:03:42.712 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1659078222711,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":6092922415274} from /127.0.0.1
+ 2022-07-29 14:03:52.712 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1659078222711,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":6092922415274} from /127.0.0.1
+ 2022-07-29 14:04:42.722 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1659078282720,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":6152931627363} from /127.0.0.1
+ 2022-07-29 14:04:52.723 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1659078282720,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":6152931627363} from /127.0.0.1
+ 2022-07-29 14:05:42.706 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1659078342705,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":6212916064165} from /127.0.0.1
+ 2022-07-29 14:05:52.706 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1659078342705,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":6212916064165} from /127.0.0.1
+ 2022-07-29 14:06:42.738 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1659078402737,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":6272948094681} from /127.0.0.1
+ 2022-07-29 14:06:52.738 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1659078402737,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":6272948094681} from /127.0.0.1
+ 2022-07-29 14:07:42.721 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1659078462720,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":6332931236174} from /127.0.0.1
+ 2022-07-29 14:07:52.721 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1659078462720,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":6332931236174} from /127.0.0.1
+ 2022-07-29 14:08:42.712 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1659078522712,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":6392922811381} from /127.0.0.1
+ 2022-07-29 14:08:52.713 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1659078522712,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":6392922811381} from /127.0.0.1
+ 2022-07-29 14:09:11.443 INFO  [Thread-35] c.n.l.PollingServerListUpdater           : Shutting down the Executor Pool for PollingServerListUpdater
+ 2022-07-29 14:09:11.450 INFO  [SpringContextShutdownHook] io.undertow                              : stopping server: Undertow - 2.1.4.Final
+ 2022-07-29 14:09:11.472 INFO  [SpringContextShutdownHook] io.undertow.servlet                      : Destroying Spring FrameworkServlet 'dispatcherServlet'
+ 2022-07-29 14:09:11.483 INFO  [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskScheduler : Shutting down ExecutorService 'taskScheduler'
+ 2022-07-29 14:09:11.486 WARN  [SpringContextShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Failed to stop bean 'nacosWatch'
+ 
+java.lang.NullPointerException: null
+	at io.undertow.servlet.spec.ServletContextImpl.getInitParameterNames(ServletContextImpl.java:430)
+	at org.springframework.web.context.support.ServletContextPropertySource.getPropertyNames(ServletContextPropertySource.java:41)
+	at com.alibaba.spring.util.PropertySourcesUtils.getPropertyNames(PropertySourcesUtils.java:130)
+	at com.alibaba.spring.util.PropertySourcesUtils.getSubProperties(PropertySourcesUtils.java:103)
+	at com.alibaba.spring.util.PropertySourcesUtils.getSubProperties(PropertySourcesUtils.java:57)
+	at com.alibaba.cloud.nacos.NacosDiscoveryProperties.enrichNacosDiscoveryProperties(NacosDiscoveryProperties.java:616)
+	at com.alibaba.cloud.nacos.NacosDiscoveryProperties.getNacosProperties(NacosDiscoveryProperties.java:610)
+	at com.alibaba.cloud.nacos.discovery.NacosWatch.stop(NacosWatch.java:166)
+	at com.alibaba.cloud.nacos.discovery.NacosWatch.stop(NacosWatch.java:98)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStop(DefaultLifecycleProcessor.java:238)
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$300(DefaultLifecycleProcessor.java:53)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.stop(DefaultLifecycleProcessor.java:377)
+	at org.springframework.context.support.DefaultLifecycleProcessor.stopBeans(DefaultLifecycleProcessor.java:210)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onClose(DefaultLifecycleProcessor.java:128)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1022)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:170)
+	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:949)
+
+2022-07-29 14:10:01.936 INFO  [main] c.a.n.c.c.impl.LocalConfigInfoProcessor  : LOCAL_SNAPSHOT_PATH:/home/nguyen/nacos/config
+ 2022-07-29 14:10:01.973 INFO  [main] c.a.nacos.client.config.impl.Limiter     : limitTime:5.0
+ 2022-07-29 14:10:02.001 INFO  [main] c.a.nacos.client.config.utils.JvmUtil    : isMultiInstance:false
+ 2022-07-29 14:10:02.002 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'gateway.properties', group: 'WEB_CTV', data: gateway.port=20003
+
+gateway.application.name=gateway
+
+gateway.context-path=/
+
+gateway.redis.database=0
+ 2022-07-29 14:10:02.008 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'apply-admin.properties', group: 'WEB_CTV', data: apply-admin.port=20004
+
+apply-admin.application.name=admin
+
+apply-admin.context-path=/
+ 2022-07-29 14:10:02.013 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'apply-api.properties', group: 'WEB_CTV', data: apply-api.port=20005
+
+apply-api.application.name=api
+
+apply-api.context-path=/
+ 2022-07-29 14:10:02.016 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'manage.properties', group: 'WEB_CTV', data: manage.port=20008
+
+manage.application.name=manage
+
+manage.context-path=/
+
+# database
+manage.db.host=localhost
+manage.db.port=3306
+manage.db.database=mysql
+manage.db.username=root
+manage.db.password=thaibinh
+
+# redis
+manage.redis.database=0
+ 2022-07-29 14:10:02.019 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'library-major.properties', group: 'WEB_CTV', data: 
+#logback-spring
+logging.config=classpath:logback-spring.xml
+
+# spring.datasource.drive-class-name
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+# có sử dụng unicode hay không?
+userUnicode=true
+# mã hóa ký tự
+characterEncoding=UTF-8
+
+# redis
+common.redis.host=localhost
+common.redis.port=4488
+common.redis.password=thaibinh
+common.redis.database=0
+ 2022-07-29 14:10:02.022 WARN  [main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[library-major.properties.properties] & group[WEB_CTV]
+ 2022-07-29 14:10:02.025 WARN  [main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[library-major.properties-common-config-dev.properties] & group[WEB_CTV]
+ 2022-07-29 14:10:02.026 INFO  [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-library-major.properties-common-config-dev.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-library-major.properties.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-library-major.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-manage.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-apply-api.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-apply-admin.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-gateway.properties,WEB_CTV'}]
+ 2022-07-29 14:10:02.045 INFO  [main] com.os.ApplyAdminApplication             : The following profiles are active: common-config-dev
+ 2022-07-29 14:10:03.301 INFO  [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5b51561e-5dba-356e-9501-34355a68e06d
+ 2022-07-29 14:10:03.668 WARN  [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+ 2022-07-29 14:10:03.721 INFO  [main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+ 2022-07-29 14:10:03.722 INFO  [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1657 ms
+ 2022-07-29 14:10:03.860 WARN  [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+ 2022-07-29 14:10:03.860 INFO  [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+ 2022-07-29 14:10:03.866 INFO  [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@22367b8
+ 2022-07-29 14:10:03.874 DEBUG [main] com.os.config.FeignAuthConfig            : Current Hystrix plugins configuration is [concurrencyStrategy [com.netflix.hystrix.strategy.concurrency.HystrixConcurrencyStrategyDefault@21618fa7],eventNotifier [com.netflix.hystrix.strategy.eventnotifier.HystrixEventNotifierDefault@15f2eda3],metricPublisher [com.netflix.hystrix.strategy.metrics.HystrixMetricsPublisherDefault@34cf294c],propertiesStrategy [com.netflix.hystrix.strategy.properties.HystrixPropertiesStrategyDefault@4d7aaca2],]
+ 2022-07-29 14:10:03.874 DEBUG [main] com.os.config.FeignAuthConfig            : Registering Sleuth Hystrix Concurrency Strategy.
+ 2022-07-29 14:10:04.140 WARN  [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+ 2022-07-29 14:10:04.141 INFO  [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+ 2022-07-29 14:10:04.290 INFO  [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+ 2022-07-29 14:10:04.656 INFO  [main] o.s.s.concurrent.ThreadPoolTaskScheduler : Initializing ExecutorService 'taskScheduler'
+ 2022-07-29 14:10:04.897 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
+ 2022-07-29 14:10:04.898 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Environment :null
+ 2022-07-29 14:10:04.898 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
+ 2022-07-29 14:10:05.090 INFO  [main] com.alibaba.nacos.client.naming          : new ips(2) service: WEB_CTV@@admin@@DEFAULT -> [{"instanceId":"127.0.1.1#20004#DEFAULT#WEB_CTV@@admin","ip":"127.0.1.1","port":20004,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@admin","metadata":{},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"instanceIdGenerator":"simple"},{"instanceId":"192.168.4.123#20004#DEFAULT#WEB_CTV@@admin","ip":"192.168.4.123","port":20004,"weight":1.0,"healthy":false,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@admin","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
+ 2022-07-29 14:10:05.130 INFO  [main] com.alibaba.nacos.client.naming          : current ips:(2) service: WEB_CTV@@admin@@DEFAULT -> [{"instanceId":"127.0.1.1#20004#DEFAULT#WEB_CTV@@admin","ip":"127.0.1.1","port":20004,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@admin","metadata":{},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"instanceIdGenerator":"simple"},{"instanceId":"192.168.4.123#20004#DEFAULT#WEB_CTV@@admin","ip":"192.168.4.123","port":20004,"weight":1.0,"healthy":false,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@admin","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
+ 2022-07-29 14:10:05.133 INFO  [main] com.alibaba.nacos.client.naming          : [LISTENER] adding WEB_CTV@@admin with DEFAULT to listener map
+ 2022-07-29 14:10:05.161 INFO  [main] io.undertow                              : starting server: Undertow - 2.1.4.Final
+ 2022-07-29 14:10:05.167 INFO  [main] org.xnio                                 : XNIO version 3.8.0.Final
+ 2022-07-29 14:10:05.176 INFO  [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.8.0.Final
+ 2022-07-29 14:10:05.220 INFO  [main] org.jboss.threads                        : JBoss Threads version 3.1.0.Final
+ 2022-07-29 14:10:05.278 INFO  [main] o.s.b.w.e.undertow.UndertowWebServer     : Undertow started on port(s) 20004 (http)
+ 2022-07-29 14:10:05.283 INFO  [main] com.alibaba.nacos.client.naming          : [BEAT] adding beat: BeatInfo{port=20004, ip='192.168.4.123', weight=1.0, serviceName='WEB_CTV@@admin', cluster='DEFAULT', metadata={preserved.register.source=SPRING_CLOUD}, scheduled=false, period=5000, stopped=false} to beat map.
+ 2022-07-29 14:10:05.287 INFO  [main] com.alibaba.nacos.client.naming          : [REGISTER-SERVICE] 25df333f-6d49-4053-9ecd-207058071611 registering service WEB_CTV@@admin with instance: Instance{instanceId='null', ip='192.168.4.123', port=20004, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={preserved.register.source=SPRING_CLOUD}}
+ 2022-07-29 14:10:05.289 INFO  [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, WEB_CTV admin 192.168.4.123:20004 register finished
+ 2022-07-29 14:10:05.374 INFO  [main] com.os.ApplyAdminApplication             : Started ApplyAdminApplication in 4.677 seconds (JVM running for 5.343)
+ 2022-07-29 14:10:05.377 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
+ 2022-07-29 14:10:05.377 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Environment :null
+ 2022-07-29 14:10:05.377 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
+ 2022-07-29 14:10:05.383 INFO  [main] com.os.nacos.NacosConfig                 : =====> appId: 127.0.1.1
+ 2022-07-29 14:10:05.383 INFO  [main] com.alibaba.nacos.client.naming          : [BEAT] adding beat: BeatInfo{port=20004, ip='127.0.1.1', weight=1.0, serviceName='WEB_CTV@@admin', cluster='DEFAULT', metadata={}, scheduled=false, period=5000, stopped=false} to beat map.
+ 2022-07-29 14:10:05.383 INFO  [main] com.alibaba.nacos.client.naming          : [REGISTER-SERVICE] 25df333f-6d49-4053-9ecd-207058071611 registering service WEB_CTV@@admin with instance: Instance{instanceId='null', ip='127.0.1.1', port=20004, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={}}
+ 2022-07-29 14:10:05.394 INFO  [main] com.os.nacos.NacosConfig                 : =====> all instance of (admin) is: []
+ 2022-07-29 14:10:05.395 INFO  [main] com.alibaba.nacos.client.naming          : [LISTENER] adding DEFAULT_GROUP@@admin with  to listener map
+ 2022-07-29 14:10:05.396 INFO  [com.alibaba.nacos.naming.client.listener] com.os.nacos.NacosConfig                 : =====> serviceName: DEFAULT_GROUP@@admin
+ 2022-07-29 14:10:05.396 INFO  [com.alibaba.nacos.naming.client.listener] com.os.nacos.NacosConfig                 : =====> instances of: []
+ 2022-07-29 14:10:05.399 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] gateway.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
+ 2022-07-29 14:10:05.401 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=gateway.properties, group=WEB_CTV, cnt=1
+ 2022-07-29 14:10:05.401 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] library-major.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
+ 2022-07-29 14:10:05.402 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=library-major.properties, group=WEB_CTV, cnt=1
+ 2022-07-29 14:10:05.402 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] apply-admin.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
+ 2022-07-29 14:10:05.402 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=apply-admin.properties, group=WEB_CTV, cnt=1
+ 2022-07-29 14:10:05.403 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] library-major.properties-common-config-dev.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
+ 2022-07-29 14:10:05.403 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=library-major.properties-common-config-dev.properties, group=WEB_CTV, cnt=1
+ 2022-07-29 14:10:05.403 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] library-major.properties.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
+ 2022-07-29 14:10:05.403 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=library-major.properties.properties, group=WEB_CTV, cnt=1
+ 2022-07-29 14:10:05.403 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] manage.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
+ 2022-07-29 14:10:05.404 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=manage.properties, group=WEB_CTV, cnt=1
+ 2022-07-29 14:10:05.404 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] apply-api.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
+ 2022-07-29 14:10:05.404 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=apply-api.properties, group=WEB_CTV, cnt=1
+ 2022-07-29 14:10:05.555 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"WEB_CTV@@admin\",\"clusters\":\"DEFAULT\",\"cacheMillis\":10000,\"hosts\":[{\"instanceId\":\"192.168.4.123#20004#DEFAULT#WEB_CTV@@admin\",\"ip\":\"192.168.4.123\",\"port\":20004,\"weight\":1.0,\"healthy\":true,\"enabled\":true,\"ephemeral\":true,\"clusterName\":\"DEFAULT\",\"serviceName\":\"WEB_CTV@@admin\",\"metadata\":{\"preserved.register.source\":\"SPRING_CLOUD\"},\"instanceHeartBeatInterval\":5000,\"instanceHeartBeatTimeOut\":15000,\"ipDeleteTimeout\":30000},{\"instanceId\":\"127.0.1.1#20004#DEFAULT#WEB_CTV@@admin\",\"ip\":\"127.0.1.1\",\"port\":20004,\"weight\":1.0,\"healthy\":true,\"enabled\":true,\"ephemeral\":true,\"clusterName\":\"DEFAULT\",\"serviceName\":\"WEB_CTV@@admin\",\"metadata\":{},\"instanceIdGenerator\":\"simple\",\"instanceHeartBeatInterval\":5000,\"instanceHeartBeatTimeOut\":15000,\"ipDeleteTimeout\":30000}],\"lastRefTime\":1659078605551,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":6475762540896} from /127.0.0.1
+ 2022-07-29 14:10:05.559 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : [BEAT] adding beat: BeatInfo{port=20004, ip='192.168.4.123', weight=1.0, serviceName='WEB_CTV@@admin', cluster='DEFAULT', metadata={preserved.register.source=SPRING_CLOUD}, scheduled=false, period=5000, stopped=false} to beat map.
+ 2022-07-29 14:10:05.564 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : modified ips(1) service: WEB_CTV@@admin@@DEFAULT -> [{"instanceId":"192.168.4.123#20004#DEFAULT#WEB_CTV@@admin","ip":"192.168.4.123","port":20004,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@admin","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
+ 2022-07-29 14:10:05.566 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : current ips:(2) service: WEB_CTV@@admin@@DEFAULT -> [{"instanceId":"192.168.4.123#20004#DEFAULT#WEB_CTV@@admin","ip":"192.168.4.123","port":20004,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@admin","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000},{"instanceId":"127.0.1.1#20004#DEFAULT#WEB_CTV@@admin","ip":"127.0.1.1","port":20004,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@admin","metadata":{},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"instanceIdGenerator":"simple"}]
+ 2022-07-29 14:10:05.954 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1659078605951,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":6476162234306} from /127.0.0.1
+ 2022-07-29 14:10:05.969 INFO  [main] c.netflix.config.ChainedDynamicProperty  : Flipping property: admin.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+ 2022-07-29 14:10:05.988 INFO  [main] c.netflix.loadbalancer.BaseLoadBalancer  : Client: admin instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=admin,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+ 2022-07-29 14:10:05.998 INFO  [main] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+ 2022-07-29 14:10:06.006 INFO  [main] com.alibaba.nacos.client.naming          : new ips(2) service: WEB_CTV@@admin -> [{"instanceId":"192.168.4.123#20004#DEFAULT#WEB_CTV@@admin","ip":"192.168.4.123","port":20004,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@admin","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000},{"instanceId":"127.0.1.1#20004#DEFAULT#WEB_CTV@@admin","ip":"127.0.1.1","port":20004,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@admin","metadata":{},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"instanceIdGenerator":"simple"}]
+ 2022-07-29 14:10:06.007 INFO  [main] com.alibaba.nacos.client.naming          : current ips:(2) service: WEB_CTV@@admin -> [{"instanceId":"192.168.4.123#20004#DEFAULT#WEB_CTV@@admin","ip":"192.168.4.123","port":20004,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@admin","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000},{"instanceId":"127.0.1.1#20004#DEFAULT#WEB_CTV@@admin","ip":"127.0.1.1","port":20004,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@admin","metadata":{},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"instanceIdGenerator":"simple"}]
+ 2022-07-29 14:10:06.018 INFO  [main] c.netflix.config.ChainedDynamicProperty  : Flipping property: admin.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+ 2022-07-29 14:10:06.021 INFO  [main] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client admin initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=admin,current list of Servers=[192.168.4.123:20004, 127.0.1.1:20004],Load balancer stats=Zone stats: {unknown=[Zone:unknown;	Instance count:2;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:127.0.1.1:20004;	Zone:UNKNOWN;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 ICT 1970;	First connection made: Thu Jan 01 08:00:00 ICT 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+, [Server:192.168.4.123:20004;	Zone:UNKNOWN;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 ICT 1970;	First connection made: Thu Jan 01 08:00:00 ICT 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:com.alibaba.cloud.nacos.ribbon.NacosServerList@5cff6b74
+ 2022-07-29 14:10:07.002 INFO  [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: admin.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+ 2022-07-29 14:10:15.555 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"WEB_CTV@@admin\",\"clusters\":\"DEFAULT\",\"cacheMillis\":10000,\"hosts\":[{\"instanceId\":\"192.168.4.123#20004#DEFAULT#WEB_CTV@@admin\",\"ip\":\"192.168.4.123\",\"port\":20004,\"weight\":1.0,\"healthy\":true,\"enabled\":true,\"ephemeral\":true,\"clusterName\":\"DEFAULT\",\"serviceName\":\"WEB_CTV@@admin\",\"metadata\":{\"preserved.register.source\":\"SPRING_CLOUD\"},\"instanceHeartBeatInterval\":5000,\"instanceHeartBeatTimeOut\":15000,\"ipDeleteTimeout\":30000},{\"instanceId\":\"127.0.1.1#20004#DEFAULT#WEB_CTV@@admin\",\"ip\":\"127.0.1.1\",\"port\":20004,\"weight\":1.0,\"healthy\":true,\"enabled\":true,\"ephemeral\":true,\"clusterName\":\"DEFAULT\",\"serviceName\":\"WEB_CTV@@admin\",\"metadata\":{},\"instanceIdGenerator\":\"simple\",\"instanceHeartBeatInterval\":5000,\"instanceHeartBeatTimeOut\":15000,\"ipDeleteTimeout\":30000}],\"lastRefTime\":1659078605551,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":6475762540896} from /127.0.0.1
+ 2022-07-29 14:10:15.555 WARN  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : out of date data received, old-t: 1659078606135, new-t: 1659078605551
+ 2022-07-29 14:10:15.954 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1659078605951,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":6476162234306} from /127.0.0.1
+ 2022-07-29 14:10:15.955 WARN  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : out of date data received, old-t: 1659078612400, new-t: 1659078605951
+ 2022-07-29 14:11:43.622 INFO  [XNIO-1 task-1] io.undertow.servlet                      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+ 2022-07-29 14:11:43.623 INFO  [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+ 2022-07-29 14:11:43.630 INFO  [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+ 2022-07-29 14:11:44.636 INFO  [hystrix-manage-1] c.o.c.AttributesHeaderRequestInterceptor : =====> request uri: /sys/user/login
+ 2022-07-29 14:11:44.636 DEBUG [hystrix-manage-1] c.o.c.AttributesHeaderRequestInterceptor : =====> tenantId: null
+ 2022-07-29 14:11:44.670 INFO  [hystrix-manage-1] c.netflix.config.ChainedDynamicProperty  : Flipping property: manage.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+ 2022-07-29 14:11:44.673 INFO  [hystrix-manage-1] c.netflix.loadbalancer.BaseLoadBalancer  : Client: manage instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=manage,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+ 2022-07-29 14:11:44.675 INFO  [hystrix-manage-1] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+ 2022-07-29 14:11:44.677 INFO  [hystrix-manage-1] com.alibaba.nacos.client.naming          : new ips(2) service: WEB_CTV@@manage -> [{"instanceId":"192.168.4.123#20008#DEFAULT#WEB_CTV@@manage","ip":"192.168.4.123","port":20008,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@manage","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000},{"instanceId":"127.0.1.1#20008#DEFAULT#WEB_CTV@@manage","ip":"127.0.1.1","port":20008,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@manage","metadata":{},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"instanceIdGenerator":"simple"}]
+ 2022-07-29 14:11:44.678 INFO  [hystrix-manage-1] com.alibaba.nacos.client.naming          : current ips:(2) service: WEB_CTV@@manage -> [{"instanceId":"192.168.4.123#20008#DEFAULT#WEB_CTV@@manage","ip":"192.168.4.123","port":20008,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@manage","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000},{"instanceId":"127.0.1.1#20008#DEFAULT#WEB_CTV@@manage","ip":"127.0.1.1","port":20008,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"WEB_CTV@@manage","metadata":{},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"instanceIdGenerator":"simple"}]
+ 2022-07-29 14:11:44.680 INFO  [hystrix-manage-1] c.netflix.config.ChainedDynamicProperty  : Flipping property: manage.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+ 2022-07-29 14:11:44.681 INFO  [hystrix-manage-1] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client manage initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=manage,current list of Servers=[192.168.4.123:20008, 127.0.1.1:20008],Load balancer stats=Zone stats: {unknown=[Zone:unknown;	Instance count:2;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:192.168.4.123:20008;	Zone:UNKNOWN;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 ICT 1970;	First connection made: Thu Jan 01 08:00:00 ICT 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+, [Server:127.0.1.1:20008;	Zone:UNKNOWN;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 ICT 1970;	First connection made: Thu Jan 01 08:00:00 ICT 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:com.alibaba.cloud.nacos.ribbon.NacosServerList@257221fd
+ 2022-07-29 14:11:45.205 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"WEB_CTV@@manage\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[{\"instanceId\":\"192.168.4.123#20008#DEFAULT#WEB_CTV@@manage\",\"ip\":\"192.168.4.123\",\"port\":20008,\"weight\":1.0,\"healthy\":true,\"enabled\":true,\"ephemeral\":true,\"clusterName\":\"DEFAULT\",\"serviceName\":\"WEB_CTV@@manage\",\"metadata\":{\"preserved.register.source\":\"SPRING_CLOUD\"},\"instanceHeartBeatInterval\":5000,\"instanceHeartBeatTimeOut\":15000,\"ipDeleteTimeout\":30000},{\"instanceId\":\"127.0.1.1#20008#DEFAULT#WEB_CTV@@manage\",\"ip\":\"127.0.1.1\",\"port\":20008,\"weight\":1.0,\"healthy\":true,\"enabled\":true,\"ephemeral\":true,\"clusterName\":\"DEFAULT\",\"serviceName\":\"WEB_CTV@@manage\",\"metadata\":{},\"instanceIdGenerator\":\"simple\",\"instanceHeartBeatInterval\":5000,\"instanceHeartBeatTimeOut\":15000,\"ipDeleteTimeout\":30000}],\"lastRefTime\":1659078705203,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":6575414609674} from /127.0.0.1
+ 2022-07-29 14:11:45.676 INFO  [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: manage.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+ 2022-07-29 14:11:55.205 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"WEB_CTV@@manage\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[{\"instanceId\":\"192.168.4.123#20008#DEFAULT#WEB_CTV@@manage\",\"ip\":\"192.168.4.123\",\"port\":20008,\"weight\":1.0,\"healthy\":true,\"enabled\":true,\"ephemeral\":true,\"clusterName\":\"DEFAULT\",\"serviceName\":\"WEB_CTV@@manage\",\"metadata\":{\"preserved.register.source\":\"SPRING_CLOUD\"},\"instanceHeartBeatInterval\":5000,\"instanceHeartBeatTimeOut\":15000,\"ipDeleteTimeout\":30000},{\"instanceId\":\"127.0.1.1#20008#DEFAULT#WEB_CTV@@manage\",\"ip\":\"127.0.1.1\",\"port\":20008,\"weight\":1.0,\"healthy\":true,\"enabled\":true,\"ephemeral\":true,\"clusterName\":\"DEFAULT\",\"serviceName\":\"WEB_CTV@@manage\",\"metadata\":{},\"instanceIdGenerator\":\"simple\",\"instanceHeartBeatInterval\":5000,\"instanceHeartBeatTimeOut\":15000,\"ipDeleteTimeout\":30000}],\"lastRefTime\":1659078705203,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":6575414609674} from /127.0.0.1
+ 2022-07-29 14:11:55.205 WARN  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : out of date data received, old-t: 1659078705680, new-t: 1659078705203
+ 2022-07-29 14:12:08.945 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1659078728944,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":6599154856605} from /127.0.0.1
+ 2022-07-29 14:12:18.945 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1659078728944,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":6599154856605} from /127.0.0.1
+ 2022-07-29 14:13:08.317 INFO  [hystrix-manage-2] c.o.c.AttributesHeaderRequestInterceptor : =====> request uri: /sys/user/login
+ 2022-07-29 14:13:08.317 DEBUG [hystrix-manage-2] c.o.c.AttributesHeaderRequestInterceptor : =====> tenantId: null
+ 2022-07-29 14:13:08.946 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1659078788944,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":6659155642353} from /127.0.0.1
+ 2022-07-29 14:13:18.946 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1659078788944,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":6659155642353} from /127.0.0.1
+ 2022-07-29 14:14:00.214 INFO  [Thread-36] c.n.l.PollingServerListUpdater           : Shutting down the Executor Pool for PollingServerListUpdater
+ 2022-07-29 14:14:00.216 INFO  [SpringContextShutdownHook] io.undertow                              : stopping server: Undertow - 2.1.4.Final
+ 2022-07-29 14:14:00.219 INFO  [SpringContextShutdownHook] io.undertow.servlet                      : Destroying Spring FrameworkServlet 'dispatcherServlet'
+ 2022-07-29 14:14:00.220 INFO  [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskScheduler : Shutting down ExecutorService 'taskScheduler'
+ 2022-07-29 14:14:00.222 WARN  [SpringContextShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Failed to stop bean 'nacosWatch'
+ 
+java.lang.NullPointerException: null
+	at io.undertow.servlet.spec.ServletContextImpl.getInitParameterNames(ServletContextImpl.java:430)
+	at org.springframework.web.context.support.ServletContextPropertySource.getPropertyNames(ServletContextPropertySource.java:41)
+	at com.alibaba.spring.util.PropertySourcesUtils.getPropertyNames(PropertySourcesUtils.java:130)
+	at com.alibaba.spring.util.PropertySourcesUtils.getSubProperties(PropertySourcesUtils.java:103)
+	at com.alibaba.spring.util.PropertySourcesUtils.getSubProperties(PropertySourcesUtils.java:57)
+	at com.alibaba.cloud.nacos.NacosDiscoveryProperties.enrichNacosDiscoveryProperties(NacosDiscoveryProperties.java:616)
+	at com.alibaba.cloud.nacos.NacosDiscoveryProperties.getNacosProperties(NacosDiscoveryProperties.java:610)
+	at com.alibaba.cloud.nacos.discovery.NacosWatch.stop(NacosWatch.java:166)
+	at com.alibaba.cloud.nacos.discovery.NacosWatch.stop(NacosWatch.java:98)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStop(DefaultLifecycleProcessor.java:238)
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$300(DefaultLifecycleProcessor.java:53)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.stop(DefaultLifecycleProcessor.java:377)
+	at org.springframework.context.support.DefaultLifecycleProcessor.stopBeans(DefaultLifecycleProcessor.java:210)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onClose(DefaultLifecycleProcessor.java:128)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1022)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:170)
+	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:949)
+
+2022-07-29 14:14:08.951 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1659078848949,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":6719160737982} from /127.0.0.1
+ 2022-07-29 14:14:18.952 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1659078848949,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":6719160737982} from /127.0.0.1
+ 2022-07-29 14:14:30.222 INFO  [SpringContextShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Failed to shut down 1 bean with phase value 0 within timeout of 30000ms: [nacosWatch]
+ 2022-07-29 14:14:30.223 INFO  [SpringContextShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+ 2022-07-29 14:14:30.224 WARN  [SpringContextShutdownHook] .s.c.a.CommonAnnotationBeanPostProcessor : Destroy method on bean with name 'nacosAutoServiceRegistration' threw an exception: java.lang.NullPointerException
+ 2022-07-29 14:14:30.224 INFO  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.beat.BeatReactor do shutdown begin
+ 2022-07-29 14:14:30.651 INFO  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.beat.BeatReactor do shutdown stop
+ 2022-07-29 14:14:30.651 INFO  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.core.EventDispatcher do shutdown begin
+ 2022-07-29 14:14:33.652 INFO  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.core.EventDispatcher do shutdown stop
+ 2022-07-29 14:14:33.653 INFO  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.core.HostReactor do shutdown begin
+ 2022-07-29 14:14:36.654 INFO  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.core.PushReceiver do shutdown begin
+ 2022-07-29 14:14:39.655 INFO  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.core.PushReceiver do shutdown stop
+ 2022-07-29 14:14:39.656 ERROR [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : [NA] error while receiving push data
+ 
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.receive0(Native Method)
+	at java.net.AbstractPlainDatagramSocketImpl.receive(AbstractPlainDatagramSocketImpl.java:149)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:812)
+	at com.alibaba.nacos.client.naming.core.PushReceiver.run(PushReceiver.java:83)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+
+2022-07-29 14:14:39.656 INFO  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown begin
+ 2022-07-29 14:14:39.656 INFO  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown stop
+ 2022-07-29 14:14:39.657 INFO  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.core.HostReactor do shutdown stop
+ 2022-07-29 14:14:39.657 INFO  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.net.NamingProxy do shutdown begin
+ 2022-07-29 14:14:39.657 WARN  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : [NamingHttpClientManager] Start destroying NacosRestTemplate
+ 2022-07-29 14:14:39.657 WARN  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : [NamingHttpClientManager] Destruction of the end
+ 2022-07-29 14:14:39.658 INFO  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.net.NamingProxy do shutdown stop
+ 2022-07-29 14:14:39.658 INFO  [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskScheduler : Shutting down ExecutorService 'taskScheduler'
+ 2022-07-29 14:14:39.658 INFO  [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+ 
