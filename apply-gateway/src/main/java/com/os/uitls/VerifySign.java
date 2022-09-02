@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 
 @Slf4j
 @Component
-public class VerifySign {
+public class VerifySign{
 
     private static final String SIGN_NAME = "sign";
 

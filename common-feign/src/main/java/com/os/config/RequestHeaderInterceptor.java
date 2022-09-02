@@ -33,18 +33,17 @@ public class RequestHeaderInterceptor implements RequestInterceptor {
                     (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
             if(!Objects.isNull(requestAttributes)){
                 HttpServletRequest request = requestAttributes.getRequest();
-
-                // Todo gán giá trị của header lang vào template.
+                String lang = request.getParameter("lang");
+                template.query("lang", lang);
 
                 String requestUri = request.getRequestURI();
                 log.info("=====> request uri: {}", requestUri);
                 String permissionTag = "/permission/"; // đường dẫn gán quyền.
                 // nếu không phải một đường dẫn gán quyền, thì gán lại header tenantId.
                 if(!requestUri.startsWith(permissionTag)){
-                    String tenantId = request.getParameter("tenantId");
-                    template.query("tenantId", tenantId);
-                    ThreadLocal<String> threadLocal = TenantConstants.TENANT_THREAD_LOCAL;
-                    threadLocal.set(tenantId);
+                    String tenantIdName = TenantConstants.TENANT_ID_NAME;
+                    String tenantId = request.getParameter(tenantIdName);
+                    template.query(tenantIdName, tenantId);
                     if(log.isDebugEnabled())
                         log.debug("=====> tenantId: {}", tenantId);
                 }

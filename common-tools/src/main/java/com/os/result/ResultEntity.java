@@ -1,7 +1,7 @@
 package com.os.result;
 
 import com.os.config.BeanUtils;
-import com.os.i18n.I18nInterceptor;
+import com.os.i18n.I18nFilter;
 import lombok.Data;
 
 @Data
@@ -35,7 +35,7 @@ public class ResultEntity<T>{
         }
 
         public Builder message(String message){
-            I18nInterceptor i18n = BeanUtils.getBean(I18nInterceptor.class);
+            I18nFilter i18n = BeanUtils.getBean(I18nFilter.class);
             this.message = i18n.getMessage(message);
             return this;
         }
@@ -46,10 +46,10 @@ public class ResultEntity<T>{
     }
 
     public static ResultEntity.Builder success(){
-        return ResultEntity.builder().ok(true).message("success");
+        return ResultEntity.builder().ok(true).message("common.request.success");
     }
 
     public static ResultEntity.Builder failed(){
-        return ResultEntity.builder().ok(false).message("failed");
+        return ResultEntity.builder().ok(false).message("common.sys.error");
     }
 }

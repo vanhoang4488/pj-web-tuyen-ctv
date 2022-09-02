@@ -1,52 +1,71 @@
 package com.os.binlog;
 
 import com.github.shyiko.mysql.binlog.BinaryLogClient;
-import com.github.shyiko.mysql.binlog.event.Event;
-import com.github.shyiko.mysql.binlog.event.EventType;
+import com.github.shyiko.mysql.binlog.event.*;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
-import java.util.concurrent.Callable;
+import java.io.Serializable;
+import java.util.List;
+import java.util.Map;
 
+@Slf4j
+@RequiredArgsConstructor
 public class EventListener implements BinaryLogClient.EventListener {
 
+    private final DataSourceConf conf;
     private final ThreadPoolTaskExecutor executor;
-
-    public EventListener(int nThread, int queueSize){
-        executor = new ThreadPoolTaskExecutor();
-        executor.setCorePoolSize(nThread);
-        executor.setMaxPoolSize(nThread);
-        executor.setQueueCapacity(queueSize);
-        executor.setThreadNamePrefix("binlog-thread-");
-    }
+    private final Map<Long, Map<String, Column>> tableMap;
+    private final Map<String, HandleBinLog> handles;
 
     @Override
     public void onEvent(Event event) {
-        EventType eventType = event.getHeader().getEventType();
+        EventType type = event.getHeader().getEventType();
 
-        // todo làm gì đó!
-        if(eventType == EventType.TABLE_MAP){
-
+        EventData data = event.getData();
+        if(type == EventType.TABLE_MAP){
+            TableMapEventData tableMapEventData = (TableMapEventData) data;
+            log.info("------>>> binlog tableId: {}, table name: {}",
+                    tableMapEventData.getTableId(), tableMapEventData.getTable());
         }
 
-        //những hành động thêm, xóa, sửa
-        //-> lấy thông tin chi tiết -> thao tác -> lưu lại vào database.
-        if(EventType.isWrite(eventType)){
-
+        if(EventType.isWrite(type)){
+            WriteRowsEventData writeData = (WriteRowsEventData) data;
+            this.setupInsertOrDelete(writeData.getRows(), writeData.getTableId(), event.getHeader());
         }
-        else if(EventType.isUpdate(eventType)){
-
+        else if(EventType.isDelete(type)){
+            DeleteRowsEventData delData = (DeleteRowsEventData) data;
+            this.setupInsertOrDelete(delData.getRows(), delData.getTableId(), event.getHeader());
         }
-        else if(EventType.isDelete(eventType)){
-
+        else if(EventType.isUpdate(type)){
+            UpdateRowsEventData updateData = (UpdateRowsEventData) data;
+            this.setupUpdate(updateData.getRows(), updateData.getTableId(), event.getHeader());
         }
     }
 
-    private void executeEvent(Event event){
-        executor.submit(new Callable<Event>() {
+    private void setupInsertOrDelete(List<Serializable[]> rows, Long tableId, EventHeader eventHeader){
+        for(Serializable[] row : rows){
+            BinLogItem item = BinLogItem.fromItemByWriteOrDelete(row, tableMap.get(tableId), eventHeader);
+            item.setDatabase(conf.getDatabase());
+            this.execute(item);
+        }
+    }
 
+    private void setupUpdate(List<Map.Entry<Serializable[], Serializable[]>> rows, Long tableId, EventHeader eventHeader){
+        for(Map.Entry<Serializable[], Serializable[]> row : rows){
+            BinLogItem item = BinLogItem.fromItemByUpdate(row, tableMap.get(tableId), eventHeader);
+            item.setDatabase(conf.getDatabase());
+            this.execute(item);
+        }
+    }
+
+    private void execute(BinLogItem item){
+        executor.submit(new Runnable() {
             @Override
-            public Event call() throws Exception {
-                return null;
+            public void run() {
+                String dbTable = BinLogUtil.getDbTable(item.getDatabase(), item.getTable());
+                handles.get(dbTable).handle(item);
             }
         });
     }

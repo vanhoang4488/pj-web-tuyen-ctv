@@ -4,7 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.gateway.config.GatewayAutoConfiguration;
 
-// Loại bỏ khởi tạo GatewayAutoConfiguration.class để cài đè RoutePredicateHandlerMapping.
+/**
+ * Loại bỏ khởi tạo GatewayAutoConfiguration.class để cài đè RoutePredicateHandlerMapping.
+ */
 @SpringBootApplication(exclude = {GatewayAutoConfiguration.class})
 public class ApplyGatewayApplication {
 

@@ -21,7 +21,7 @@ import reactor.core.publisher.Mono;
 
 @Slf4j
 @Configuration
-public class GatewayConfig {
+public class GatewayConfig{
 
     @Bean
     public WebFilter webFilter(){

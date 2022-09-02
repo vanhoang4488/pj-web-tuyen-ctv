@@ -5,9 +5,9 @@ import org.springframework.web.server.WebFilter;
 import org.springframework.web.server.WebFilterChain;
 import reactor.core.publisher.Mono;
 
-public class RewriteDoubleSlashFilter implements WebFilter {
+public class RewriteDoubleSlashFilter implements WebFilter{
 
-    private static final String DOUBLE_SLASH = "//";
+    private static final String DOUBLE_SLASH = "\\s{2,}";
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain) {

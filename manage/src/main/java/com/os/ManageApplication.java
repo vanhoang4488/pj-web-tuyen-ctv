@@ -18,9 +18,8 @@ public class ManageApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args){
 
-        ConfigurableApplicationContext ctx = new SpringApplicationBuilder(ManageApplication.class)
+        new SpringApplicationBuilder(ManageApplication.class)
                 .web(WebApplicationType.SERVLET).run(args);
-        System.out.println("==> datasource: " + ctx.getBean("dataSource"));
     }
 
     @Override

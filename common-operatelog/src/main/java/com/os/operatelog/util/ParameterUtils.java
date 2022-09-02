@@ -1,12 +1,11 @@
 package com.os.operatelog.util;
 
-import com.os.OpLogRecord;
+import com.os.entity.OpLogRecord;
 import com.os.operatelog.annotation.OpLog;
 import com.os.operatelog.aop.OpLogInterceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.*;
 import java.util.regex.Matcher;

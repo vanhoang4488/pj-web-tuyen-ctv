@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.SchedulingConfigurer;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 import org.springframework.scheduling.config.ScheduledTaskRegistrar;
 
 import java.util.concurrent.Executors;
@@ -46,14 +47,19 @@ public class CommonConfig implements SchedulingConfigurer {
     }
 
     @Bean(name = "taskScheduler", destroyMethod = "shutdown")
-    public ScheduledExecutorService taskScheduler(){
+    public ThreadPoolTaskScheduler taskScheduler(){
         int nThread = Runtime.getRuntime().availableProcessors();
-        ScheduledExecutorService executor = Executors.newScheduledThreadPool(nThread * 2);
+        ThreadPoolTaskScheduler executor = new ThreadPoolTaskScheduler();
+        executor.setPoolSize(nThread * 2);
+        executor.setThreadNamePrefix("scheduler-task-");
+        executor.initialize();
         return executor;
     }
 
     @Override
     public void configureTasks(ScheduledTaskRegistrar taskRegistrar) {
+
         taskRegistrar.setScheduler(taskScheduler());
+
     }
 }

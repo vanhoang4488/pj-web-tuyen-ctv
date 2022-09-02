@@ -6,5 +6,5 @@ public abstract class TenantConstants {
 
     public static final ThreadLocal<String> TENANT_THREAD_LOCAL = new ThreadLocal();
 
-    public static final String TENANT_ID = "tenantId";
+    public static final String TENANT_ID_NAME = "tenantId";
 }

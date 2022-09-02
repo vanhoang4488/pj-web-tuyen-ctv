@@ -20,38 +20,7 @@ import java.util.concurrent.Callable;
 
 @Slf4j
 @Configuration
-public class FeignAuthConfig extends HystrixConcurrencyStrategy {
-    private HystrixConcurrencyStrategy delegate;
-
-    public FeignAuthConfig(){
-       this.delegate = HystrixPlugins.getInstance().getConcurrencyStrategy();
-
-        if(this.delegate instanceof FeignAuthConfig)
-            return;
-
-        try {
-            HystrixCommandExecutionHook commandExecutionHook =
-                    HystrixPlugins.getInstance().getCommandExecutionHook();
-            HystrixEventNotifier eventNotifier =
-                    HystrixPlugins.getInstance().getEventNotifier();
-            HystrixMetricsPublisher metricsPublisher =
-                    HystrixPlugins.getInstance().getMetricsPublisher();
-            HystrixPropertiesStrategy propertiesStrategy =
-                    HystrixPlugins.getInstance().getPropertiesStrategy();
-
-            this.logConcurrentStateOfHystrixPlugins (eventNotifier, metricsPublisher, propertiesStrategy);
-
-            HystrixPlugins.reset();
-            HystrixPlugins.getInstance().registerConcurrencyStrategy(this);
-            HystrixPlugins.getInstance().registerCommandExecutionHook(commandExecutionHook);
-            HystrixPlugins.getInstance().registerEventNotifier(eventNotifier);
-            HystrixPlugins.getInstance().registerMetricsPublisher(metricsPublisher);
-            HystrixPlugins.getInstance().registerPropertiesStrategy(propertiesStrategy);
-        }
-        catch (Exception e){
-            log.error("===> Generator HystrixConcurrencyStrategy failed: {}", e.getMessage(), e);
-        }
-    }
+public class FeignAuthConfig{
 
     @Bean
     public RequestInterceptor RequestHeaderInterceptor(){
@@ -66,43 +35,5 @@ public class FeignAuthConfig extends HystrixConcurrencyStrategy {
         return new SpecialErrorDecoder();
     }
 
-    private void logConcurrentStateOfHystrixPlugins(HystrixEventNotifier eventNotifier,
-                                               HystrixMetricsPublisher metricsPublisher,
-                                               HystrixPropertiesStrategy propertiesStrategy){
-        if (log.isDebugEnabled()) {
-            log.debug("Current Hystrix plugins configuration is [" + "concurrencyStrategy ["
-                    + delegate + "]," + "eventNotifier [" + eventNotifier + "]," + "metricPublisher ["
-                    + metricsPublisher + "]," + "propertiesStrategy [" + propertiesStrategy + "]," + "]");
-            log.debug("Registering Sleuth Hystrix Concurrency Strategy.");
-        }
-    }
 
-    @Override
-    public <T> Callable<T> wrapCallable(Callable<T> callable) {
-        RequestAttributes requestAttributes = RequestContextHolder.getRequestAttributes();
-        return new WrappedCallable<T>(callable, requestAttributes);
-    }
-
-    static class WrappedCallable<T> implements Callable<T> {
-
-        private final Callable<T> target;
-
-        private final RequestAttributes requestAttributes;
-
-        public WrappedCallable(Callable<T> callable, RequestAttributes requestAttributes){
-            this.target = callable;
-            this.requestAttributes = requestAttributes;
-        }
-
-        @Override
-        public T call() throws Exception {
-            try{
-                RequestContextHolder.setRequestAttributes(requestAttributes);
-                return target.call();
-            }
-            finally {
-                RequestContextHolder.resetRequestAttributes();
-            }
-        }
-    }
 }

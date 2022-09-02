@@ -1,7 +1,7 @@
 package com.os.operatelog.aop;
 
 import com.google.gson.Gson;
-import com.os.OpLogRecord;
+import com.os.entity.OpLogRecord;
 import com.os.listener.QueueName;
 import com.os.listener.QueueSender;
 import com.os.operatelog.annotation.OpLog;
