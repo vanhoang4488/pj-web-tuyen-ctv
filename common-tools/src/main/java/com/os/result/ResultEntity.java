@@ -13,11 +13,12 @@ public class ResultEntity<T>{
     /**thông điệp trả về*/
     private String message;
 
-    public ResultEntity() {}
+    private T entity;
 
     public ResultEntity(Builder<T> builder){
         this.ok = builder.ok;
         this.message = builder.message;
+        this.entity = builder.entity;
     }
 
     public static Builder builder(){
@@ -28,6 +29,7 @@ public class ResultEntity<T>{
 
         private boolean ok;
         private String message;
+        private T entity;
 
         public Builder ok(boolean ok){
             this.ok = ok;
@@ -37,6 +39,11 @@ public class ResultEntity<T>{
         public Builder message(String message){
             I18nFilter i18n = BeanUtils.getBean(I18nFilter.class);
             this.message = i18n.getMessage(message);
+            return this;
+        }
+
+        public Builder entity(T entity){
+            this.entity = entity;
             return this;
         }
 

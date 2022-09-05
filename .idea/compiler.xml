@@ -12,6 +12,7 @@
         <module name="common-operatelog" />
         <module name="common-feign" />
         <module name="common-config" />
+        <module name="apply-upload" />
         <module name="apply-gateway" />
         <module name="apply-admin" />
         <module name="common-tools" />
@@ -21,6 +22,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="apply-file-sys" target="1.8" />
       <module name="common-operalog" target="1.8" />
       <module name="operatelog" target="1.8" />
     </bytecodeTargetLevel>
@@ -28,7 +30,9 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="apply-admin" options="-parameters" />
+      <module name="apply-file-sys" options="-parameters" />
       <module name="apply-gateway" options="-parameters" />
+      <module name="apply-upload" options="-parameters" />
       <module name="common-config" options="-parameters" />
       <module name="common-entity" options="-parameters" />
       <module name="common-feign" options="-parameters" />

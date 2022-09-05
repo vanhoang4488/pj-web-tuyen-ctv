@@ -18,6 +18,7 @@
     <modules>
         <module>apply-gateway</module>
         <module>apply-admin</module>
+        <module>apply-upload</module>
         <module>manage</module>
         <module>common-mybatis</module>
         <module>common-tools</module>
