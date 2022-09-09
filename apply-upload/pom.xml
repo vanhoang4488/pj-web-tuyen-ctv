@@ -33,6 +33,21 @@
             <version>5.2.2</version>
         </dependency>
         <dependency>
+            <groupId>net.arnx</groupId>
+            <artifactId>wmf2svg</artifactId>
+            <version>0.9.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.xmlgraphics</groupId>
+            <artifactId>batik-codec</artifactId>
+            <version>1.7</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sourceforge.jeuclid</groupId>
+            <artifactId>jeuclid-core</artifactId>
+            <version>3.1.9</version>
+        </dependency>
+        <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
         </dependency>
