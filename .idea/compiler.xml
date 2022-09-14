@@ -44,7 +44,7 @@
       <module name="common-tools" options="-parameters" />
       <module name="manage" options="-parameters" />
       <module name="operatelog" options="-parameters" />
-      <module name="pj-web-tuyen-ctv" options="-parameters" />
+      <module name="pj-web-tuyen-ctv" options="" />
     </option>
   </component>
 </project>

@@ -64,11 +64,17 @@ public abstract class W3cNodeUtil {
             }
         }
         catch (Exception e){
-            log.error("=====> transform xml2 to string failed: {}", e.getMessage(), e);
+            log.error("=====> encoding utf-16 xml failed: {}", e.getMessage(), e);
         }
         return null;
     }
 
+    /**
+     * chuyển đổi xml2Str thành Node.
+     * @param xmlString
+     * @param encoding
+     * @return
+     */
     public static Document xmlStr2Node(String xmlString, String encoding){
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         Document doc = null;

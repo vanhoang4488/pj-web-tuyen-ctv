@@ -15,6 +15,11 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.*;
 
+/**
+ *  Nếu chúng ta có nhu cầu chuyển đổi các hình ảnh ở định dạng svg, png (độ phân giải cao)
+ *  -> các hình ảnh có độ phân giải thấp hơn jpg thì sử dụng lớp này.
+ *  Hoặc là chuyển đổi độ phân giải hình ảnh từ thấp lên cao.
+ */
 public abstract class WmfUtils {
 
     public static String convert(String path){
