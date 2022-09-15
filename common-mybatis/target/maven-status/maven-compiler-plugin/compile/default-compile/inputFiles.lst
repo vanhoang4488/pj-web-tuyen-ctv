@@ -1,0 +1,13 @@
+C:\Account\du_an\pj-web-tuyen-ctv\pj-web-tuyen-ctv\common-mybatis\src\main\java\com\os\binlog\BinLogUtil.java
+C:\Account\du_an\pj-web-tuyen-ctv\pj-web-tuyen-ctv\common-mybatis\src\main\java\com\os\binlog\BinLogListener.java
+C:\Account\du_an\pj-web-tuyen-ctv\pj-web-tuyen-ctv\common-mybatis\src\main\java\com\os\binlog\TourBinLog.java
+C:\Account\du_an\pj-web-tuyen-ctv\pj-web-tuyen-ctv\common-mybatis\src\main\java\com\os\config\MybatisConfig.java
+C:\Account\du_an\pj-web-tuyen-ctv\pj-web-tuyen-ctv\common-mybatis\src\main\java\com\os\binlog\DataSourceConf.java
+C:\Account\du_an\pj-web-tuyen-ctv\pj-web-tuyen-ctv\common-mybatis\src\main\java\com\os\binlog\EventListener.java
+C:\Account\du_an\pj-web-tuyen-ctv\pj-web-tuyen-ctv\common-mybatis\src\main\java\com\os\binlog\Column.java
+C:\Account\du_an\pj-web-tuyen-ctv\pj-web-tuyen-ctv\common-mybatis\src\main\java\com\os\binlog\BinLogItem.java
+C:\Account\du_an\pj-web-tuyen-ctv\pj-web-tuyen-ctv\common-mybatis\src\main\java\com\os\binlog\MysqlBinlogListener.java
+C:\Account\du_an\pj-web-tuyen-ctv\pj-web-tuyen-ctv\common-mybatis\src\main\java\com\os\tenant\TenantSqlInterceptor.java
+C:\Account\du_an\pj-web-tuyen-ctv\pj-web-tuyen-ctv\common-mybatis\src\main\java\com\os\Idempotency\IdempotencyInterceptor.java
+C:\Account\du_an\pj-web-tuyen-ctv\pj-web-tuyen-ctv\common-mybatis\src\main\java\com\os\binlog\HandleBinLog.java
+C:\Account\du_an\pj-web-tuyen-ctv\pj-web-tuyen-ctv\common-mybatis\src\main\java\com\os\util\StatementParser.java

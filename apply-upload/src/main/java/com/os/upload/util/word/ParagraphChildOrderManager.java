@@ -28,7 +28,8 @@ public class ParagraphChildOrderManager {
             XmlCursor.TokenType tokenType = cursor.toNextToken();
             if(tokenType.isStart()){
                 // todo đoạn này cần bổ sung thêm
-                if(cursor.getName().getPrefix().equalsIgnoreCase("w"))
+                if(cursor.getName().getPrefix().equalsIgnoreCase("w")
+                        && cursor.getName().getLocalPart().equals("r"))
                     typeList.add(TYPE_RUN);
                 else if (cursor.getName().getLocalPart().equalsIgnoreCase("oMath"))
                     typeList.add(TYPE_OMATH);

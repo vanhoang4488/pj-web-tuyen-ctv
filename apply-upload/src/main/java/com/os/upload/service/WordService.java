@@ -32,22 +32,16 @@ public class WordService {
     private List<String> convertWordDocToList(XWPFDocument document, ImageParser imageParser){
         List<String> lines = new ArrayList<>();
         List<IBodyElement> elements = document.getBodyElements();
-        // có là dòng đầu tiên hay không.
-        boolean isFirstLine = true;
-        for (IBodyElement element : elements){
+        for (IBodyElement element : elements) {
             StringBuilder line = new StringBuilder();
 
-            if(element.getElementType().equals(BodyElementType.PARAGRAPH))
+            if (element.getElementType().equals(BodyElementType.PARAGRAPH))
                 HandleWord.handleParagraph(line, element, imageParser);
-            else if(element.getElementType().equals(BodyElementType.TABLE))
+            else if (element.getElementType().equals(BodyElementType.TABLE))
                 HandleWord.handleTable(line, element, imageParser);
 
-            if(isFirstLine)
-                lines.add(line.toString());
-            else {
-                lines.add("</br>" + line.toString());
-                isFirstLine = false;
-            }
+            // mỗi thẻ <p></p> là đã là 1 dòng rồi => không cần <br/>
+            lines.add(line.toString());
         }
         return lines;
     }

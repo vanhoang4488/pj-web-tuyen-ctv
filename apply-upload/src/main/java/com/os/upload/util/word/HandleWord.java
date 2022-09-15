@@ -233,7 +233,7 @@ public abstract class HandleWord {
         }
 
         if (run.getColor() != null){
-            c = "<span style='color:#'>" + run.getColor().toLowerCase() + ";'>" + c + "</span>";
+            c = "<span style='color:#" + run.getColor().toLowerCase() + ";'>" + c + "</span>";
         }
 
         content.append(c);
@@ -263,7 +263,7 @@ public abstract class HandleWord {
         content.append(s);
     }
 
-    public static String handleTable(StringBuilder content, IBodyElement body, ImageParser imageParser){
+    public static void handleTable(StringBuilder content, IBodyElement body, ImageParser imageParser){
         XWPFTable table = (XWPFTable) body;
         List<XWPFTableRow> rows = table.getRows();
         content.append("<table>");
@@ -276,10 +276,10 @@ public abstract class HandleWord {
                 for(XWPFParagraph paragraph : paragraphs){
                     handleParagraph(content, paragraph, imageParser);
                 }
-                content.append("</td>\n");
+                content.append("</td>");
             }
-            content.append("</tr>\n");
+            content.append("</tr>");
         }
-        return null;
+        content.append("</table>");
     }
 }
