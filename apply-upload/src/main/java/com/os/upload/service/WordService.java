@@ -1,5 +1,6 @@
 package com.os.upload.service;
 
+import cn.hutool.core.io.resource.ClassPathResource;
 import com.os.entity.Article;
 import com.os.result.ResultEntity;
 import com.os.upload.util.ImageParser;
@@ -7,6 +8,7 @@ import com.os.upload.util.word.HandleWord;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.xwpf.usermodel.*;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ResourceUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
@@ -19,7 +21,7 @@ import java.util.Map;
 public class WordService {
 
     public ResultEntity<Article> createArticleByWordDoc(XWPFDocument document){
-        ImageParser imageParser = new ImageParser("classpath:/img", "");
+        ImageParser imageParser = new ImageParser("C:\\Account\\du_an\\pj-web-tuyen-ctv\\img", "");
         // chuyển đổi toàn bộ nội dụng file Word thành một List<String>
         // mỗi dòng là 1 phần tử trong List.
         List<String> lines = convertWordDocToList(document, imageParser);

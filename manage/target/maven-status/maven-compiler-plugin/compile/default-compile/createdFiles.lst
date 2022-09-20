@@ -1,8 +1,0 @@
-com\os\service\mail\MailBiz.class
-com\os\service\mail\MailMessage.class
-com\os\config\ManageConfig.class
-com\os\service\login\SysUserLoginBiz.class
-com\os\ManageApplication.class
-com\os\service\mail\HandleMail.class
-com\os\controller\login\SysUserLoginController.class
-com\os\controller\mail\SysMailController.class

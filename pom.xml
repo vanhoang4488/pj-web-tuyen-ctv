@@ -84,7 +84,9 @@
                 <directory>src/main/resources</directory>
                 <filtering>false</filtering>
                 <includes>
+                    <include>**/static/</include>
                     <include>**/*.xml</include>
+                    <include>**/*.XSL</include>
                 </includes>
             </resource>
         </resources>

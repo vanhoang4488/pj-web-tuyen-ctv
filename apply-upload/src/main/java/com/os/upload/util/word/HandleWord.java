@@ -21,6 +21,7 @@ import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -122,22 +123,24 @@ public abstract class HandleWord {
             String desc = pic.getDescription();
 
             String path = imageParser.parse(pic.getPictureData().getData(), pic.getPictureData().getFileName());
-            log.debug("----->>> pic.getPictureData().getFileName() == {}", pic.getPictureData().getFileName());
+            log.debug("----->>> path save file: {}", path);
 
-            CTPicture ctPicture = pic.getCTPicture();
-            Node domNode = ctPicture.getDomNode();
+            if(!Objects.isNull(path)){
+                CTPicture ctPicture = pic.getCTPicture();
+                Node domNode = ctPicture.getDomNode();
 
-            Node extNode = W3cNodeUtil.getChildChainNode(domNode, "pic:spPr", "a:ext");
-            NamedNodeMap attributes = extNode.getAttributes();
+                Node extNode = W3cNodeUtil.getChildChainNode(domNode, "pic:spPr", "a:ext");
+                NamedNodeMap attributes = extNode.getAttributes();
 
-            // todo chưa tạo được capture của hình ảnh.
-            if(attributes != null && attributes.getNamedItem("cx") != null){
-                int width = WordMyUnits.emuToPx(new Double(attributes.getNamedItem("cx").getNodeValue()));
-                int height = WordMyUnits.emuToPx(new Double(attributes.getNamedItem("cy").getNodeValue()));
-                content.append(String.format("<img src=\"%s\" width=\"%d\" height=\"%d\"/>", path, width, height));
-            }
-            else{
-                content.append(String.format("<img src=\"%s\"/>", path));
+                // todo chưa tạo được capture của hình ảnh.
+                if(attributes != null && attributes.getNamedItem("cx") != null){
+                    int width = WordMyUnits.emuToPx(new Double(attributes.getNamedItem("cx").getNodeValue()));
+                    int height = WordMyUnits.emuToPx(new Double(attributes.getNamedItem("cy").getNodeValue()));
+                    content.append(String.format("<img src=\"%s\" width=\"%d\" height=\"%d\"/>", path, width, height));
+                }
+                else{
+                    content.append(String.format("<img src=\"%s\"/>", path));
+                }
             }
         }
     }
