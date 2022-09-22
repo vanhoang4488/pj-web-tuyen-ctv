@@ -3,12 +3,11 @@ package com.os.entity;
 import com.os.annotaion.Column;
 import com.os.annotaion.Id;
 import com.os.annotaion.Table;
-import lombok.Builder;
 import lombok.Data;
 
 @Table
 @Data
-public class Article {
+public class Blog {
 
     @Id
     private String articleId;

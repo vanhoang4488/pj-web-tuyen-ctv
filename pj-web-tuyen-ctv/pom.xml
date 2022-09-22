@@ -44,6 +44,7 @@
         <caffeine.version>2.8.6</caffeine.version>
         <jsqlparser.version>4.3</jsqlparser.version>
         <mysqlbinlog.version>0.25.0</mysqlbinlog.version>
+        <apache-poi.version>5.2.2</apache-poi.version>
     </properties>
 
     <profiles>
@@ -211,6 +212,16 @@
                 <groupId>com.zendesk</groupId>
                 <artifactId>mysql-binlog-connector-java</artifactId>
                 <version>${mysqlbinlog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>5.2.2</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>5.2.2</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
