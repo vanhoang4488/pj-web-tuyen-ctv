@@ -12,9 +12,11 @@ public class UserBlogNum {
     @Id
     private long userId;
     @Column
+    private String userName;
+    @Column
     private long num;
     @Column
-    private long total_view;
+    private long total_views;
     @Column
     private String interestest;
     @Column

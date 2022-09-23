@@ -1,4 +1,4 @@
-package com.os.manage.syslog;
+package com.os.manage.userblognum;
 
 import com.google.gson.Gson;
 import com.os.result.ResultEntity;
@@ -11,7 +11,7 @@ import java.nio.charset.Charset;
 
 @Component
 @RequiredArgsConstructor
-public class SysLogFallbackImpl implements SysLogService {
+public class UserBlogNumFallbackImpl implements UserBlogNumService {
 
     private final Gson gson;
 
