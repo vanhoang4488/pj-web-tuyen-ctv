@@ -56,6 +56,11 @@
             <artifactId>poi-ooxml</artifactId>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>ooxml-schemas</artifactId>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
 </project>

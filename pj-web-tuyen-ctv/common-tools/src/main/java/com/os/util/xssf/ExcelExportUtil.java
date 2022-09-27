@@ -3,10 +3,7 @@ package com.os.util.xssf;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.model.StylesTable;
 import org.apache.poi.xssf.usermodel.*;
-import org.openxmlformats.schemas.spreadsheetml.x2006.main.CTTable;
-import org.openxmlformats.schemas.spreadsheetml.x2006.main.CTTableColumn;
-import org.openxmlformats.schemas.spreadsheetml.x2006.main.CTTableColumns;
-import org.openxmlformats.schemas.spreadsheetml.x2006.main.CTTableStyleInfo;
+import org.openxmlformats.schemas.spreadsheetml.x2006.main.*;
 
 import java.io.InputStream;
 import java.util.List;
@@ -51,11 +48,16 @@ public abstract class ExcelExportUtil {
      */
     private static void setTableHeader(CTTable ctTable, String[] headerNames){
         CTTableColumns headers = ctTable.addNewTableColumns();
+        CTAutoFilter autoFilter = ctTable.addNewAutoFilter();
         headers.setCount(headerNames.length);
         for (int i = 1; i <= headerNames.length; i++){
             CTTableColumn header = headers.addNewTableColumn();
             header.setId(i);
             header.setName("Column" + i);
+            // add table heading drop-down
+            CTFilterColumn filterColumn = autoFilter.addNewFilterColumn();
+            filterColumn.setColId(i);
+            filterColumn.setShowButton(true);
         }
     }
 
@@ -81,8 +83,8 @@ public abstract class ExcelExportUtil {
         XSSFCellStyle style = workbook.createCellStyle();
         style.setAlignment(HorizontalAlignment.CENTER);
         XSSFFont font = workbook.createFont();
-        font.setFontHeightInPoints((short ) 14);
-        font.setFontName("Times New Roman");
+//        font.setFontHeightInPoints((short ) 14);
+//        font.setFontName("Times New Roman");
         style.setFont(font);
         return style;
     }

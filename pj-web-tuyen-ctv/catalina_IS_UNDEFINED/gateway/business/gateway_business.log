@@ -1,40 +1,63 @@
-2022-09-01 16:05:52.600 INFO  [background-preinit] o.h.validator.internal.util.Version      : HV000001: Hibernate Validator 6.1.6.Final
- 2022-09-01 16:05:55.107 INFO  [main] c.a.n.c.c.impl.LocalConfigInfoProcessor  : LOCAL_SNAPSHOT_PATH:C:\Users\hoang\nacos\config
- 2022-09-01 16:05:55.220 INFO  [main] c.a.nacos.client.config.impl.Limiter     : limitTime:5.0
- 2022-09-01 16:05:55.477 INFO  [main] c.a.nacos.client.config.utils.JvmUtil    : isMultiInstance:false
- 2022-09-01 16:05:55.477 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'gateway.properties', group: 'WEB_CTV', data: gateway.port=20003
+2022-09-27 13:32:23.831 INFO  [background-preinit] o.h.validator.internal.util.Version      : HV000001: Hibernate Validator 6.1.6.Final
+ 2022-09-27 13:32:24.565 INFO  [main] c.a.n.c.c.impl.LocalConfigInfoProcessor  : LOCAL_SNAPSHOT_PATH:C:\Users\Admin\nacos\config
+ 2022-09-27 13:32:24.604 INFO  [main] c.a.nacos.client.config.impl.Limiter     : limitTime:5.0
+ 2022-09-27 13:32:24.630 INFO  [main] c.a.nacos.client.config.utils.JvmUtil    : isMultiInstance:false
+ 2022-09-27 13:32:24.633 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'gateway.properties', group: 'WEB_CTV', data: gateway.port=20000
 
 gateway.application.name=gateway
 
 gateway.context-path=/
 
 gateway.redis.database=0
- 2022-09-01 16:05:55.499 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'apply-admin.properties', group: 'WEB_CTV', data: apply-admin.port=20004
+ 2022-09-27 13:32:24.640 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'admin.properties', group: 'WEB_CTV', data: 
+admin.port=20003
+admin.application.name=admin
+admin.context-path=/
 
-apply-admin.application.name=admin
+ 2022-09-27 13:32:24.643 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'content.properties', group: 'WEB_CTV', data: 
+content.port=20008
+content.application.name=content
+content.context-path=/
 
-apply-admin.context-path=/
- 2022-09-01 16:05:55.530 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'apply-api.properties', group: 'WEB_CTV', data: apply-api.port=20005
+# database
+content.db.hostname=localhost
+content.db.port=3306
+content.db.database=wctv_content
+content.db.username=root
+content.db.password=thaibinh
 
-apply-api.application.name=api
-
-apply-api.context-path=/
- 2022-09-01 16:05:55.530 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'manage.properties', group: 'WEB_CTV', data: manage.port=20008
-
+#redis
+content.redis.database=0
+ 2022-09-27 13:32:24.646 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'manage.properties', group: 'WEB_CTV', data: 
+manage.port=20008
 manage.application.name=manage
-
 manage.context-path=/
 
 # database
 manage.db.host=localhost
 manage.db.port=3306
-manage.db.database=mysql
+manage.db.database=wctv_manage
 manage.db.username=root
 manage.db.password=thaibinh
 
 # redis
 manage.redis.database=0
- 2022-09-01 16:05:55.562 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'library-major.properties', group: 'WEB_CTV', data: 
+ 2022-09-27 13:32:24.651 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'upload.properties', group: 'WEB_CTV', data: 
+upload.port=20005
+upload.application.name=upload
+upload.context-path=/
+
+# database
+upload.db.hostname=localhost
+upload.db.port=3306
+upload.db.database=wctv_upload
+upload.db.username=root
+upload.db.password=thaibinh
+
+# redis
+upload.redis.database=0
+
+ 2022-09-27 13:32:24.654 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'library-major.properties', group: 'WEB_CTV', data: 
 #logback-spring
 logging.config=classpath:logback-spring.xml
 
@@ -47,233 +70,65 @@ characterEncoding=UTF-8
 
 # redis
 common.redis.host=localhost
-common.redis.port=6379
-common.redis.password=
+common.redis.port=4488
+common.redis.password=thaibinh
 common.redis.database=0
 
-# fein 
-spring.feign.enable=true
-hystrix.threadpool.core.size=10
-hystrix.threadpool.maximum.size=15
-hystrix.threadpool.maxQueue.size=200
-
-#mail
-common.mail.host=stmp.gmail.com
+# gmail 
+common.mail.host=smtp.gmail.com
 common.mail.port=587
-common.mail.username=tac.taf.kcalb@gmail.com
+common.mail.username=taf.tac.kcalb@gmail.com
 common.mail.password=piyuybfwomhktxyf
-common.mail.smtp.auth=true
+com.mail.stmp.auth=true
+common.mail.transfer.protocol=stmp
 common.mail.smtp.starttls.enable=true
-common.mail.transport.protocol=smtp
- 2022-09-01 16:05:55.577 WARN  [main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[library-major.properties.properties] & group[WEB_CTV]
- 2022-09-01 16:05:55.577 WARN  [main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[library-major.properties-common-config-dev.properties] & group[WEB_CTV]
- 2022-09-01 16:05:55.593 INFO  [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-library-major.properties-common-config-dev.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-library-major.properties.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-library-major.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-manage.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-apply-api.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-apply-admin.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-gateway.properties,WEB_CTV'}]
- 2022-09-01 16:05:55.652 INFO  [main] com.os.ApplyGatewayApplication           : The following profiles are active: common-config-dev
- 2022-09-01 16:05:58.406 INFO  [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
- 2022-09-01 16:05:58.427 INFO  [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
- 2022-09-01 16:05:58.556 INFO  [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 78ms. Found 0 Redis repository interfaces.
- 2022-09-01 16:05:59.123 INFO  [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ce01a458-fb9d-3c88-9763-3ac81d64ced7
- 2022-09-01 16:05:59.184 INFO  [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
- 2022-09-01 16:05:59.184 INFO  [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactiveLoadBalancerConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactiveLoadBalancerConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
- 2022-09-01 16:05:59.204 INFO  [main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
- 2022-09-01 16:06:03.683 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
- 2022-09-01 16:06:03.683 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
- 2022-09-01 16:06:03.685 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
- 2022-09-01 16:06:03.685 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
- 2022-09-01 16:06:03.685 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
- 2022-09-01 16:06:03.685 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
- 2022-09-01 16:06:03.685 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
- 2022-09-01 16:06:03.685 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
- 2022-09-01 16:06:03.685 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
- 2022-09-01 16:06:03.685 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
- 2022-09-01 16:06:03.685 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
- 2022-09-01 16:06:03.685 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
- 2022-09-01 16:06:03.685 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
- 2022-09-01 16:06:04.035 INFO  [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService
- 2022-09-01 16:06:04.035 INFO  [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'taskThreadPoolExecutor'
- 2022-09-01 16:06:04.035 INFO  [main] o.s.s.concurrent.ThreadPoolTaskScheduler : Initializing ExecutorService
- 2022-09-01 16:06:04.045 INFO  [main] o.s.s.concurrent.ThreadPoolTaskScheduler : Initializing ExecutorService 'taskScheduler'
- 2022-09-01 16:06:04.061 WARN  [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
- 2022-09-01 16:06:04.061 INFO  [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
- 2022-09-01 16:06:04.061 WARN  [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
- 2022-09-01 16:06:04.061 INFO  [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
- 2022-09-01 16:06:06.544 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
- 2022-09-01 16:06:06.544 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Environment :null
- 2022-09-01 16:06:06.544 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
- 2022-09-01 16:06:06.757 INFO  [main] com.alibaba.nacos.client.naming          : [LISTENER] adding DEFAULT_GROUP@@gateway with DEFAULT to listener map
- 2022-09-01 16:06:06.890 INFO  [main] io.undertow                              : starting server: Undertow - 2.1.4.Final
- 2022-09-01 16:06:06.920 INFO  [main] org.xnio                                 : XNIO version 3.8.0.Final
- 2022-09-01 16:06:06.981 INFO  [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.8.0.Final
- 2022-09-01 16:06:07.122 INFO  [main] org.jboss.threads                        : JBoss Threads version 3.1.0.Final
- 2022-09-01 16:06:07.233 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@gateway\",\"clusters\":\"DEFAULT\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1662023167213,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":23765343245500} from /192.168.4.123
- 2022-09-01 16:06:07.243 INFO  [main] o.s.b.w.e.undertow.UndertowWebServer     : Undertow started on port(s) 20003 (http)
- 2022-09-01 16:06:07.546 INFO  [boundedElastic-3] com.alibaba.nacos.client.naming          : new ips(1) service: DEFAULT_GROUP@@admin -> [{"instanceId":"192.168.4.123#20004#DEFAULT#DEFAULT_GROUP@@admin","ip":"192.168.4.123","port":20004,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@admin","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
- 2022-09-01 16:06:07.555 INFO  [boundedElastic-3] com.alibaba.nacos.client.naming          : current ips:(1) service: DEFAULT_GROUP@@admin -> [{"instanceId":"192.168.4.123#20004#DEFAULT#DEFAULT_GROUP@@admin","ip":"192.168.4.123","port":20004,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@admin","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
- 2022-09-01 16:06:08.132 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[{\"instanceId\":\"192.168.4.123#20004#DEFAULT#DEFAULT_GROUP@@admin\",\"ip\":\"192.168.4.123\",\"port\":20004,\"weight\":1.0,\"healthy\":true,\"enabled\":true,\"ephemeral\":true,\"clusterName\":\"DEFAULT\",\"serviceName\":\"DEFAULT_GROUP@@admin\",\"metadata\":{\"preserved.register.source\":\"SPRING_CLOUD\"},\"instanceHeartBeatInterval\":5000,\"instanceHeartBeatTimeOut\":15000,\"ipDeleteTimeout\":30000}],\"lastRefTime\":1662023168130,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":23766256996300} from /192.168.4.123
- 2022-09-01 16:06:08.991 INFO  [main] com.alibaba.nacos.client.naming          : [BEAT] adding beat: BeatInfo{port=20003, ip='192.168.4.123', weight=1.0, serviceName='DEFAULT_GROUP@@gateway', cluster='DEFAULT', metadata={preserved.register.source=SPRING_CLOUD}, scheduled=false, period=5000, stopped=false} to beat map.
- 2022-09-01 16:06:08.991 INFO  [main] com.alibaba.nacos.client.naming          : [REGISTER-SERVICE] 25df333f-6d49-4053-9ecd-207058071611 registering service DEFAULT_GROUP@@gateway with instance: Instance{instanceId='null', ip='192.168.4.123', port=20003, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={preserved.register.source=SPRING_CLOUD}}
- 2022-09-01 16:06:09.001 INFO  [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP gateway 192.168.4.123:20003 register finished
- 2022-09-01 16:06:09.030 INFO  [boundedElastic-3] com.alibaba.nacos.client.naming          : new ips(1) service: DEFAULT_GROUP@@gateway -> [{"instanceId":"192.168.4.123#20003#DEFAULT#DEFAULT_GROUP@@gateway","ip":"192.168.4.123","port":20003,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@gateway","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
- 2022-09-01 16:06:09.032 INFO  [main] com.os.ApplyGatewayApplication           : Started ApplyGatewayApplication in 18.083 seconds (JVM running for 25.346)
- 2022-09-01 16:06:09.032 INFO  [main] com.os.config.GatewayConfig              : ============>apply-gateway starts successfully<===========
- 2022-09-01 16:06:09.032 INFO  [boundedElastic-3] com.alibaba.nacos.client.naming          : current ips:(1) service: DEFAULT_GROUP@@gateway -> [{"instanceId":"192.168.4.123#20003#DEFAULT#DEFAULT_GROUP@@gateway","ip":"192.168.4.123","port":20003,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@gateway","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
- 2022-09-01 16:06:09.032 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
- 2022-09-01 16:06:09.032 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Environment :null
- 2022-09-01 16:06:09.038 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
- 2022-09-01 16:06:09.040 INFO  [main] com.os.nacos.NacosConfig                 : =====> appId: 192.168.4.123
- 2022-09-01 16:06:09.052 INFO  [main] com.alibaba.nacos.client.naming          : init new ips(0) service: DEFAULT_GROUP@@DEFAULT_GROUP -> []
- 2022-09-01 16:06:09.052 INFO  [main] com.alibaba.nacos.client.naming          : current ips:(0) service: DEFAULT_GROUP@@DEFAULT_GROUP -> []
- 2022-09-01 16:06:09.052 INFO  [main] com.os.nacos.NacosConfig                 : =====> all instance of (DEFAULT_GROUP@@gateway) is: []
- 2022-09-01 16:06:09.052 INFO  [main] com.alibaba.nacos.client.naming          : [LISTENER] adding DEFAULT_GROUP@@DEFAULT_GROUP@@gateway with  to listener map
- 2022-09-01 16:06:09.052 INFO  [com.alibaba.nacos.naming.client.listener] com.os.nacos.NacosConfig                 : =====> serviceName: DEFAULT_GROUP@@DEFAULT_GROUP@@gateway
- 2022-09-01 16:06:09.060 INFO  [com.alibaba.nacos.naming.client.listener] com.os.nacos.NacosConfig                 : =====> instances of: []
- 2022-09-01 16:06:09.666 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@gateway\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[{\"instanceId\":\"192.168.4.123#20003#DEFAULT#DEFAULT_GROUP@@gateway\",\"ip\":\"192.168.4.123\",\"port\":20003,\"weight\":1.0,\"healthy\":true,\"enabled\":true,\"ephemeral\":true,\"clusterName\":\"DEFAULT\",\"serviceName\":\"DEFAULT_GROUP@@gateway\",\"metadata\":{\"preserved.register.source\":\"SPRING_CLOUD\"},\"instanceHeartBeatInterval\":5000,\"instanceHeartBeatTimeOut\":15000,\"ipDeleteTimeout\":30000}],\"lastRefTime\":1662023169658,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":23767786359300} from /192.168.4.123
- 2022-09-01 16:06:09.668 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@DEFAULT_GROUP\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1662023169658,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":23767786278700} from /192.168.4.123
- 2022-09-01 16:06:09.790 INFO  [com.alibaba.nacos.client.naming.updater] com.alibaba.nacos.client.naming          : new ips(1) service: DEFAULT_GROUP@@gateway@@DEFAULT -> [{"instanceId":"192.168.4.123#20003#DEFAULT#DEFAULT_GROUP@@gateway","ip":"192.168.4.123","port":20003,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@gateway","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
- 2022-09-01 16:06:09.800 INFO  [com.alibaba.nacos.client.naming.updater] com.alibaba.nacos.client.naming          : current ips:(1) service: DEFAULT_GROUP@@gateway@@DEFAULT -> [{"instanceId":"192.168.4.123#20003#DEFAULT#DEFAULT_GROUP@@gateway","ip":"192.168.4.123","port":20003,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@gateway","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
- 2022-09-01 16:06:10.318 INFO  [main] c.netflix.config.ChainedDynamicProperty  : Flipping property: gateway.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
- 2022-09-01 16:06:10.349 INFO  [main] c.netflix.loadbalancer.BaseLoadBalancer  : Client: gateway instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=gateway,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
- 2022-09-01 16:06:10.373 INFO  [main] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
- 2022-09-01 16:06:10.393 INFO  [main] c.netflix.config.ChainedDynamicProperty  : Flipping property: gateway.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
- 2022-09-01 16:06:10.402 INFO  [main] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client gateway initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=gateway,current list of Servers=[192.168.4.123:20003],Load balancer stats=Zone stats: {unknown=[Zone:unknown;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
-},Server stats: [[Server:192.168.4.123:20003;	Zone:UNKNOWN;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 07:00:00 ICT 1970;	First connection made: Thu Jan 01 07:00:00 ICT 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
-]}ServerList:com.alibaba.cloud.nacos.ribbon.NacosServerList@38159384
- 2022-09-01 16:06:10.442 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] gateway.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
- 2022-09-01 16:06:10.444 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=gateway.properties, group=WEB_CTV, cnt=1
- 2022-09-01 16:06:10.444 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] library-major.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
- 2022-09-01 16:06:10.444 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=library-major.properties, group=WEB_CTV, cnt=1
- 2022-09-01 16:06:10.444 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] apply-admin.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
- 2022-09-01 16:06:10.444 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=apply-admin.properties, group=WEB_CTV, cnt=1
- 2022-09-01 16:06:10.444 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] library-major.properties-common-config-dev.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
- 2022-09-01 16:06:10.444 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=library-major.properties-common-config-dev.properties, group=WEB_CTV, cnt=1
- 2022-09-01 16:06:10.444 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] library-major.properties.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
- 2022-09-01 16:06:10.444 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=library-major.properties.properties, group=WEB_CTV, cnt=1
- 2022-09-01 16:06:10.452 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] manage.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
- 2022-09-01 16:06:10.452 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=manage.properties, group=WEB_CTV, cnt=1
- 2022-09-01 16:06:10.454 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] apply-api.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
- 2022-09-01 16:06:10.454 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=apply-api.properties, group=WEB_CTV, cnt=1
- 2022-09-01 16:06:11.388 INFO  [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: gateway.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
- 2022-09-01 16:07:13.032 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@DEFAULT_GROUP\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1662023232982,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":23831108009200} from /192.168.4.123
- 2022-09-01 16:08:12.981 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@DEFAULT_GROUP\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1662023292981,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":23891110174000} from /192.168.4.123
- 2022-09-01 16:09:13.047 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@DEFAULT_GROUP\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1662023353016,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":23951154073700} from /192.168.4.123
- 2022-09-01 16:10:13.002 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@DEFAULT_GROUP\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1662023413002,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":24011124518200} from /192.168.4.123
- 2022-09-01 16:11:13.091 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@DEFAULT_GROUP\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1662023473091,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":24071213346900} from /192.168.4.123
- 2022-09-01 16:12:13.116 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@DEFAULT_GROUP\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1662023533116,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":24131238747200} from /192.168.4.123
- 2022-09-01 16:13:13.145 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@DEFAULT_GROUP\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1662023593123,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":24191246662900} from /192.168.4.123
- 2022-09-01 16:14:13.195 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@DEFAULT_GROUP\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1662023653164,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":24251286655700} from /192.168.4.123
- 2022-09-01 16:15:13.164 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@DEFAULT_GROUP\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1662023713164,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":24311287489800} from /192.168.4.123
- 2022-09-01 16:16:13.228 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@DEFAULT_GROUP\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1662023773228,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":24371351259900} from /192.168.4.123
- 2022-09-01 16:17:13.288 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@DEFAULT_GROUP\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1662023833288,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":24431414224600} from /192.168.4.123
- 2022-09-01 16:18:13.301 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@DEFAULT_GROUP\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1662023893301,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":24491424174700} from /192.168.4.123
- 2022-09-01 16:18:37.483 INFO  [boundedElastic-5] com.alibaba.nacos.client.naming          : new ips(1) service: DEFAULT_GROUP@@manage -> [{"instanceId":"192.168.4.123#20008#DEFAULT#DEFAULT_GROUP@@manage","ip":"192.168.4.123","port":20008,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@manage","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
- 2022-09-01 16:18:37.499 INFO  [boundedElastic-5] com.alibaba.nacos.client.naming          : current ips:(1) service: DEFAULT_GROUP@@manage -> [{"instanceId":"192.168.4.123#20008#DEFAULT#DEFAULT_GROUP@@manage","ip":"192.168.4.123","port":20008,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@manage","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
- 2022-09-01 16:18:38.032 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@manage\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[{\"instanceId\":\"192.168.4.123#20008#DEFAULT#DEFAULT_GROUP@@manage\",\"ip\":\"192.168.4.123\",\"port\":20008,\"weight\":1.0,\"healthy\":true,\"enabled\":true,\"ephemeral\":true,\"clusterName\":\"DEFAULT\",\"serviceName\":\"DEFAULT_GROUP@@manage\",\"metadata\":{\"preserved.register.source\":\"SPRING_CLOUD\"},\"instanceHeartBeatInterval\":5000,\"instanceHeartBeatTimeOut\":15000,\"ipDeleteTimeout\":30000}],\"lastRefTime\":1662023918032,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":24516155345800} from /192.168.4.123
- 2022-09-01 16:19:13.271 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@DEFAULT_GROUP\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1662023953266,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":24551389586000} from /192.168.4.123
- 2022-09-01 16:20:13.268 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@DEFAULT_GROUP\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1662024013268,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":24611390547200} from /192.168.4.123
- 2022-09-01 16:20:43.715 INFO  [Thread-61] c.n.l.PollingServerListUpdater           : Shutting down the Executor Pool for PollingServerListUpdater
- 2022-09-01 16:20:43.861 INFO  [SpringContextShutdownHook] io.undertow                              : stopping server: Undertow - 2.1.4.Final
- 2022-09-01 16:20:43.931 INFO  [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskScheduler : Shutting down ExecutorService 'taskScheduler'
- 2022-09-01 16:20:43.931 INFO  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : [LISTENER] removing DEFAULT_GROUP@@gateway with DEFAULT from listener map
- 2022-09-01 16:20:44.031 INFO  [SpringContextShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
- 2022-09-01 16:20:44.031 INFO  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : [BEAT] removing beat: DEFAULT_GROUP@@gateway:192.168.4.123:20003 from beat map.
- 2022-09-01 16:20:44.031 INFO  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : [DEREGISTER-SERVICE] 25df333f-6d49-4053-9ecd-207058071611 deregistering service DEFAULT_GROUP@@gateway with instance: Instance{instanceId='null', ip='192.168.4.123', port=20003, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={}}
- 2022-09-01 16:20:44.046 INFO  [SpringContextShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
- 2022-09-01 16:20:44.046 INFO  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.beat.BeatReactor do shutdown begin
- 2022-09-01 16:20:44.547 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@gateway\",\"clusters\":\"DEFAULT\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1662024044547,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":24642672629600} from /192.168.4.123
- 2022-09-01 16:20:44.547 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : removed ips(1) service: DEFAULT_GROUP@@gateway@@DEFAULT -> [{"instanceId":"192.168.4.123#20003#DEFAULT#DEFAULT_GROUP@@gateway","ip":"192.168.4.123","port":20003,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@gateway","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
- 2022-09-01 16:20:44.547 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : current ips:(0) service: DEFAULT_GROUP@@gateway@@DEFAULT -> []
- 2022-09-01 16:34:03.927 INFO  [background-preinit] o.h.validator.internal.util.Version      : HV000001: Hibernate Validator 6.1.6.Final
- 2022-09-01 16:34:05.408 INFO  [main] c.a.n.c.c.impl.LocalConfigInfoProcessor  : LOCAL_SNAPSHOT_PATH:C:\Users\hoang\nacos\config
- 2022-09-01 16:34:05.470 INFO  [main] c.a.nacos.client.config.impl.Limiter     : limitTime:5.0
- 2022-09-01 16:34:05.639 INFO  [main] c.a.nacos.client.config.utils.JvmUtil    : isMultiInstance:false
- 2022-09-01 16:34:05.639 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'gateway.properties', group: 'WEB_CTV', data: gateway.port=20003
 
-gateway.application.name=gateway
+# feign
+common.hystrix.threadpool.core.size=10
+common.hystrix.threadpool.maximum.size=15
+common.hystrix.threadpool.maxQueue.size=200
 
-gateway.context-path=/
-
-gateway.redis.database=0
- 2022-09-01 16:34:05.639 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'apply-admin.properties', group: 'WEB_CTV', data: apply-admin.port=20004
-
-apply-admin.application.name=admin
-
-apply-admin.context-path=/
- 2022-09-01 16:34:05.655 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'apply-api.properties', group: 'WEB_CTV', data: apply-api.port=20005
-
-apply-api.application.name=api
-
-apply-api.context-path=/
- 2022-09-01 16:34:05.655 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'manage.properties', group: 'WEB_CTV', data: manage.port=20008
-
-manage.application.name=manage
-
-manage.context-path=/
-
-# database
-manage.db.host=localhost
-manage.db.port=3306
-manage.db.database=mysql
-manage.db.username=root
-manage.db.password=thaibinh
-
-# redis
-manage.redis.database=0
- 2022-09-01 16:34:05.670 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'library-major.properties', group: 'WEB_CTV', data: 
-#logback-spring
-logging.config=classpath:logback-spring.xml
-
-# spring.datasource.drive-class-name
-spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-# có sử dụng unicode hay không?
-userUnicode=true
-# mã hóa ký tự
-characterEncoding=UTF-8
-
-# redis
-common.redis.host=localhost
-common.redis.port=6379
-common.redis.password=
-common.redis.database=0
-
-# fein 
-spring.feign.enable=true
-hystrix.threadpool.core.size=10
-hystrix.threadpool.maximum.size=15
-hystrix.threadpool.maxQueue.size=200
-
-#mail
-common.mail.host=stmp.gmail.com
-common.mail.port=587
-common.mail.username=tac.taf.kcalb@gmail.com
-common.mail.password=piyuybfwomhktxyf
-common.mail.smtp.auth=true
-common.mail.smtp.starttls.enable=true
-common.mail.transport.protocol=smtp
- 2022-09-01 16:34:05.670 WARN  [main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[library-major.properties.properties] & group[WEB_CTV]
- 2022-09-01 16:34:05.686 WARN  [main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[library-major.properties-common-config-dev.properties] & group[WEB_CTV]
- 2022-09-01 16:34:05.686 INFO  [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-library-major.properties-common-config-dev.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-library-major.properties.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-library-major.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-manage.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-apply-api.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-apply-admin.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-gateway.properties,WEB_CTV'}]
- 2022-09-01 16:34:05.724 INFO  [main] com.os.ApplyGatewayApplication           : The following profiles are active: common-config-dev
- 2022-09-01 16:34:06.041 WARN  [main] onfigReactiveWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [E:\du_an\pj-web-tuyen-ctv\common-tools\target\classes\com\os\i18n\I18nConfig.class]; nested exception is java.lang.IllegalStateException: Error processing condition on com.os.i18n.I18nConfig
- 2022-09-01 16:34:06.041 INFO  [main] ConditionEvaluationReportLoggingListener : 
+ 2022-09-27 13:32:24.658 WARN  [main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[library-major.properties.properties] & group[WEB_CTV]
+ 2022-09-27 13:32:24.661 WARN  [main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[library-major.properties-common-config-dev.properties] & group[WEB_CTV]
+ 2022-09-27 13:32:24.661 INFO  [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-library-major.properties-common-config-dev.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-library-major.properties.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-library-major.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-upload.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-manage.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-content.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-admin.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-gateway.properties,WEB_CTV'}]
+ 2022-09-27 13:32:24.680 INFO  [main] com.os.ApplyGatewayApplication           : The following profiles are active: common-config-dev
+ 2022-09-27 13:32:25.545 INFO  [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-09-27 13:32:25.547 INFO  [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+ 2022-09-27 13:32:25.600 INFO  [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27ms. Found 0 Redis repository interfaces.
+ 2022-09-27 13:32:25.843 INFO  [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=2ef09ca4-bc54-3075-80be-2c32689bd3fa
+ 2022-09-27 13:32:25.863 INFO  [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ 2022-09-27 13:32:25.865 INFO  [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactiveLoadBalancerConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactiveLoadBalancerConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ 2022-09-27 13:32:25.868 INFO  [main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+ 2022-09-27 13:32:26.892 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
+ 2022-09-27 13:32:26.893 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
+ 2022-09-27 13:32:26.893 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
+ 2022-09-27 13:32:26.893 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
+ 2022-09-27 13:32:26.893 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
+ 2022-09-27 13:32:26.893 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
+ 2022-09-27 13:32:26.893 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
+ 2022-09-27 13:32:26.893 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
+ 2022-09-27 13:32:26.893 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
+ 2022-09-27 13:32:26.893 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
+ 2022-09-27 13:32:26.893 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
+ 2022-09-27 13:32:26.893 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
+ 2022-09-27 13:32:26.893 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
+ 2022-09-27 13:32:28.962 WARN  [main] onfigReactiveWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'keyExpiredListener' defined in file [C:\Account\du_an\pj-web-tuyen-ctv\pj-web-tuyen-ctv\common-redis\target\classes\com\os\KeyExpiredListener.class]: Invocation of init method failed; nested exception is org.springframework.data.redis.RedisConnectionFailureException: Cannot get Jedis connection; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: Failed connecting to localhost:4488
+ 2022-09-27 13:32:28.987 INFO  [main] ConditionEvaluationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
- 2022-09-01 16:34:06.110 ERROR [main] o.springframework.boot.SpringApplication : Application run failed
+ 2022-09-27 13:32:29.025 ERROR [main] o.springframework.boot.SpringApplication : Application run failed
  
-org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [E:\du_an\pj-web-tuyen-ctv\common-tools\target\classes\com\os\i18n\I18nConfig.class]; nested exception is java.lang.IllegalStateException: Error processing condition on com.os.i18n.I18nConfig
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:452)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.findCandidateComponents(ClassPathScanningCandidateComponentProvider.java:315)
-	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:276)
-	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:132)
-	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:296)
-	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:250)
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:207)
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:175)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:319)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:236)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:280)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:96)
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:707)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:533)
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'keyExpiredListener' defined in file [C:\Account\du_an\pj-web-tuyen-ctv\pj-web-tuyen-ctv\common-redis\target\classes\com\os\KeyExpiredListener.class]: Invocation of init method failed; nested exception is org.springframework.data.redis.RedisConnectionFailureException: Cannot get Jedis connection; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: Failed connecting to localhost:4488
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1794)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
 	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:62)
 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
@@ -282,640 +137,30 @@ org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read c
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
 	at com.os.ApplyGatewayApplication.main(ApplyGatewayApplication.java:21)
-Caused by: java.lang.IllegalStateException: Error processing condition on com.os.i18n.I18nConfig
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:88)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:71)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.isConditionMatch(ClassPathScanningCandidateComponentProvider.java:513)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.isCandidateComponent(ClassPathScanningCandidateComponentProvider.java:496)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:430)
-	... 21 common frames omitted
-Caused by: java.lang.IllegalStateException: The name and value attributes of @ConditionalOnProperty are exclusive
-	at org.springframework.util.Assert.state(Assert.java:76)
-	at org.springframework.boot.autoconfigure.condition.OnPropertyCondition$Spec.getNames(OnPropertyCondition.java:131)
-	at org.springframework.boot.autoconfigure.condition.OnPropertyCondition$Spec.<init>(OnPropertyCondition.java:122)
-	at org.springframework.boot.autoconfigure.condition.OnPropertyCondition.determineOutcome(OnPropertyCondition.java:88)
-	at org.springframework.boot.autoconfigure.condition.OnPropertyCondition.getMatchOutcome(OnPropertyCondition.java:55)
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47)
-	... 27 common frames omitted
-
-2022-09-01 16:34:47.694 INFO  [background-preinit] o.h.validator.internal.util.Version      : HV000001: Hibernate Validator 6.1.6.Final
- 2022-09-01 16:34:49.015 INFO  [main] c.a.n.c.c.impl.LocalConfigInfoProcessor  : LOCAL_SNAPSHOT_PATH:C:\Users\hoang\nacos\config
- 2022-09-01 16:34:49.075 INFO  [main] c.a.nacos.client.config.impl.Limiter     : limitTime:5.0
- 2022-09-01 16:34:49.116 INFO  [main] c.a.nacos.client.config.utils.JvmUtil    : isMultiInstance:false
- 2022-09-01 16:34:49.124 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'gateway.properties', group: 'WEB_CTV', data: gateway.port=20003
-
-gateway.application.name=gateway
-
-gateway.context-path=/
-
-gateway.redis.database=0
- 2022-09-01 16:34:49.134 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'apply-admin.properties', group: 'WEB_CTV', data: apply-admin.port=20004
-
-apply-admin.application.name=admin
-
-apply-admin.context-path=/
- 2022-09-01 16:34:49.136 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'apply-api.properties', group: 'WEB_CTV', data: apply-api.port=20005
-
-apply-api.application.name=api
-
-apply-api.context-path=/
- 2022-09-01 16:34:49.144 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'manage.properties', group: 'WEB_CTV', data: manage.port=20008
-
-manage.application.name=manage
-
-manage.context-path=/
-
-# database
-manage.db.host=localhost
-manage.db.port=3306
-manage.db.database=mysql
-manage.db.username=root
-manage.db.password=thaibinh
-
-# redis
-manage.redis.database=0
- 2022-09-01 16:34:49.146 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'library-major.properties', group: 'WEB_CTV', data: 
-#logback-spring
-logging.config=classpath:logback-spring.xml
-
-# spring.datasource.drive-class-name
-spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-# có sử dụng unicode hay không?
-userUnicode=true
-# mã hóa ký tự
-characterEncoding=UTF-8
-
-# redis
-common.redis.host=localhost
-common.redis.port=6379
-common.redis.password=
-common.redis.database=0
-
-# fein 
-spring.feign.enable=true
-hystrix.threadpool.core.size=10
-hystrix.threadpool.maximum.size=15
-hystrix.threadpool.maxQueue.size=200
-
-#mail
-common.mail.host=stmp.gmail.com
-common.mail.port=587
-common.mail.username=tac.taf.kcalb@gmail.com
-common.mail.password=piyuybfwomhktxyf
-common.mail.smtp.auth=true
-common.mail.smtp.starttls.enable=true
-common.mail.transport.protocol=smtp
- 2022-09-01 16:34:49.154 WARN  [main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[library-major.properties.properties] & group[WEB_CTV]
- 2022-09-01 16:34:49.154 WARN  [main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[library-major.properties-common-config-dev.properties] & group[WEB_CTV]
- 2022-09-01 16:34:49.164 INFO  [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-library-major.properties-common-config-dev.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-library-major.properties.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-library-major.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-manage.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-apply-api.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-apply-admin.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-gateway.properties,WEB_CTV'}]
- 2022-09-01 16:34:49.196 INFO  [main] com.os.ApplyGatewayApplication           : The following profiles are active: common-config-dev
- 2022-09-01 16:34:49.308 WARN  [main] onfigReactiveWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [E:\du_an\pj-web-tuyen-ctv\common-tools\target\classes\com\os\i18n\I18nConfig.class]; nested exception is java.lang.IllegalStateException: Error processing condition on com.os.i18n.I18nConfig
- 2022-09-01 16:34:49.308 INFO  [main] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
- 2022-09-01 16:34:49.328 ERROR [main] o.springframework.boot.SpringApplication : Application run failed
- 
-org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [E:\du_an\pj-web-tuyen-ctv\common-tools\target\classes\com\os\i18n\I18nConfig.class]; nested exception is java.lang.IllegalStateException: Error processing condition on com.os.i18n.I18nConfig
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:452)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.findCandidateComponents(ClassPathScanningCandidateComponentProvider.java:315)
-	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:276)
-	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:132)
-	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:296)
-	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:250)
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:207)
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:175)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:319)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:236)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:280)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:96)
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:707)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:533)
-	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:62)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:405)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
-	at com.os.ApplyGatewayApplication.main(ApplyGatewayApplication.java:21)
-Caused by: java.lang.IllegalStateException: Error processing condition on com.os.i18n.I18nConfig
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:88)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:71)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.isConditionMatch(ClassPathScanningCandidateComponentProvider.java:513)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.isCandidateComponent(ClassPathScanningCandidateComponentProvider.java:496)
-	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:430)
-	... 21 common frames omitted
-Caused by: java.lang.IllegalStateException: The name and value attributes of @ConditionalOnProperty are exclusive
-	at org.springframework.util.Assert.state(Assert.java:76)
-	at org.springframework.boot.autoconfigure.condition.OnPropertyCondition$Spec.getNames(OnPropertyCondition.java:131)
-	at org.springframework.boot.autoconfigure.condition.OnPropertyCondition$Spec.<init>(OnPropertyCondition.java:122)
-	at org.springframework.boot.autoconfigure.condition.OnPropertyCondition.determineOutcome(OnPropertyCondition.java:88)
-	at org.springframework.boot.autoconfigure.condition.OnPropertyCondition.getMatchOutcome(OnPropertyCondition.java:55)
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47)
-	... 27 common frames omitted
-
-2022-09-01 16:35:27.830 INFO  [background-preinit] o.h.validator.internal.util.Version      : HV000001: Hibernate Validator 6.1.6.Final
- 2022-09-01 16:35:29.060 INFO  [main] c.a.n.c.c.impl.LocalConfigInfoProcessor  : LOCAL_SNAPSHOT_PATH:C:\Users\hoang\nacos\config
- 2022-09-01 16:35:29.123 INFO  [main] c.a.nacos.client.config.impl.Limiter     : limitTime:5.0
- 2022-09-01 16:35:29.161 INFO  [main] c.a.nacos.client.config.utils.JvmUtil    : isMultiInstance:false
- 2022-09-01 16:35:29.161 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'gateway.properties', group: 'WEB_CTV', data: gateway.port=20003
-
-gateway.application.name=gateway
-
-gateway.context-path=/
-
-gateway.redis.database=0
- 2022-09-01 16:35:29.161 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'apply-admin.properties', group: 'WEB_CTV', data: apply-admin.port=20004
-
-apply-admin.application.name=admin
-
-apply-admin.context-path=/
- 2022-09-01 16:35:29.161 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'apply-api.properties', group: 'WEB_CTV', data: apply-api.port=20005
-
-apply-api.application.name=api
-
-apply-api.context-path=/
- 2022-09-01 16:35:29.176 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'manage.properties', group: 'WEB_CTV', data: manage.port=20008
-
-manage.application.name=manage
-
-manage.context-path=/
-
-# database
-manage.db.host=localhost
-manage.db.port=3306
-manage.db.database=mysql
-manage.db.username=root
-manage.db.password=thaibinh
-
-# redis
-manage.redis.database=0
- 2022-09-01 16:35:29.176 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'library-major.properties', group: 'WEB_CTV', data: 
-#logback-spring
-logging.config=classpath:logback-spring.xml
-
-# spring.datasource.drive-class-name
-spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-# có sử dụng unicode hay không?
-userUnicode=true
-# mã hóa ký tự
-characterEncoding=UTF-8
-
-# redis
-common.redis.host=localhost
-common.redis.port=6379
-common.redis.password=
-common.redis.database=0
-
-# fein 
-spring.feign.enable=true
-hystrix.threadpool.core.size=10
-hystrix.threadpool.maximum.size=15
-hystrix.threadpool.maxQueue.size=200
-
-#mail
-common.mail.host=stmp.gmail.com
-common.mail.port=587
-common.mail.username=tac.taf.kcalb@gmail.com
-common.mail.password=piyuybfwomhktxyf
-common.mail.smtp.auth=true
-common.mail.smtp.starttls.enable=true
-common.mail.transport.protocol=smtp
- 2022-09-01 16:35:29.176 WARN  [main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[library-major.properties.properties] & group[WEB_CTV]
- 2022-09-01 16:35:29.176 WARN  [main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[library-major.properties-common-config-dev.properties] & group[WEB_CTV]
- 2022-09-01 16:35:29.192 INFO  [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-library-major.properties-common-config-dev.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-library-major.properties.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-library-major.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-manage.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-apply-api.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-apply-admin.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-gateway.properties,WEB_CTV'}]
- 2022-09-01 16:35:29.223 INFO  [main] com.os.ApplyGatewayApplication           : The following profiles are active: common-config-dev
- 2022-09-01 16:35:30.696 ERROR [main] o.springframework.boot.SpringApplication : Application run failed
- 
-java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration.propertySourcesPlaceholderConfigurer
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108)
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:184)
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:144)
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:120)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:331)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:236)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:280)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:96)
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:707)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:533)
-	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:62)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:405)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
-	at com.os.ApplyGatewayApplication.main(ApplyGatewayApplication.java:21)
-Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.os.i18n.I18nConfig] from ClassLoader [sun.misc.Launcher$AppClassLoader@18b4aac2]
-	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:481)
-	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:358)
-	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:414)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$2(AbstractAutowireCapableBeanFactory.java:742)
-	at java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1660)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:741)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:680)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:648)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1614)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:523)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:495)
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanNamesForType(OnBeanCondition.java:238)
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:231)
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:221)
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:169)
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:144)
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47)
-	... 18 common frames omitted
-Caused by: java.lang.NoClassDefFoundError: org/springframework/web/servlet/LocaleResolver
-	at java.lang.Class.getDeclaredMethods0(Native Method)
-	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701)
-	at java.lang.Class.getDeclaredMethods(Class.java:1975)
-	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:463)
-	... 34 common frames omitted
-Caused by: java.lang.ClassNotFoundException: org.springframework.web.servlet.LocaleResolver
-	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
-	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	... 38 common frames omitted
-
-2022-09-01 16:35:30.712 WARN  [main] o.springframework.boot.SpringApplication : Unable to close ApplicationContext
- 
-java.lang.IllegalStateException: Failed to introspect Class [com.os.i18n.I18nConfig] from ClassLoader [sun.misc.Launcher$AppClassLoader@18b4aac2]
-	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:481)
-	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:358)
-	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:414)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$2(AbstractAutowireCapableBeanFactory.java:742)
-	at java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1660)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:741)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:680)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:648)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1614)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:523)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:495)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:620)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:612)
-	at org.springframework.context.support.AbstractApplicationContext.getBeansOfType(AbstractApplicationContext.java:1243)
-	at org.springframework.boot.SpringApplication.getExitCodeFromMappedException(SpringApplication.java:880)
-	at org.springframework.boot.SpringApplication.getExitCodeFromException(SpringApplication.java:868)
-	at org.springframework.boot.SpringApplication.handleExitCode(SpringApplication.java:855)
-	at org.springframework.boot.SpringApplication.handleRunFailure(SpringApplication.java:806)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:325)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
-	at com.os.ApplyGatewayApplication.main(ApplyGatewayApplication.java:21)
-Caused by: java.lang.NoClassDefFoundError: org/springframework/web/servlet/LocaleResolver
-	at java.lang.Class.getDeclaredMethods0(Native Method)
-	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701)
-	at java.lang.Class.getDeclaredMethods(Class.java:1975)
-	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:463)
-	... 21 common frames omitted
-Caused by: java.lang.ClassNotFoundException: org.springframework.web.servlet.LocaleResolver
-	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
-	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+Caused by: org.springframework.data.redis.RedisConnectionFailureException: Cannot get Jedis connection; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: Failed connecting to localhost:4488
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.fetchJedisConnector(JedisConnectionFactory.java:282)
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.getConnection(JedisConnectionFactory.java:476)
+	at org.springframework.data.redis.listener.KeyspaceEventMessageListener.init(KeyspaceEventMessageListener.java:85)
+	at org.springframework.data.redis.listener.KeyspaceEventMessageListener.afterPropertiesSet(KeyspaceEventMessageListener.java:137)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1790)
+	... 17 common frames omitted
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: Failed connecting to localhost:4488
+	at redis.clients.jedis.Connection.connect(Connection.java:170)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:113)
+	at redis.clients.jedis.BinaryJedis.connect(BinaryJedis.java:2024)
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.fetchJedisConnector(JedisConnectionFactory.java:277)
+	... 22 common frames omitted
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at redis.clients.jedis.DefaultJedisSocketFactory.createSocket(DefaultJedisSocketFactory.java:53)
+	at redis.clients.jedis.Connection.connect(Connection.java:163)
 	... 25 common frames omitted
 
-2022-09-01 16:40:17.371 INFO  [background-preinit] o.h.validator.internal.util.Version      : HV000001: Hibernate Validator 6.1.6.Final
- 2022-09-01 16:40:18.600 INFO  [main] c.a.n.c.c.impl.LocalConfigInfoProcessor  : LOCAL_SNAPSHOT_PATH:C:\Users\hoang\nacos\config
- 2022-09-01 16:40:18.665 INFO  [main] c.a.nacos.client.config.impl.Limiter     : limitTime:5.0
- 2022-09-01 16:40:18.696 INFO  [main] c.a.nacos.client.config.utils.JvmUtil    : isMultiInstance:false
- 2022-09-01 16:40:18.696 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'gateway.properties', group: 'WEB_CTV', data: gateway.port=20003
-
-gateway.application.name=gateway
-
-gateway.context-path=/
-
-gateway.redis.database=0
- 2022-09-01 16:40:18.696 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'apply-admin.properties', group: 'WEB_CTV', data: apply-admin.port=20004
-
-apply-admin.application.name=admin
-
-apply-admin.context-path=/
- 2022-09-01 16:40:18.712 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'apply-api.properties', group: 'WEB_CTV', data: apply-api.port=20005
-
-apply-api.application.name=api
-
-apply-api.context-path=/
- 2022-09-01 16:40:18.712 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'manage.properties', group: 'WEB_CTV', data: manage.port=20008
-
-manage.application.name=manage
-
-manage.context-path=/
-
-# database
-manage.db.host=localhost
-manage.db.port=3306
-manage.db.database=mysql
-manage.db.username=root
-manage.db.password=thaibinh
-
-# redis
-manage.redis.database=0
- 2022-09-01 16:40:18.712 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'library-major.properties', group: 'WEB_CTV', data: 
-#logback-spring
-logging.config=classpath:logback-spring.xml
-
-# spring.datasource.drive-class-name
-spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-# có sử dụng unicode hay không?
-userUnicode=true
-# mã hóa ký tự
-characterEncoding=UTF-8
-
-# redis
-common.redis.host=localhost
-common.redis.port=6379
-common.redis.password=
-common.redis.database=0
-
-# fein 
-spring.feign.enable=true
-hystrix.threadpool.core.size=10
-hystrix.threadpool.maximum.size=15
-hystrix.threadpool.maxQueue.size=200
-
-#mail
-common.mail.host=stmp.gmail.com
-common.mail.port=587
-common.mail.username=tac.taf.kcalb@gmail.com
-common.mail.password=piyuybfwomhktxyf
-common.mail.smtp.auth=true
-common.mail.smtp.starttls.enable=true
-common.mail.transport.protocol=smtp
- 2022-09-01 16:40:18.712 WARN  [main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[library-major.properties.properties] & group[WEB_CTV]
- 2022-09-01 16:40:18.728 WARN  [main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[library-major.properties-common-config-dev.properties] & group[WEB_CTV]
- 2022-09-01 16:40:18.728 INFO  [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-library-major.properties-common-config-dev.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-library-major.properties.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-library-major.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-manage.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-apply-api.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-apply-admin.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-gateway.properties,WEB_CTV'}]
- 2022-09-01 16:40:18.759 INFO  [main] com.os.ApplyGatewayApplication           : The following profiles are active: common-config-dev
- 2022-09-01 16:40:19.816 INFO  [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
- 2022-09-01 16:40:19.832 INFO  [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
- 2022-09-01 16:40:19.925 INFO  [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47ms. Found 0 Redis repository interfaces.
- 2022-09-01 16:40:20.300 INFO  [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ce01a458-fb9d-3c88-9763-3ac81d64ced7
- 2022-09-01 16:40:20.347 INFO  [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
- 2022-09-01 16:40:20.347 INFO  [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactiveLoadBalancerConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactiveLoadBalancerConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
- 2022-09-01 16:40:20.363 INFO  [main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
- 2022-09-01 16:40:22.996 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
- 2022-09-01 16:40:22.996 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
- 2022-09-01 16:40:22.996 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
- 2022-09-01 16:40:22.996 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
- 2022-09-01 16:40:22.996 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
- 2022-09-01 16:40:22.996 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
- 2022-09-01 16:40:22.996 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
- 2022-09-01 16:40:22.996 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
- 2022-09-01 16:40:22.996 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
- 2022-09-01 16:40:22.996 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
- 2022-09-01 16:40:22.996 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
- 2022-09-01 16:40:22.996 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
- 2022-09-01 16:40:22.996 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
- 2022-09-01 16:40:23.243 INFO  [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService
- 2022-09-01 16:40:23.243 INFO  [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'taskThreadPoolExecutor'
- 2022-09-01 16:40:23.243 INFO  [main] o.s.s.concurrent.ThreadPoolTaskScheduler : Initializing ExecutorService
- 2022-09-01 16:40:23.259 INFO  [main] o.s.s.concurrent.ThreadPoolTaskScheduler : Initializing ExecutorService 'taskScheduler'
- 2022-09-01 16:40:23.275 WARN  [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
- 2022-09-01 16:40:23.275 INFO  [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
- 2022-09-01 16:40:23.290 WARN  [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
- 2022-09-01 16:40:23.290 INFO  [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
- 2022-09-01 16:40:24.973 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
- 2022-09-01 16:40:24.973 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Environment :null
- 2022-09-01 16:40:24.973 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
- 2022-09-01 16:40:25.114 INFO  [main] com.alibaba.nacos.client.naming          : [LISTENER] adding DEFAULT_GROUP@@gateway with DEFAULT to listener map
- 2022-09-01 16:40:25.208 INFO  [main] io.undertow                              : starting server: Undertow - 2.1.4.Final
- 2022-09-01 16:40:25.270 INFO  [main] org.xnio                                 : XNIO version 3.8.0.Final
- 2022-09-01 16:40:25.286 INFO  [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.8.0.Final
- 2022-09-01 16:40:25.380 INFO  [main] org.jboss.threads                        : JBoss Threads version 3.1.0.Final
- 2022-09-01 16:40:25.473 INFO  [main] o.s.b.w.e.undertow.UndertowWebServer     : Undertow started on port(s) 20003 (http)
- 2022-09-01 16:40:25.583 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@gateway\",\"clusters\":\"DEFAULT\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1662025225583,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":25823704983600} from /192.168.4.123
- 2022-09-01 16:40:26.223 INFO  [main] com.alibaba.nacos.client.naming          : [BEAT] adding beat: BeatInfo{port=20003, ip='192.168.4.123', weight=1.0, serviceName='DEFAULT_GROUP@@gateway', cluster='DEFAULT', metadata={preserved.register.source=SPRING_CLOUD}, scheduled=false, period=5000, stopped=false} to beat map.
- 2022-09-01 16:40:26.223 INFO  [main] com.alibaba.nacos.client.naming          : [REGISTER-SERVICE] 25df333f-6d49-4053-9ecd-207058071611 registering service DEFAULT_GROUP@@gateway with instance: Instance{instanceId='null', ip='192.168.4.123', port=20003, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={preserved.register.source=SPRING_CLOUD}}
- 2022-09-01 16:40:26.223 INFO  [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP gateway 192.168.4.123:20003 register finished
- 2022-09-01 16:40:26.251 INFO  [main] com.os.ApplyGatewayApplication           : Started ApplyGatewayApplication in 10.188 seconds (JVM running for 11.476)
- 2022-09-01 16:40:26.251 INFO  [main] com.os.config.GatewayConfig              : ============>apply-gateway starts successfully<===========
- 2022-09-01 16:40:26.251 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
- 2022-09-01 16:40:26.251 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Environment :null
- 2022-09-01 16:40:26.251 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
- 2022-09-01 16:40:26.251 INFO  [main] com.os.nacos.NacosConfig                 : =====> appId: 192.168.4.123
- 2022-09-01 16:40:26.267 INFO  [main] com.alibaba.nacos.client.naming          : init new ips(0) service: DEFAULT_GROUP@@DEFAULT_GROUP -> []
- 2022-09-01 16:40:26.267 INFO  [main] com.alibaba.nacos.client.naming          : current ips:(0) service: DEFAULT_GROUP@@DEFAULT_GROUP -> []
- 2022-09-01 16:40:26.267 INFO  [main] com.os.nacos.NacosConfig                 : =====> all instance of (DEFAULT_GROUP@@gateway) is: []
- 2022-09-01 16:40:26.282 INFO  [main] com.alibaba.nacos.client.naming          : [LISTENER] adding DEFAULT_GROUP@@DEFAULT_GROUP@@gateway with  to listener map
- 2022-09-01 16:40:26.282 INFO  [com.alibaba.nacos.naming.client.listener] com.os.nacos.NacosConfig                 : =====> serviceName: DEFAULT_GROUP@@DEFAULT_GROUP@@gateway
- 2022-09-01 16:40:26.282 INFO  [com.alibaba.nacos.naming.client.listener] com.os.nacos.NacosConfig                 : =====> instances of: []
- 2022-09-01 16:40:26.326 INFO  [boundedElastic-3] com.alibaba.nacos.client.naming          : new ips(1) service: DEFAULT_GROUP@@gateway -> [{"instanceId":"192.168.4.123#20003#DEFAULT#DEFAULT_GROUP@@gateway","ip":"192.168.4.123","port":20003,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@gateway","metadata":{"preserved.register.source":"SPRING_CLOUD"},"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"ipDeleteTimeout":30000}]
- 2022-09-01 16:40:26.326 INFO  [boundedElastic-3] com.alibaba.nacos.client.naming          : current ips:(1) service: DEFAULT_GROUP@@gateway -> [{"instanceId":"192.168.4.123#20003#DEFAULT#DEFAULT_GROUP@@gateway","ip":"192.168.4.123","port":20003,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@gateway","metadata":{"preserved.register.source":"SPRING_CLOUD"},"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"ipDeleteTimeout":30000}]
- 2022-09-01 16:40:26.779 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@DEFAULT_GROUP\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1662025226779,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":25824901272500} from /192.168.4.123
- 2022-09-01 16:40:26.779 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@gateway\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[{\"instanceId\":\"192.168.4.123#20003#DEFAULT#DEFAULT_GROUP@@gateway\",\"ip\":\"192.168.4.123\",\"port\":20003,\"weight\":1.0,\"healthy\":true,\"enabled\":true,\"ephemeral\":true,\"clusterName\":\"DEFAULT\",\"serviceName\":\"DEFAULT_GROUP@@gateway\",\"metadata\":{\"preserved.register.source\":\"SPRING_CLOUD\"},\"instanceHeartBeatInterval\":5000,\"instanceHeartBeatTimeOut\":15000,\"ipDeleteTimeout\":30000}],\"lastRefTime\":1662025226779,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":25824901444000} from /192.168.4.123
- 2022-09-01 16:40:27.314 INFO  [main] c.netflix.config.ChainedDynamicProperty  : Flipping property: gateway.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
- 2022-09-01 16:40:27.361 INFO  [main] c.netflix.loadbalancer.BaseLoadBalancer  : Client: gateway instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=gateway,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
- 2022-09-01 16:40:27.377 INFO  [main] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
- 2022-09-01 16:40:27.392 INFO  [main] c.netflix.config.ChainedDynamicProperty  : Flipping property: gateway.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
- 2022-09-01 16:40:27.392 INFO  [main] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client gateway initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=gateway,current list of Servers=[192.168.4.123:20003],Load balancer stats=Zone stats: {unknown=[Zone:unknown;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
-},Server stats: [[Server:192.168.4.123:20003;	Zone:UNKNOWN;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 07:00:00 ICT 1970;	First connection made: Thu Jan 01 07:00:00 ICT 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
-]}ServerList:com.alibaba.cloud.nacos.ribbon.NacosServerList@581c9bb7
- 2022-09-01 16:40:27.439 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] gateway.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
- 2022-09-01 16:40:27.439 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=gateway.properties, group=WEB_CTV, cnt=1
- 2022-09-01 16:40:27.439 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] library-major.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
- 2022-09-01 16:40:27.439 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=library-major.properties, group=WEB_CTV, cnt=1
- 2022-09-01 16:40:27.439 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] apply-admin.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
- 2022-09-01 16:40:27.439 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=apply-admin.properties, group=WEB_CTV, cnt=1
- 2022-09-01 16:40:27.439 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] library-major.properties-common-config-dev.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
- 2022-09-01 16:40:27.439 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=library-major.properties-common-config-dev.properties, group=WEB_CTV, cnt=1
- 2022-09-01 16:40:27.439 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] library-major.properties.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
- 2022-09-01 16:40:27.439 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=library-major.properties.properties, group=WEB_CTV, cnt=1
- 2022-09-01 16:40:27.439 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] manage.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
- 2022-09-01 16:40:27.439 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=manage.properties, group=WEB_CTV, cnt=1
- 2022-09-01 16:40:27.439 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] apply-api.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
- 2022-09-01 16:40:27.439 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=apply-api.properties, group=WEB_CTV, cnt=1
- 2022-09-01 16:40:28.142 INFO  [com.alibaba.nacos.client.naming.updater] com.alibaba.nacos.client.naming          : new ips(1) service: DEFAULT_GROUP@@gateway@@DEFAULT -> [{"instanceId":"192.168.4.123#20003#DEFAULT#DEFAULT_GROUP@@gateway","ip":"192.168.4.123","port":20003,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@gateway","metadata":{"preserved.register.source":"SPRING_CLOUD"},"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"ipDeleteTimeout":30000}]
- 2022-09-01 16:40:28.142 INFO  [com.alibaba.nacos.client.naming.updater] com.alibaba.nacos.client.naming          : current ips:(1) service: DEFAULT_GROUP@@gateway@@DEFAULT -> [{"instanceId":"192.168.4.123#20003#DEFAULT#DEFAULT_GROUP@@gateway","ip":"192.168.4.123","port":20003,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@gateway","metadata":{"preserved.register.source":"SPRING_CLOUD"},"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"ipDeleteTimeout":30000}]
- 2022-09-01 16:40:28.393 INFO  [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: gateway.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
- 2022-09-01 16:40:55.306 INFO  [boundedElastic-1] com.alibaba.nacos.client.naming          : new ips(1) service: DEFAULT_GROUP@@admin -> [{"instanceId":"192.168.4.123#20004#DEFAULT#DEFAULT_GROUP@@admin","ip":"192.168.4.123","port":20004,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@admin","metadata":{"preserved.register.source":"SPRING_CLOUD"},"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"ipDeleteTimeout":30000}]
- 2022-09-01 16:40:55.306 INFO  [boundedElastic-1] com.alibaba.nacos.client.naming          : current ips:(1) service: DEFAULT_GROUP@@admin -> [{"instanceId":"192.168.4.123#20004#DEFAULT#DEFAULT_GROUP@@admin","ip":"192.168.4.123","port":20004,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@admin","metadata":{"preserved.register.source":"SPRING_CLOUD"},"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"ipDeleteTimeout":30000}]
- 2022-09-01 16:40:55.821 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[{\"instanceId\":\"192.168.4.123#20004#DEFAULT#DEFAULT_GROUP@@admin\",\"ip\":\"192.168.4.123\",\"port\":20004,\"weight\":1.0,\"healthy\":true,\"enabled\":true,\"ephemeral\":true,\"clusterName\":\"DEFAULT\",\"serviceName\":\"DEFAULT_GROUP@@admin\",\"metadata\":{\"preserved.register.source\":\"SPRING_CLOUD\"},\"instanceHeartBeatInterval\":5000,\"instanceHeartBeatTimeOut\":15000,\"ipDeleteTimeout\":30000}],\"lastRefTime\":1662025255821,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":25853945071600} from /192.168.4.123
- 2022-09-01 16:41:12.587 INFO  [Thread-46] c.n.l.PollingServerListUpdater           : Shutting down the Executor Pool for PollingServerListUpdater
- 2022-09-01 16:41:12.600 INFO  [SpringContextShutdownHook] io.undertow                              : stopping server: Undertow - 2.1.4.Final
- 2022-09-01 16:41:12.630 INFO  [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskScheduler : Shutting down ExecutorService 'taskScheduler'
- 2022-09-01 16:41:12.630 INFO  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : [LISTENER] removing DEFAULT_GROUP@@gateway with DEFAULT from listener map
- 2022-09-01 16:41:12.661 INFO  [SpringContextShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
- 2022-09-01 16:41:12.661 INFO  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : [BEAT] removing beat: DEFAULT_GROUP@@gateway:192.168.4.123:20003 from beat map.
- 2022-09-01 16:41:12.661 INFO  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : [DEREGISTER-SERVICE] 25df333f-6d49-4053-9ecd-207058071611 deregistering service DEFAULT_GROUP@@gateway with instance: Instance{instanceId='null', ip='192.168.4.123', port=20003, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={}}
- 2022-09-01 16:41:12.677 INFO  [SpringContextShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
- 2022-09-01 16:41:12.677 INFO  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.beat.BeatReactor do shutdown begin
- 2022-09-01 16:41:13.177 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@gateway\",\"clusters\":\"DEFAULT\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1662025273177,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":25871300714400} from /192.168.4.123
- 2022-09-01 16:41:13.177 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : removed ips(1) service: DEFAULT_GROUP@@gateway@@DEFAULT -> [{"instanceId":"192.168.4.123#20003#DEFAULT#DEFAULT_GROUP@@gateway","ip":"192.168.4.123","port":20003,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@gateway","metadata":{"preserved.register.source":"SPRING_CLOUD"},"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"ipDeleteTimeout":30000}]
- 2022-09-01 16:41:13.177 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : current ips:(0) service: DEFAULT_GROUP@@gateway@@DEFAULT -> []
- 2022-09-01 17:28:34.203 INFO  [background-preinit] o.h.validator.internal.util.Version      : HV000001: Hibernate Validator 6.1.6.Final
- 2022-09-01 17:28:35.682 INFO  [main] c.a.n.c.c.impl.LocalConfigInfoProcessor  : LOCAL_SNAPSHOT_PATH:C:\Users\hoang\nacos\config
- 2022-09-01 17:28:35.760 INFO  [main] c.a.nacos.client.config.impl.Limiter     : limitTime:5.0
- 2022-09-01 17:28:35.854 INFO  [main] c.a.nacos.client.config.utils.JvmUtil    : isMultiInstance:false
- 2022-09-01 17:28:35.854 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'gateway.properties', group: 'WEB_CTV', data: gateway.port=20003
-
-gateway.application.name=gateway
-
-gateway.context-path=/
-
-gateway.redis.database=0
- 2022-09-01 17:28:35.869 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'apply-admin.properties', group: 'WEB_CTV', data: apply-admin.port=20004
-
-apply-admin.application.name=admin
-
-apply-admin.context-path=/
- 2022-09-01 17:28:35.869 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'apply-api.properties', group: 'WEB_CTV', data: apply-api.port=20005
-
-apply-api.application.name=api
-
-apply-api.context-path=/
- 2022-09-01 17:28:35.885 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'manage.properties', group: 'WEB_CTV', data: manage.port=20008
-
-manage.application.name=manage
-
-manage.context-path=/
-
-# database
-manage.db.host=localhost
-manage.db.port=3306
-manage.db.database=mysql
-manage.db.username=root
-manage.db.password=thaibinh
-
-# redis
-manage.redis.database=0
- 2022-09-01 17:28:35.885 DEBUG [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'library-major.properties', group: 'WEB_CTV', data: 
-#logback-spring
-logging.config=classpath:logback-spring.xml
-
-# spring.datasource.drive-class-name
-spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-# có sử dụng unicode hay không?
-userUnicode=true
-# mã hóa ký tự
-characterEncoding=UTF-8
-
-# redis
-common.redis.host=localhost
-common.redis.port=6379
-common.redis.password=
-common.redis.database=0
-
-# fein 
-spring.feign.enable=true
-hystrix.threadpool.core.size=10
-hystrix.threadpool.maximum.size=15
-hystrix.threadpool.maxQueue.size=200
-
-#mail
-common.mail.host=stmp.gmail.com
-common.mail.port=587
-common.mail.username=tac.taf.kcalb@gmail.com
-common.mail.password=piyuybfwomhktxyf
-common.mail.smtp.auth=true
-common.mail.smtp.starttls.enable=true
-common.mail.transport.protocol=smtp
- 2022-09-01 17:28:35.901 WARN  [main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[library-major.properties.properties] & group[WEB_CTV]
- 2022-09-01 17:28:35.901 WARN  [main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[library-major.properties-common-config-dev.properties] & group[WEB_CTV]
- 2022-09-01 17:28:35.901 INFO  [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-library-major.properties-common-config-dev.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-library-major.properties.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-library-major.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-manage.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-apply-api.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-apply-admin.properties,WEB_CTV'}, BootstrapPropertySource {name='bootstrapProperties-gateway.properties,WEB_CTV'}]
- 2022-09-01 17:28:35.948 INFO  [main] com.os.ApplyGatewayApplication           : The following profiles are active: common-config-dev
- 2022-09-01 17:28:37.942 INFO  [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
- 2022-09-01 17:28:37.954 INFO  [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
- 2022-09-01 17:28:38.022 INFO  [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29ms. Found 0 Redis repository interfaces.
- 2022-09-01 17:28:38.419 INFO  [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ce01a458-fb9d-3c88-9763-3ac81d64ced7
- 2022-09-01 17:28:38.460 INFO  [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
- 2022-09-01 17:28:38.460 INFO  [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactiveLoadBalancerConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactiveLoadBalancerConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
- 2022-09-01 17:28:38.476 INFO  [main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
- 2022-09-01 17:28:42.256 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
- 2022-09-01 17:28:42.256 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
- 2022-09-01 17:28:42.256 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
- 2022-09-01 17:28:42.256 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
- 2022-09-01 17:28:42.256 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
- 2022-09-01 17:28:42.256 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
- 2022-09-01 17:28:42.256 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
- 2022-09-01 17:28:42.256 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
- 2022-09-01 17:28:42.256 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
- 2022-09-01 17:28:42.256 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
- 2022-09-01 17:28:42.256 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
- 2022-09-01 17:28:42.256 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
- 2022-09-01 17:28:42.256 INFO  [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
- 2022-09-01 17:28:42.549 INFO  [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService
- 2022-09-01 17:28:42.549 INFO  [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'taskThreadPoolExecutor'
- 2022-09-01 17:28:42.549 INFO  [main] o.s.s.concurrent.ThreadPoolTaskScheduler : Initializing ExecutorService
- 2022-09-01 17:28:42.564 INFO  [main] o.s.s.concurrent.ThreadPoolTaskScheduler : Initializing ExecutorService 'taskScheduler'
- 2022-09-01 17:28:42.580 WARN  [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
- 2022-09-01 17:28:42.580 INFO  [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
- 2022-09-01 17:28:42.596 WARN  [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
- 2022-09-01 17:28:42.596 INFO  [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
- 2022-09-01 17:28:45.395 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
- 2022-09-01 17:28:45.395 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Environment :null
- 2022-09-01 17:28:45.410 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
- 2022-09-01 17:28:45.645 INFO  [main] com.alibaba.nacos.client.naming          : [LISTENER] adding DEFAULT_GROUP@@gateway with DEFAULT to listener map
- 2022-09-01 17:28:45.738 INFO  [main] io.undertow                              : starting server: Undertow - 2.1.4.Final
- 2022-09-01 17:28:45.754 INFO  [main] org.xnio                                 : XNIO version 3.8.0.Final
- 2022-09-01 17:28:45.770 INFO  [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.8.0.Final
- 2022-09-01 17:28:45.879 INFO  [main] org.jboss.threads                        : JBoss Threads version 3.1.0.Final
- 2022-09-01 17:28:45.988 INFO  [main] o.s.b.w.e.undertow.UndertowWebServer     : Undertow started on port(s) 20003 (http)
- 2022-09-01 17:28:46.129 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@gateway\",\"clusters\":\"DEFAULT\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1662028126129,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":28724253523000} from /192.168.4.123
- 2022-09-01 17:28:47.144 INFO  [main] com.alibaba.nacos.client.naming          : [BEAT] adding beat: BeatInfo{port=20003, ip='192.168.4.123', weight=1.0, serviceName='DEFAULT_GROUP@@gateway', cluster='DEFAULT', metadata={preserved.register.source=SPRING_CLOUD}, scheduled=false, period=5000, stopped=false} to beat map.
- 2022-09-01 17:28:47.145 INFO  [main] com.alibaba.nacos.client.naming          : [REGISTER-SERVICE] 25df333f-6d49-4053-9ecd-207058071611 registering service DEFAULT_GROUP@@gateway with instance: Instance{instanceId='null', ip='192.168.4.123', port=20003, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={preserved.register.source=SPRING_CLOUD}}
- 2022-09-01 17:28:47.165 INFO  [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP gateway 192.168.4.123:20003 register finished
- 2022-09-01 17:28:47.194 INFO  [main] com.os.ApplyGatewayApplication           : Started ApplyGatewayApplication in 14.595 seconds (JVM running for 16.298)
- 2022-09-01 17:28:47.194 INFO  [main] com.os.config.GatewayConfig              : ============>apply-gateway starts successfully<===========
- 2022-09-01 17:28:47.194 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
- 2022-09-01 17:28:47.194 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Environment :null
- 2022-09-01 17:28:47.194 INFO  [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
- 2022-09-01 17:28:47.194 INFO  [main] com.os.nacos.NacosConfig                 : =====> appId: 192.168.4.123
- 2022-09-01 17:28:47.225 INFO  [main] com.alibaba.nacos.client.naming          : init new ips(0) service: DEFAULT_GROUP@@DEFAULT_GROUP -> []
- 2022-09-01 17:28:47.234 INFO  [main] com.alibaba.nacos.client.naming          : current ips:(0) service: DEFAULT_GROUP@@DEFAULT_GROUP -> []
- 2022-09-01 17:28:47.234 INFO  [main] com.os.nacos.NacosConfig                 : =====> all instance of (DEFAULT_GROUP@@gateway) is: []
- 2022-09-01 17:28:47.234 INFO  [main] com.alibaba.nacos.client.naming          : [LISTENER] adding DEFAULT_GROUP@@DEFAULT_GROUP@@gateway with  to listener map
- 2022-09-01 17:28:47.245 INFO  [com.alibaba.nacos.naming.client.listener] com.os.nacos.NacosConfig                 : =====> serviceName: DEFAULT_GROUP@@DEFAULT_GROUP@@gateway
- 2022-09-01 17:28:47.245 INFO  [com.alibaba.nacos.naming.client.listener] com.os.nacos.NacosConfig                 : =====> instances of: []
- 2022-09-01 17:28:47.254 INFO  [boundedElastic-4] com.alibaba.nacos.client.naming          : new ips(1) service: DEFAULT_GROUP@@gateway -> [{"instanceId":"192.168.4.123#20003#DEFAULT#DEFAULT_GROUP@@gateway","ip":"192.168.4.123","port":20003,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@gateway","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
- 2022-09-01 17:28:47.260 INFO  [boundedElastic-4] com.alibaba.nacos.client.naming          : current ips:(1) service: DEFAULT_GROUP@@gateway -> [{"instanceId":"192.168.4.123#20003#DEFAULT#DEFAULT_GROUP@@gateway","ip":"192.168.4.123","port":20003,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@gateway","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
- 2022-09-01 17:28:47.723 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@DEFAULT_GROUP\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1662028127723,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":28725845880500} from /192.168.4.123
- 2022-09-01 17:28:47.723 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@gateway\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[{\"instanceId\":\"192.168.4.123#20003#DEFAULT#DEFAULT_GROUP@@gateway\",\"ip\":\"192.168.4.123\",\"port\":20003,\"weight\":1.0,\"healthy\":true,\"enabled\":true,\"ephemeral\":true,\"clusterName\":\"DEFAULT\",\"serviceName\":\"DEFAULT_GROUP@@gateway\",\"metadata\":{\"preserved.register.source\":\"SPRING_CLOUD\"},\"instanceHeartBeatInterval\":5000,\"instanceHeartBeatTimeOut\":15000,\"ipDeleteTimeout\":30000}],\"lastRefTime\":1662028127723,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":28725846165700} from /192.168.4.123
- 2022-09-01 17:28:48.717 INFO  [com.alibaba.nacos.client.naming.updater] com.alibaba.nacos.client.naming          : new ips(1) service: DEFAULT_GROUP@@gateway@@DEFAULT -> [{"instanceId":"192.168.4.123#20003#DEFAULT#DEFAULT_GROUP@@gateway","ip":"192.168.4.123","port":20003,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@gateway","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
- 2022-09-01 17:28:48.780 INFO  [com.alibaba.nacos.client.naming.updater] com.alibaba.nacos.client.naming          : current ips:(1) service: DEFAULT_GROUP@@gateway@@DEFAULT -> [{"instanceId":"192.168.4.123#20003#DEFAULT#DEFAULT_GROUP@@gateway","ip":"192.168.4.123","port":20003,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@gateway","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
- 2022-09-01 17:28:49.217 INFO  [main] c.netflix.config.ChainedDynamicProperty  : Flipping property: gateway.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
- 2022-09-01 17:28:49.313 INFO  [main] c.netflix.loadbalancer.BaseLoadBalancer  : Client: gateway instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=gateway,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
- 2022-09-01 17:28:49.343 INFO  [main] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
- 2022-09-01 17:28:49.390 INFO  [main] c.netflix.config.ChainedDynamicProperty  : Flipping property: gateway.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
- 2022-09-01 17:28:49.390 INFO  [main] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client gateway initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=gateway,current list of Servers=[192.168.4.123:20003],Load balancer stats=Zone stats: {unknown=[Zone:unknown;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
-},Server stats: [[Server:192.168.4.123:20003;	Zone:UNKNOWN;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 07:00:00 ICT 1970;	First connection made: Thu Jan 01 07:00:00 ICT 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
-]}ServerList:com.alibaba.cloud.nacos.ribbon.NacosServerList@55361f03
- 2022-09-01 17:28:49.484 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] gateway.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
- 2022-09-01 17:28:49.484 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=gateway.properties, group=WEB_CTV, cnt=1
- 2022-09-01 17:28:49.484 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] library-major.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
- 2022-09-01 17:28:49.484 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=library-major.properties, group=WEB_CTV, cnt=1
- 2022-09-01 17:28:49.484 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] apply-admin.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
- 2022-09-01 17:28:49.484 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=apply-admin.properties, group=WEB_CTV, cnt=1
- 2022-09-01 17:28:49.484 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] library-major.properties-common-config-dev.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
- 2022-09-01 17:28:49.484 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=library-major.properties-common-config-dev.properties, group=WEB_CTV, cnt=1
- 2022-09-01 17:28:49.484 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] library-major.properties.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
- 2022-09-01 17:28:49.484 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=library-major.properties.properties, group=WEB_CTV, cnt=1
- 2022-09-01 17:28:49.499 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] manage.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
- 2022-09-01 17:28:49.499 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=manage.properties, group=WEB_CTV, cnt=1
- 2022-09-01 17:28:49.499 INFO  [main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [subscribe] apply-api.properties+WEB_CTV+25df333f-6d49-4053-9ecd-207058071611
- 2022-09-01 17:28:49.499 INFO  [main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8848-25df333f-6d49-4053-9ecd-207058071611] [add-listener] ok, tenant=25df333f-6d49-4053-9ecd-207058071611, dataId=apply-api.properties, group=WEB_CTV, cnt=1
- 2022-09-01 17:28:50.367 INFO  [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: gateway.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
- 2022-09-01 17:29:15.864 INFO  [boundedElastic-1] com.alibaba.nacos.client.naming          : new ips(1) service: DEFAULT_GROUP@@admin -> [{"instanceId":"192.168.4.123#20004#DEFAULT#DEFAULT_GROUP@@admin","ip":"192.168.4.123","port":20004,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@admin","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
- 2022-09-01 17:29:15.864 INFO  [boundedElastic-1] com.alibaba.nacos.client.naming          : current ips:(1) service: DEFAULT_GROUP@@admin -> [{"instanceId":"192.168.4.123#20004#DEFAULT#DEFAULT_GROUP@@admin","ip":"192.168.4.123","port":20004,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@admin","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
- 2022-09-01 17:29:16.458 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@admin\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[{\"instanceId\":\"192.168.4.123#20004#DEFAULT#DEFAULT_GROUP@@admin\",\"ip\":\"192.168.4.123\",\"port\":20004,\"weight\":1.0,\"healthy\":true,\"enabled\":true,\"ephemeral\":true,\"clusterName\":\"DEFAULT\",\"serviceName\":\"DEFAULT_GROUP@@admin\",\"metadata\":{\"preserved.register.source\":\"SPRING_CLOUD\"},\"instanceHeartBeatInterval\":5000,\"instanceHeartBeatTimeOut\":15000,\"ipDeleteTimeout\":30000}],\"lastRefTime\":1662028156458,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":28754580809800} from /192.168.4.123
- 2022-09-01 17:29:45.872 INFO  [boundedElastic-2] com.alibaba.nacos.client.naming          : new ips(1) service: DEFAULT_GROUP@@manage -> [{"instanceId":"192.168.4.123#20008#DEFAULT#DEFAULT_GROUP@@manage","ip":"192.168.4.123","port":20008,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@manage","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
- 2022-09-01 17:29:45.872 INFO  [boundedElastic-2] com.alibaba.nacos.client.naming          : current ips:(1) service: DEFAULT_GROUP@@manage -> [{"instanceId":"192.168.4.123#20008#DEFAULT#DEFAULT_GROUP@@manage","ip":"192.168.4.123","port":20008,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@manage","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
- 2022-09-01 17:29:46.435 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@manage\",\"clusters\":\"\",\"cacheMillis\":10000,\"hosts\":[{\"instanceId\":\"192.168.4.123#20008#DEFAULT#DEFAULT_GROUP@@manage\",\"ip\":\"192.168.4.123\",\"port\":20008,\"weight\":1.0,\"healthy\":true,\"enabled\":true,\"ephemeral\":true,\"clusterName\":\"DEFAULT\",\"serviceName\":\"DEFAULT_GROUP@@manage\",\"metadata\":{\"preserved.register.source\":\"SPRING_CLOUD\"},\"instanceHeartBeatInterval\":5000,\"instanceHeartBeatTimeOut\":15000,\"ipDeleteTimeout\":30000}],\"lastRefTime\":1662028186419,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":28784558264800} from /192.168.4.123
- 2022-09-01 17:30:45.221 INFO  [Thread-51] c.n.l.PollingServerListUpdater           : Shutting down the Executor Pool for PollingServerListUpdater
- 2022-09-01 17:30:45.260 INFO  [SpringContextShutdownHook] io.undertow                              : stopping server: Undertow - 2.1.4.Final
- 2022-09-01 17:30:45.270 INFO  [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskScheduler : Shutting down ExecutorService 'taskScheduler'
- 2022-09-01 17:30:45.270 INFO  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : [LISTENER] removing DEFAULT_GROUP@@gateway with DEFAULT from listener map
- 2022-09-01 17:30:45.317 INFO  [SpringContextShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
- 2022-09-01 17:30:45.317 INFO  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : [BEAT] removing beat: DEFAULT_GROUP@@gateway:192.168.4.123:20003 from beat map.
- 2022-09-01 17:30:45.332 INFO  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : [DEREGISTER-SERVICE] 25df333f-6d49-4053-9ecd-207058071611 deregistering service DEFAULT_GROUP@@gateway with instance: Instance{instanceId='null', ip='192.168.4.123', port=20003, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={}}
- 2022-09-01 17:30:45.332 INFO  [SpringContextShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
- 2022-09-01 17:30:45.332 INFO  [SpringContextShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.beat.BeatReactor do shutdown begin
- 2022-09-01 17:30:45.911 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : received push data: {"type":"dom","data":"{\"name\":\"DEFAULT_GROUP@@gateway\",\"clusters\":\"DEFAULT\",\"cacheMillis\":10000,\"hosts\":[],\"lastRefTime\":1662028245911,\"checksum\":\"\",\"allIPs\":false,\"reachProtectionThreshold\":false,\"valid\":true}","lastRefTime":28844034498600} from /192.168.4.123
- 2022-09-01 17:30:45.911 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : removed ips(1) service: DEFAULT_GROUP@@gateway@@DEFAULT -> [{"instanceId":"192.168.4.123#20003#DEFAULT#DEFAULT_GROUP@@gateway","ip":"192.168.4.123","port":20003,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@gateway","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
- 2022-09-01 17:30:45.926 INFO  [com.alibaba.nacos.naming.push.receiver] com.alibaba.nacos.client.naming          : current ips:(0) service: DEFAULT_GROUP@@gateway@@DEFAULT -> []
- 
