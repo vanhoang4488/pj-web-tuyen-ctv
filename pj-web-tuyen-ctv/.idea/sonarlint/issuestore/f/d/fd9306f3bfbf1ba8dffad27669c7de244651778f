@@ -1,0 +1,18 @@
+
+[	java:S112n"FDefine and throw a dedicated exception instead of using a generic one.(¸­Ã§
+i
+java:S2095<"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(ú³‘×ùÿÿÿÿ
+c
+java:S2095/"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(±œ‹Þ
+I
+java:S2755o"3Disable access to external entities in XML parsing.(î³ÐÈ
+U
+java:S1118":Add a private constructor to hide the implicit public one.(É¦ÐÈùÿÿÿÿ
+v
+java:S32528"[Use static access with "org.apache.batik.transcoder.SVGAbstractTranscoder" for "KEY_WIDTH".(¦½Í¹þÿÿÿÿ
+U
+java:S1854W":Remove this useless assignment to local variable "parser".(á–¸Úûÿÿÿÿ
+?
+java:S1172U")Remove this unused method parameter "in".(‘”‘²
+F
+java:S1481W"+Remove this unused "parser" local variable.(á–¸Úûÿÿÿÿ
