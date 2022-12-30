@@ -6,17 +6,17 @@ import com.os.upload.util.word.item.IWordNumber;
 import com.os.upload.util.word.item.WordNumberFactory;
 import com.os.util.StringUtils;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.io.IOUtils;
 import org.apache.poi.openxml4j.opc.PackagePart;
 import org.apache.poi.xwpf.usermodel.*;
 import org.openxmlformats.schemas.drawingml.x2006.picture.CTPicture;
 import org.openxmlformats.schemas.officeDocument.x2006.math.CTOMath;
 import org.openxmlformats.schemas.officeDocument.x2006.sharedTypes.STVerticalAlignRun;
+import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTDrawing;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.List;
@@ -124,7 +124,6 @@ public abstract class HandleWord {
 
             String path = imageParser.parse(pic.getPictureData().getData(), pic.getPictureData().getFileName());
             log.debug("----->>> path save file: {}", path);
-
             if(!Objects.isNull(path)){
                 CTPicture ctPicture = pic.getCTPicture();
                 Node domNode = ctPicture.getDomNode();

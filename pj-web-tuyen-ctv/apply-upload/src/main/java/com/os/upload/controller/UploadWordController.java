@@ -1,5 +1,6 @@
 package com.os.upload.controller;
 
+import com.os.entity.Blog;
 import com.os.result.ResultEntity;
 import com.os.upload.service.WordService;
 import lombok.RequiredArgsConstructor;
@@ -18,8 +19,8 @@ public class UploadWordController {
     private final WordService wordService;
 
     @PostMapping("/createArticleByWordDoc")
-    public ResultEntity createArticleByWordDoc(HttpServletRequest request,
-                                               @RequestParam("file") MultipartFile multipartFile) throws IOException {
+    public ResultEntity<Blog> createArticleByWordDoc(HttpServletRequest request,
+                                                     @RequestParam("file") MultipartFile multipartFile) throws IOException {
 
         // todo kiểm tra định file và content-type.
 

@@ -1,15 +1,20 @@
 
-k	java:S1170"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–³îïýÿÿÿÿ
+k	java:S1171"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–³îïýÿÿÿÿ
+m	java:S117I"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÒÙÏÀ8—¶‹çÕ0
 N
-java:S2755"3Disable access to external entities in XML parsing.(Ó°¬”ýÿÿÿÿ
+java:S2755R"3Disable access to external entities in XML parsing.(ÏñÇÑÿÿÿÿÿ
 N
-java:S27559"3Disable access to external entities in XML parsing.(ÏñÇÑÿÿÿÿÿ
+java:S2755h"3Disable access to external entities in XML parsing.(ƒ”±êùÿÿÿÿ
+U
+java:S2755:"3Disable access to external entities in XML parsing.(ÏñÇÑÿÿÿÿÿ8×ÜŠçÕ0
 N
-java:S27557"3Disable access to external entities in XML parsing.(Ó°¬”ýÿÿÿÿ
+java:S2755"3Disable access to external entities in XML parsing.(Ó°¬”ýÿÿÿÿ
 N
-java:S2755O"3Disable access to external entities in XML parsing.(ƒ”±êùÿÿÿÿ
+java:S2755P"3Disable access to external entities in XML parsing.(Ó°¬”ýÿÿÿÿ
+U
+java:S27558"3Disable access to external entities in XML parsing.(Ó°¬”ýÿÿÿÿ8×ÜŠçÕ0
 Q
-java:S1610";Convert the abstract class "W3cNodeUtil" into an interface.(Ï£æð
+java:S1610";Convert the abstract class "W3cNodeUtil" into an interface.(Ï£æð
 P
-java:S1118":Add a private constructor to hide the implicit public one.(Ï£æð
-C	java:S108)")Either remove or fill this block of code.(ñ“Š±üÿÿÿÿ
+java:S1118":Add a private constructor to hide the implicit public one.(Ï£æð
+C	java:S108*")Either remove or fill this block of code.(ñ“Š±üÿÿÿÿ

@@ -1,15 +1,0 @@
-
-U
-java:S1118":Add a private constructor to hide the implicit public one.(£Àø¾øÿÿÿÿ
-T
-java:S1155V">Use isEmpty() to check whether the collection is empty or not.(¯×»Ô
-\
-java:S1126m"AReplace this if-then-else statement by a single return statement.(¡˜³èüÿÿÿÿ
-M
-java:S1854{"8Remove this useless assignment to local variable "desc".(µĞø(
->
-java:S1481{")Remove this unused "desc" local variable.(µĞø(
-I
-java:S1135‡"2Complete the task associated to this TODO comment.(ù´¯
-I
-java:S1135¸"2Complete the task associated to this TODO comment.(ÜÂá

@@ -9,6 +9,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.Source;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMResult;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
@@ -60,6 +61,30 @@ public abstract class W3cNodeUtil {
                 Source source = new StreamSource(new StringReader(xml));
                 StringWriter sw = new StringWriter();
                 transformer.transform(source, new StreamResult(sw));
+                return sw.toString();
+            }
+        }
+        catch (Exception e){
+            log.error("=====> encoding utf-16 xml failed: {}", e.getMessage(), e);
+        }
+        return null;
+    }
+
+    public static String xml2Xml (String xml, Source XSLSource, Node node) {
+        Transformer transformer = null;
+        if(xml == null)
+            throw new IllegalArgumentException("xml could not null ...");
+
+        try{
+            if(XSLSource == null)
+                transformer = TransformerFactory.newInstance().newTransformer();
+            else
+                transformer = TransformerFactory.newInstance().newTransformer(XSLSource);
+
+            if(transformer != null){
+                Source source = new StreamSource(new StringReader(xml));
+                StringWriter sw = new StringWriter();
+                transformer.transform(source, new DOMResult(node));
                 return sw.toString();
             }
         }
