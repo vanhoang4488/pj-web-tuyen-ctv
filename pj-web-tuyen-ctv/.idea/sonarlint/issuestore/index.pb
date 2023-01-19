@@ -15,3 +15,11 @@ k
 Rapply-upload/src/main/java/com/os/upload/util/word/ParagraphChildOrderManager.java,8\2\82c4e55c31ceccdbfcf631cc2a71911ad0279bcf
 s
 Capply-upload/src/main/java/com/os/upload/util/word/W3cNodeUtil.java,e\0\e09ec845207474a5e37620c277ad0115e57e21d9
+q
+Aapply-upload/src/main/java/com/os/upload/service/WordService.java,c\4\c49bb4e51f6663383770ad65799f1535dcb9c736
+n
+>apply-upload/src/main/java/com/os/upload/util/ImageParser.java,e\3\e3de60b772dd2cec9ed53570283d328ca19a852d
+q
+Aapply-upload/src/main/java/com/os/upload/util/word/OmmlUtils.java,b\1\b1f0858238fb62c150e5e0c461a445e8e418a822
+r
+Bapply-upload/src/main/java/com/os/upload/util/word/HandleWord.java,3\e\3eb585ad61c233c66e074dd2c655d63c82ec7c3c
