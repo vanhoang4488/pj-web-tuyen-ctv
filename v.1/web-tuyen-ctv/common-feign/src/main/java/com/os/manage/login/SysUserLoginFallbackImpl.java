@@ -4,7 +4,7 @@ import com.os.result.ResultEntity;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SysUserLoginFallbackImpl implements SysUserLoginService{
+public class UserLoginFallbackImpl implements UserLoginService {
 
     @Override
     public ResultEntity<Object> loginByLoginName(String loginName) {

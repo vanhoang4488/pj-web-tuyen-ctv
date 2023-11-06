@@ -44,9 +44,13 @@
       <module name="common-tools" options="-parameters" />
       <module name="manage" options="-parameters" />
       <module name="operatelog" options="-parameters" />
+<<<<<<<< HEAD:v.1/web-tuyen-ctv/.idea/compiler.xml
       <module name="pj-web-tuyen-ctv" options="-parameters" />
       <module name="v.1" options="-parameters" />
       <module name="web-tuyen-ctv" options="-parameters" />
+========
+      <module name="pj-web-tuyen-ctv" options="" />
+>>>>>>>> 613685f371be9e816e15b3551bfc0538ed3de2f6:pj-web-tuyen-ctv/.idea/compiler.xml
     </option>
   </component>
 </project>

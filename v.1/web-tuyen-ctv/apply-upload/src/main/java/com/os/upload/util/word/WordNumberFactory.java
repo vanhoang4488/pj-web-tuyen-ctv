@@ -1,4 +1,4 @@
-package com.os.upload.util.word;
+package com.os.upload.util.word.item;
 
 import com.os.upload.util.word.item.DecimalNumber;
 import com.os.upload.util.word.item.IWordNumber;

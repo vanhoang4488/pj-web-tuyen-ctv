@@ -12,7 +12,7 @@
 
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %clr(%-5p){cyan} %clr(${PID:-}){magenta} %clr([%15.15t]){faint} %clr(%-40.40logger{60}){yellow} : %m%n %wEx</pattern>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %clr(%-5p){magenta} %clr(${PID:-}){green} %clr([%15.15t]){blue} %clr(%-60.40logger{60}){yellow} : %m%n %wEx</pattern>
         </encoder>
     </appender>
 

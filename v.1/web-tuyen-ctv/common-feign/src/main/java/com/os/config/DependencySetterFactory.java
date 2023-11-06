@@ -13,13 +13,13 @@ import java.lang.reflect.Method;
 @Component
 public class DependencySetterFactory implements SetterFactory {
 
-    @Value("${hystrix.threadpool.core.size}")
+    @Value("${common.hystrix.threadpool.core.size}")
     private int coreSize;
 
-    @Value("${hystrix.threadpool.maximum.size}")
+    @Value("${common.hystrix.threadpool.maximum.size}")
     private int maximumSize;
 
-    @Value("${hystrix.threadpool.maxQueue.size}")
+    @Value("${common.hystrix.threadpool.maxQueue.size}")
     private int maxQueueSize;
 
     @Override

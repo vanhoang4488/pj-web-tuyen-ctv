@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @FeignClient(value = "${manage.application.name}",
             configuration = FeignAuthConfig.class,
-            fallback = SysUserLoginFallbackImpl.class,
+            fallback = UserLoginFallbackImpl.class,
             path = "${manage.context-path}")
-public interface SysUserLoginService extends BaseService {
+public interface UserLoginService extends BaseService {
 
     @RequestMapping("/sys/user/login")
     public ResultEntity<Object> loginByLoginName(@RequestParam String loginName);
