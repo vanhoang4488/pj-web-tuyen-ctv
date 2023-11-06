@@ -1,0 +1,3 @@
+vanhoang\config\GatewayConfig.class
+vanhoang\filter\CustomHttpMethodFilter.class
+vanhoang\GatewayApplication.class
