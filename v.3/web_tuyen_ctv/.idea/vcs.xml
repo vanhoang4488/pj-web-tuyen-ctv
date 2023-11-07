@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
-<<<<<<<< HEAD:v.3/web_tuyen_ctv/.idea/vcs.xml
     <mapping directory="$PROJECT_DIR$/../.." vcs="Git" />
-========
-    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
->>>>>>>> 613685f371be9e816e15b3551bfc0538ed3de2f6:pj-web-tuyen-ctv/.idea/vcs.xml
   </component>
 </project>

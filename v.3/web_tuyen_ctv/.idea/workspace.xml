@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a842e1f-a060-4ca9-9777-2c9ae0ae6eeb" name="Changes" comment="" />
+    <list default="true" id="9a842e1f-a060-4ca9-9777-2c9ae0ae6eeb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-config/target/common-config-3.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/common-config/target/common-config-3.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/target/gateway-3.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/target/gateway-3.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/target/gateway-3.0.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/target/gateway-3.0.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/main/java/vanhoang/project/UserApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/vanhoang/project/UserApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/main/java/vanhoang/project/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/vanhoang/project/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/target/classes/vanhoang/project/UserApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/user/target/classes/vanhoang/project/UserApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/target/classes/vanhoang/project/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/user/target/classes/vanhoang/project/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/target/user-3.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/user/target/user-3.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/target/user-3.0.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/user/target/user-3.0.jar.original" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
