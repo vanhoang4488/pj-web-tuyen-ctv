@@ -33,7 +33,7 @@
     <profile>
       <id>dev</id>
       <properties>
-        <project.profile.active>dev</project.profile.active>
+        <project.profiles.active>dev</project.profiles.active>
       </properties>
       <activation>
         <activeByDefault>true</activeByDefault>
