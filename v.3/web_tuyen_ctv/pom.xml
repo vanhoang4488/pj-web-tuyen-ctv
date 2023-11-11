@@ -20,12 +20,15 @@
     <module>gateway</module>
     <module>user</module>
     <module>common-jdbc</module>
+      <module>common-tools</module>
   </modules>
 
   <properties>
     <java.version>11</java.version>
     <spring-cloud.version>2021.0.8</spring-cloud.version>
     <common-lang3.version>3.13.0</common-lang3.version>
+    <mapstruct.version>1.5.5.final</mapstruct.version>
+    <mvn-compiler.version>3.8.1</mvn-compiler.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
@@ -51,6 +54,24 @@
         </includes>
       </resource>
     </resources>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>${mvn-compiler.version}</version>
+          <configuration>
+            <annotationProcessorPaths>
+              <path>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-processor</artifactId>
+                <version>${mapstruct.version}</version>
+              </path>
+            </annotationProcessorPaths>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
   </build>
 
   <dependencyManagement>
@@ -76,6 +97,11 @@
         <version>${spring-cloud.version}</version>
         <type>pom</type>
         <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.mapstruct</groupId>
+        <artifactId>mapstruct</artifactId>
+        <version>${mapstruct.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

@@ -5,19 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a842e1f-a060-4ca9-9777-2c9ae0ae6eeb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/gateway/src/main/resources/bootstrap.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/resources/bootstrap.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/convertor/BaseConvertor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/convertor/UserConvertor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/dto/UserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-tools/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/src/main/java/vanhoang/project/service/AbstractService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/src/main/java/vanhoang/project/service/BaseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/src/main/java/vanhoang/project/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tài liệu/tài_liệu_dự_án_v2.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../tài liệu/tài_liệu_dự_án_v2.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-config/src/main/resources/config/bootstrap-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/common-config/src/main/resources/config/bootstrap-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-config/src/main/resources/config/bootstrap.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-config/target/common-config-3.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/common-config/target/common-config-3.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-jdbc/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common-jdbc/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/dto/BaseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/dto/base/BaseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/dto/ResponseResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/dto/base/ResponseResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/dto/ResponseStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/dto/base/ResponseStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-jdbc/target/common-jdbc-3.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-jdbc/target/maven-archiver/pom.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/target/gateway-3.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/target/gateway-3.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/target/gateway-3.0.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/target/gateway-3.0.jar.original" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/main/java/vanhoang/project/UserApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/vanhoang/project/UserApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/src/main/java/vanhoang/project/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/vanhoang/project/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,9 +38,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="package-info" />
         <option value="Class" />
         <option value="Interface" />
-        <option value="package-info" />
       </list>
     </option>
   </component>
@@ -51,20 +62,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "jdk.selected.JAVA_MODULE": "11",
-    "last_opened_file_path": "E:/du_an/pj-web-tuyen-ctv/v.3/web_tuyen_ctv/gateway/src/main/resources",
-    "settings.editor.selected.configurable": "File.Encoding"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/du_an/pj-web-tuyen-ctv/v.3/web_tuyen_ctv/gateway/src/main/resources&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "PLAIN_TEXT"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;PLAIN_TEXT&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\du_an\pj-web-tuyen-ctv\v.3\web_tuyen_ctv\gateway\src\main\resources" />

@@ -7,8 +7,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+      </profile>
+      <profile name="Annotation profile for web_tuyen_ctv" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.5.5.final/mapstruct-processor-1.5.5.final.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct/1.5.5.Final/mapstruct-1.5.5.Final.jar" />
+        </processorPath>
         <module name="common-config" />
         <module name="common-jdbc" />
+        <module name="common-tools" />
         <module name="common-redis" />
         <module name="user" />
         <module name="gateway" />
@@ -20,6 +30,7 @@
       <module name="common-config" options="-parameters" />
       <module name="common-jdbc" options="-parameters" />
       <module name="common-redis" options="-parameters" />
+      <module name="common-tools" options="-parameters" />
       <module name="gateway" options="-parameters" />
       <module name="user" options="-parameters" />
     </option>
