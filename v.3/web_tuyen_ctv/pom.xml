@@ -20,7 +20,7 @@
     <module>gateway</module>
     <module>user</module>
     <module>common-jdbc</module>
-      <module>common-tools</module>
+    <module>common-tools</module>
   </modules>
 
   <properties>
@@ -28,7 +28,7 @@
     <spring-cloud.version>2021.0.8</spring-cloud.version>
     <common-lang3.version>3.13.0</common-lang3.version>
     <mapstruct.version>1.5.5.final</mapstruct.version>
-    <mvn-compiler.version>3.8.1</mvn-compiler.version>
+    <lombok.version>1.18.30</lombok.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
@@ -59,13 +59,17 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>${mvn-compiler.version}</version>
           <configuration>
             <annotationProcessorPaths>
               <path>
                 <groupId>org.mapstruct</groupId>
                 <artifactId>mapstruct-processor</artifactId>
                 <version>${mapstruct.version}</version>
+              </path>
+              <path>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
               </path>
             </annotationProcessorPaths>
           </configuration>
@@ -110,6 +114,7 @@
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
+      <version>${lombok.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.commons</groupId>

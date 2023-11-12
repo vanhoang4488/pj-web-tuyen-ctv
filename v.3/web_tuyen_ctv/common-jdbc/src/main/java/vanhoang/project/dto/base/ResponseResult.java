@@ -27,7 +27,7 @@ public class ResponseResult <T>{
         return responseResult;
     }
 
-    public static ResponseResult<Object> fail() {
+    public static <T> ResponseResult<T> fail() {
         return ResponseResult.builder()
                 .status(ResponseStatus.FAIL.getStatus())
                 .message(ResponseStatus.FAIL.getMessage())

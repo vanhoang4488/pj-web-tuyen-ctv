@@ -5,30 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a842e1f-a060-4ca9-9777-2c9ae0ae6eeb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/convertor/BaseConvertor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/convertor/UserConvertor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/dto/UserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-tools/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/vanhoang/project/service/AbstractService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/vanhoang/project/service/BaseService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/vanhoang/project/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../tài liệu/tài_liệu_dự_án_v2.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../tài liệu/tài_liệu_dự_án_v2.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tài liệu/những việc cần làm.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../tài liệu/những việc cần làm.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common-config/target/common-config-3.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/common-config/target/common-config-3.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-jdbc/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common-jdbc/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/dto/BaseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/dto/base/BaseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/dto/ResponseResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/dto/base/ResponseResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/dto/ResponseStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/dto/base/ResponseStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-jdbc/target/common-jdbc-3.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-jdbc/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/convertor/BaseConvertor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/convertor/UserConvertor.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/convertor/UserConvertor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/dto/base/ResponseResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/dto/base/ResponseResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/entity/BlogEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/entity/BlogEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-jdbc/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/common-jdbc/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-jdbc/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/common-jdbc/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-redis/target/classes/vanhoang/project/config/RedisConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/common-redis/target/classes/vanhoang/project/config/RedisConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-redis/target/common-redis-3.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/common-redis/target/common-redis-3.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/target/classes/vanhoang/project/config/GatewayConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/target/classes/vanhoang/project/config/GatewayConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gateway/target/gateway-3.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/target/gateway-3.0.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gateway/target/gateway-3.0.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/target/gateway-3.0.jar.original" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/src/main/java/vanhoang/project/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/vanhoang/project/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/main/java/vanhoang/project/service/AbstractService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/vanhoang/project/service/AbstractService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/main/java/vanhoang/project/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/vanhoang/project/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/target/classes/vanhoang/project/UserApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/user/target/classes/vanhoang/project/UserApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/target/classes/vanhoang/project/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/user/target/classes/vanhoang/project/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/user/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/user/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/target/user-3.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/user/target/user-3.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/target/user-3.0.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/user/target/user-3.0.jar.original" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +89,7 @@
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
+      <command value="mvn clean compile" />
       <command value="mvn clean install" />
     </option>
   </component>
@@ -140,5 +144,16 @@
       <updated>1698990823024</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
