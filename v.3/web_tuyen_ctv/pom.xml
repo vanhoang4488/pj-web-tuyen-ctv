@@ -21,6 +21,8 @@
     <module>user</module>
     <module>common-jdbc</module>
     <module>common-tools</module>
+      <module>common-dto</module>
+    <module>common-entity</module>
   </modules>
 
   <properties>
@@ -29,6 +31,7 @@
     <common-lang3.version>3.13.0</common-lang3.version>
     <mapstruct.version>1.5.5.final</mapstruct.version>
     <lombok.version>1.18.30</lombok.version>
+    <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
@@ -71,6 +74,11 @@
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
               </path>
+              <path>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok-mapstruct-binding</artifactId>
+                <version>${lombok-mapstruct-binding.version}</version>
+              </path>
             </annotationProcessorPaths>
           </configuration>
         </plugin>
@@ -93,6 +101,21 @@
       <dependency>
         <groupId>vanhoang.project</groupId>
         <artifactId>common-jdbc</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>vanhoang.project</groupId>
+        <artifactId>common-dto</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>vanhoang.project</groupId>
+        <artifactId>common-entity</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>vanhoang.project</groupId>
+        <artifactId>common-tools</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>

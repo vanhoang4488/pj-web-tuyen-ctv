@@ -1,4 +1,4 @@
-package vanhoang.project.convertor;
+package vanhoang.project.aop.convertor;
 
 import javax.annotation.processing.Generated;
 import vanhoang.project.dto.UserDTO;
@@ -6,7 +6,7 @@ import vanhoang.project.entity.UserEntity;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-11-12T22:05:16+0700",
+    date = "2023-11-13T23:19:34+0700",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 11.0.14 (Oracle Corporation)"
 )
 public class UserConvertorImpl implements UserConvertor {
