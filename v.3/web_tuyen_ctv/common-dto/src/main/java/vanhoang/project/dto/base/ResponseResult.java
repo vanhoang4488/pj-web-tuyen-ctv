@@ -34,6 +34,13 @@ public class ResponseResult <T>{
                 .build();
     }
 
+    public static <T> ResponseResult<T> fail(String message) {
+        return ResponseResult.builder()
+                .status(ResponseStatus.FAIL.getStatus())
+                .message(message)
+                .build();
+    }
+
     static class Builder {
         private int status;
         private String message;

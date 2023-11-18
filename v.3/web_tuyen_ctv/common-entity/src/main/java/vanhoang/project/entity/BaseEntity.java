@@ -24,8 +24,24 @@ public class BaseEntity implements Serializable, Persistable<Long> {
     private Date updateTime;
 
     @PrePersist
-    @PostLoad
-    public void markNotNew() {
+    public void prePresist() {
         this.isNew = false;
+        this.id = this.createId(); // cải tiến lại cơ chế tạo khóa chính
+        this.createTime = new Date(); // cần điều chỉnh theo timezone
+        this.updateTime = new Date(); // cần điều chỉnh theo timezone
+    }
+
+    @PreUpdate
+    public void preUpdate() {
+        this.updateTime = new Date();
+    }
+
+    @PostLoad
+    private void postLoad() {
+        this.isNew = false;
+    }
+
+    private Long createId() {
+        return 8890L;
     }
 }

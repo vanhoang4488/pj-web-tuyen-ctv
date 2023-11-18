@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.util.Date;
 
 @Setter
 @Getter
@@ -14,4 +15,6 @@ import java.io.Serializable;
 public class BaseDTO implements Serializable {
 
     private Long id;
+    private Date createTime;
+    private Date updateTime;
 }

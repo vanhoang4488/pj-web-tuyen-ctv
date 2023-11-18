@@ -25,15 +25,15 @@ public class BlogEntity extends BaseEntity{
     @Column
     private Integer views; // số lượt xem
     @Column
-    private Double rate; // đánh giá mức độ hay cảu bài viết
+    private Double rate; // đánh giá mức độ hay của bài viết
 
     /**ràng buộc: nhiều một với User*/
     @JoinColumn(name = "authorId")
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
     private UserEntity author;
 
     /**ràng buộc: n to n: User -> Comment*/
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL,
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE,
                 mappedBy = "blog")
     private Set<CommentEntity> comments;
 }

@@ -27,12 +27,12 @@ public class UserEntity extends BaseEntity{
     private String email;
 
     /**ràng buộc: 1 to n: Blog*/
-    @OneToMany(fetch = FetchType.LAZY, cascade =  CascadeType.ALL,
+    @OneToMany(fetch = FetchType.LAZY, cascade =  CascadeType.MERGE,
                 mappedBy = "author")
     private Set<BlogEntity> blogs;
 
    /**ràng buộc: n to n: Blog -> Comment*/
-   @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL,
+   @OneToMany(fetch = FetchType.LAZY,
                 mappedBy = "commentor")
     private Set<CommentEntity> comments;
 }
