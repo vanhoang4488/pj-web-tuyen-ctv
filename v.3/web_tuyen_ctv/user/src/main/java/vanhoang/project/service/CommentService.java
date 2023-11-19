@@ -28,7 +28,7 @@ public class CommentService extends AbstractService<CommentDTO, CommentEntity> i
         CommentConvertor commentConvertor = Mappers.getMapper(CommentConvertor.class);
         CommentEntity commentEntity = commentConvertor.convert(commentDTO);
         try {
-            commentRepository.save(commentEntity);
+            commentRepository.persist(commentEntity);
             return true;
         }
         catch (IllegalArgumentException ex1) {

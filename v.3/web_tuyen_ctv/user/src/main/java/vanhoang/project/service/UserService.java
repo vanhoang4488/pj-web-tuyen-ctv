@@ -35,7 +35,7 @@ public class UserService extends AbstractService<UserDTO, UserEntity> implements
         String message = CheckEntity.checkUser(userEntity);
         if (!StringUtils.isNoneEmpty(message)) {
             try {
-                userRepository.save(userEntity);
+                userRepository.persist(userEntity);
                 return null;
             }
             catch (IllegalArgumentException ex1) {
