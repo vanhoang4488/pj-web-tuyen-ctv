@@ -20,8 +20,8 @@
         </processorPath>
         <module name="common-dto" />
         <module name="common-config" />
-        <module name="common-jdbc" />
         <module name="common-tools" />
+        <module name="common-jdbc" />
         <module name="common-redis" />
         <module name="user" />
         <module name="common-entity" />

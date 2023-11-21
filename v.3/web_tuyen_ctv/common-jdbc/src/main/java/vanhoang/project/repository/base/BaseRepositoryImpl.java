@@ -1,24 +1,22 @@
 package vanhoang.project.repository.base;
 
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import vanhoang.project.entity.BaseEntity;
+import vanhoang.project.utils.GenerationID;
+import vanhoang.project.utils.LocalDateTimeUtils;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
-import java.util.TimeZone;
 
 @Repository
 public class BaseRepositoryImpl<T extends BaseEntity, ID> implements  BaseRepository<T, ID> {
-
-    @Value("${serverTimeZone}")
-    private String serverTimeZone;
-
     @PersistenceContext
     private EntityManager entityManager;
+
+    @Autowired
+    private GenerationID generationId;
 
     @Override
     public List<T> findAll() {
@@ -36,21 +34,17 @@ public class BaseRepositoryImpl<T extends BaseEntity, ID> implements  BaseReposi
 
     @Override
     public T persist(T entity) {
-        entity.setCreateTime(this.getNow());
-        entity.setUpdateTime(this.getNow());
+        entity.setId(generationId.generationUUID());
+        entity.setCreateTime(LocalDateTimeUtils.getNow());
+        entity.setUpdateTime(LocalDateTimeUtils.getNow());
         entityManager.persist(entity);
         return entity;
     }
 
     @Override
     public T merge(T entity) {
-        entity.setUpdateTime(this.getNow());
+        entity.setUpdateTime(LocalDateTimeUtils.getNow());
         entityManager.merge(entity);
         return entity;
-    }
-
-    private Date getNow() {
-        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone(serverTimeZone));
-        return calendar.getTime();
     }
 }

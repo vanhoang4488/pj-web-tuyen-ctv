@@ -22,8 +22,8 @@ public class BeanUtils implements ApplicationContextAware {
         return appContext.getBean(clazz);
     }
 
-    public static Calendar getTimeZone() {
-        String serverTimeZone = appContext.getEnvironment().getProperty("common.db.serverTimeZone");
+    public static Calendar getCalendar() {
+        String serverTimeZone = appContext.getEnvironment().getProperty("serverTimeZone");
         return Calendar.getInstance(TimeZone.getTimeZone(serverTimeZone));
     }
 }
