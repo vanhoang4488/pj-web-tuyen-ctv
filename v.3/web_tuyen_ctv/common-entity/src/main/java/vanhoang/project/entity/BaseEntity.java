@@ -2,7 +2,6 @@ package vanhoang.project.entity;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.data.domain.Persistable;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -11,10 +10,7 @@ import java.util.Date;
 @Getter
 @Setter
 @MappedSuperclass
-public class BaseEntity implements Serializable, Persistable<Long> {
-
-    @Transient
-    private boolean isNew = true;
+public class BaseEntity implements Serializable{
 
     @Id
     private Long id;
@@ -22,9 +18,4 @@ public class BaseEntity implements Serializable, Persistable<Long> {
     private Date createTime;
     @Column
     private Date updateTime;
-
-    @PrePersist
-    public void markNotNew() {
-        this.isNew = false;
-    }
 }
