@@ -2,6 +2,7 @@ package vanhoang.project.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import vanhoang.project.entity.base.BaseEntity;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -10,7 +11,7 @@ import java.util.Set;
 @Setter
 @Entity
 @Table(name = "comments")
-public class CommentEntity extends BaseEntity{
+public class CommentEntity extends BaseEntity {
 
     @Column
     private String comment;

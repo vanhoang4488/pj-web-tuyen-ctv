@@ -2,7 +2,7 @@ package vanhoang.project.repository.base;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import vanhoang.project.entity.BaseEntity;
+import vanhoang.project.entity.base.BaseEntity;
 
 import java.util.List;
 

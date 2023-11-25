@@ -1,4 +1,4 @@
-package vanhoang.project.entity;
+package vanhoang.project.entity.base;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -5,13 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a842e1f-a060-4ca9-9777-2c9ae0ae6eeb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/common-entity/src/main/java/vanhoang/project/entity/NotificationEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-dto/src/main/java/vanhoang/project/dto/NotificationDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-entity/src/main/java/vanhoang/project/entity/statistic/UserNotitficationEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/repository/NotificationRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/repository/statistic/UserNotificationRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-tools/src/main/java/vanhoang/project/convertor/NotificationConvertor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/src/main/java/vanhoang/project/controller/NotificationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/src/main/java/vanhoang/project/service/NotificationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../tài liệu/những việc cần làm.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../tài liệu/những việc cần làm.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../tài liệu/tài_liệu_dự_án_v2.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../tài liệu/tài_liệu_dự_án_v2.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-config/src/main/resources/config/bootstrap-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/common-config/src/main/resources/config/bootstrap-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-entity/src/main/java/vanhoang/project/entity/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-entity/src/main/java/vanhoang/project/entity/BaseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-entity/src/main/java/vanhoang/project/entity/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-entity/src/main/java/vanhoang/project/entity/base/BaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-entity/src/main/java/vanhoang/project/entity/BlogEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-entity/src/main/java/vanhoang/project/entity/BlogEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-entity/src/main/java/vanhoang/project/entity/CommentEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-entity/src/main/java/vanhoang/project/entity/CommentEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-entity/src/main/java/vanhoang/project/entity/NotificationEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-entity/src/main/java/vanhoang/project/entity/NotificationEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-entity/src/main/java/vanhoang/project/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-entity/src/main/java/vanhoang/project/entity/UserEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/repository/BlogRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/repository/BlogRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/repository/base/BaseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/repository/base/BaseRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/repository/base/BaseRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/repository/base/BaseRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/main/java/vanhoang/project/service/BlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/vanhoang/project/service/BlogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/main/java/vanhoang/project/service/base/AbstractService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/vanhoang/project/service/base/AbstractService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

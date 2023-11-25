@@ -2,7 +2,7 @@ package vanhoang.project.repository.base;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import vanhoang.project.entity.BaseEntity;
+import vanhoang.project.entity.base.BaseEntity;
 import vanhoang.project.utils.GenerationID;
 import vanhoang.project.utils.LocalDateTimeUtils;
 

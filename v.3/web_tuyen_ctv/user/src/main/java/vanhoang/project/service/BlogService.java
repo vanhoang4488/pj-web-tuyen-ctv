@@ -28,7 +28,7 @@ public class BlogService extends AbstractService<BlogDTO, BlogEntity> implements
 
     public Page<BlogDTO> getBlogPage(int currentPage, int pageSize) {
         Pageable pageable = PageRequest.of(currentPage, pageSize);
-        Page<BlogEntity> blogEntityPage = blogRepository.findBlogByIdIsNotNull(pageable);
+        Page<BlogEntity> blogEntityPage = blogRepository.findAll(pageable);
         if (blogEntityPage.getTotalPages() > 0) {
             BlogConvertor blogConvertor = Mappers.getMapper(BlogConvertor.class);
             return blogEntityPage.map(blogConvertor::convert);
