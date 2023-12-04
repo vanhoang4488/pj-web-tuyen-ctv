@@ -39,8 +39,11 @@ public interface CommentConvertor {
 
     @Named("convertParentComment")
     default CommentEntity convertParentComment(Long parentCommentId) {
-        CommentEntity parentComment = new CommentEntity();
-        parentComment.setId(parentCommentId);
-        return parentComment;
+        if (parentCommentId != null && parentCommentId > 0) {
+            CommentEntity parentComment = new CommentEntity();
+            parentComment.setId(parentCommentId);
+            return parentComment;
+        }
+        return null;
     }
 }

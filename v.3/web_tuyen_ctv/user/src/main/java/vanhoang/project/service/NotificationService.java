@@ -24,7 +24,7 @@ public class NotificationService extends AbstractService<NotificationDTO, Notifi
 
     public Set<NotificationDTO> findNotificationByUserIdAndNotRead(Long userId) {
         Set<NotificationEntity> notificationEntities =
-                notificationRepository.findNotificationByUserIdAndNotRead(userId, NotificationEntity.NOT_READ);
+                notificationRepository.findNotificationBySourceIdAndIsRead(userId, NotificationEntity.NOT_READ);
         return notificationEntities.stream()
                 .map(entity -> this.convertToDTO(entity, NotificationConvertor.class))
                 .collect(Collectors.toSet());

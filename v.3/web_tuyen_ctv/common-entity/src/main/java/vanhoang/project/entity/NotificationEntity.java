@@ -28,7 +28,7 @@ public class NotificationEntity extends BaseEntity {
     @Column
     private String args;
 
-    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "sourceId")
+    @ManyToOne(fetch = FetchType.LAZY)
     private UserEntity source;
 }

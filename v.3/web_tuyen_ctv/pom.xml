@@ -23,6 +23,7 @@
     <module>common-tools</module>
       <module>common-dto</module>
     <module>common-entity</module>
+    <module>mysql-binlog</module>
   </modules>
 
   <properties>
