@@ -1,16 +1,16 @@
 package vanhoang.project.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import vanhoang.project.entity.base.BaseEntity;
 
 import javax.persistence.*;
 import java.util.Set;
 
-@Getter
-@Setter
+@Data
 @Entity
 @Table(name = "comments")
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = false)
 public class CommentEntity extends BaseEntity {
 
     @Column

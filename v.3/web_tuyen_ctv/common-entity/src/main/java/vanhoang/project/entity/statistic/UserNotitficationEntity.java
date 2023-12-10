@@ -1,7 +1,6 @@
 package vanhoang.project.entity.statistic;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import vanhoang.project.entity.UserEntity;
 import vanhoang.project.entity.base.BaseEntity;
 
@@ -11,10 +10,11 @@ import javax.persistence.*;
 /**
  * Bảng thống kê số lượng thông báo chưa đọc.
  */
-@Getter
-@Setter
+@Data
 @Entity
 @Table(name = "user_notifications")
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = false)
 public class UserNotitficationEntity extends BaseEntity {
 
     @Column(name = "not_read_total")

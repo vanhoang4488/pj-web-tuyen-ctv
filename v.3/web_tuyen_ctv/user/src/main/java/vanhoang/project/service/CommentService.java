@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import vanhoang.project.convertor.CommentConvertor;
 import vanhoang.project.dto.CommentDTO;
 import vanhoang.project.entity.CommentEntity;
+import vanhoang.project.entity.NotificationEntity;
+import vanhoang.project.entity.UserEntity;
 import vanhoang.project.repository.CommentRepository;
 import vanhoang.project.service.base.AbstractService;
 import vanhoang.project.service.base.BaseService;
@@ -16,28 +18,49 @@ import vanhoang.project.service.base.BaseService;
 @Service
 @RequiredArgsConstructor
 public class CommentService extends AbstractService<CommentDTO, CommentEntity> implements BaseService {
-
     private final CommentRepository commentRepository;
+    private final NotificationService notificationService;
 
     public Boolean insertComment(Long blogId, Long userId, Long parentCommentId, CommentDTO commentDTO) {
         commentDTO.setBlogId(blogId);
         commentDTO.setUserId(userId);
         commentDTO.setParentCommentId(parentCommentId);
+
         if (parentCommentId != null) commentDTO.setCommentLevel(1);
         else commentDTO.setCommentLevel(0);
+
         CommentConvertor commentConvertor = Mappers.getMapper(CommentConvertor.class);
         CommentEntity commentEntity = commentConvertor.convert(commentDTO);
         try {
             commentRepository.persist(commentEntity);
+            this.addNotification(commentEntity);
             return true;
         }
         catch (IllegalArgumentException ex1) {
-            log.error("======> save comment was failed because entity was null");
+            log.error("======> add comment was failed because entity was null");
         }
         catch (OptimisticLockingFailureException ex2) {
-            log.error("======> save comment was failed: {}", ex2.getMessage(), ex2);
+            log.error("======> add comment was failed: {}", ex2.getMessage(), ex2);
         }
         return false;
     }
 
+    private Boolean addNotification(CommentEntity commentEntity) {
+        Long parentCommentId = commentEntity.getParentComment().getId();
+        if (parentCommentId != null) {
+            CommentEntity parentComment = commentRepository.findById(parentCommentId).orElse(null);
+            if (parentComment != null) {
+                Long targetId = parentComment.getCommentor().getId();
+                NotificationEntity notificationEntity = new NotificationEntity();
+                UserEntity source = new UserEntity();
+                source.setId(commentEntity.getCommentor().getId());
+                notificationEntity.setSource(source);
+                notificationEntity.setTargetId(targetId);
+                notificationEntity.setTitle(parentComment.getComment());
+                notificationEntity.setContent(commentEntity.getComment());
+                return notificationService.addNotification(notificationEntity);
+            }
+        }
+        return false;
+    }
 }
