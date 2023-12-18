@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 
+import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Type;
 import java.util.concurrent.TimeUnit;
 
@@ -21,6 +22,10 @@ public class RedisTemplateHandle {
     private final Gson gson;
     @Value("environment.prefix")
     private String environmentPrefix;
+    @Value("spring.application.name")
+    private String applicationName;
+    @Value("${token.paramName")
+    private String tokenParamName;
 
     public <T> T getCache(Class<?> clazz, String key, Type type) {
         String valueStr = stringRedisTemplate.opsForValue().get(this.getKey(clazz, key));
@@ -45,8 +50,17 @@ public class RedisTemplateHandle {
 
     private String getKey(Class<?> clazz, String key) {
         return this.environmentPrefix + SYMBOL +
+                this.applicationName + SYMBOL +
                 clazz.getSimpleName() + SYMBOL +
                 key;
     }
 
+
+    /**
+     * tạm thời chưa bật xác thực nên mặc định trả về 8888 - id superadmin
+     */
+    public Long getUserId(HttpServletRequest request) {
+        String token = request.getParameter(this.tokenParamName);
+        return 8888L;
+    }
 }

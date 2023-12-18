@@ -6,9 +6,10 @@ import vanhoang.project.controller.base.AbstractController;
 import vanhoang.project.controller.base.BaseController;
 import vanhoang.project.dto.UserDTO;
 import vanhoang.project.dto.base.ResponseResult;
+import vanhoang.project.entity.UserEntity;
 import vanhoang.project.service.UserService;
-import vanhoang.project.utils.BeanUtils;
-import vanhoang.project.utils.StringUtils;
+
+import javax.validation.Valid;
 
 @RestController
 @RequiredArgsConstructor
@@ -20,14 +21,14 @@ public class UserController extends AbstractController implements BaseController
      *  Tìm kiếm thông tin người dùng qua id
      */
     @GetMapping("/users/{id}")
+    @SuppressWarnings("unused")
     public ResponseResult<UserDTO> findUserById(@PathVariable(value = "id") Long id) {
         return this.getResponseResult(userService.findUserById(id));
     }
 
     @PostMapping("/users")
-    public ResponseResult<Object> insertUser(@RequestParam(value = "loginName") String loginName,
-                                             @RequestParam(value = "password") String password,
-                                             @RequestBody UserDTO userDTO) {
-        return this.getResponseResult(userService.insertUser(loginName, password, userDTO));
+    @SuppressWarnings("unused")
+    public ResponseResult<Object> addUser(@Valid @RequestBody UserEntity userEntity) {
+        return this.getResponseResult(userService.addUser(userEntity));
     }
 }

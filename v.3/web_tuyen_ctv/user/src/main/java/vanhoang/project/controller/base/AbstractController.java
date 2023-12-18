@@ -1,7 +1,12 @@
 package vanhoang.project.controller.base;
 
+import org.springframework.context.support.MessageSourceAccessor;
 import vanhoang.project.dto.base.ResponseResult;
+import vanhoang.project.interceptor.I18nInterceptor;
+import vanhoang.project.utils.BeanUtils;
 import vanhoang.project.utils.StringUtils;
+
+import java.util.Locale;
 
 public abstract class AbstractController {
 
@@ -17,11 +22,15 @@ public abstract class AbstractController {
         }
     }
 
-    public ResponseResult<Object> getResponseResult(String message) {
-        if (!StringUtils.isNoneEmpty(message)) {
+    public ResponseResult<Object> getResponseResult(String messageCode) {
+        if (!StringUtils.isNoneEmpty(messageCode)) {
             return ResponseResult.success();
         }
-        else
+        else {
+            MessageSourceAccessor messageSourceAccessor = BeanUtils.getBean(MessageSourceAccessor.class);
+            Locale locale = I18nInterceptor.LOCALE_THREADLOCAL.get();
+            String message = messageSourceAccessor.getMessage(messageCode, null, messageCode, locale);
             return ResponseResult.fail(message);
+        }
     }
 }

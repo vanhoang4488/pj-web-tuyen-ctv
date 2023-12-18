@@ -15,8 +15,14 @@ public interface BaseRepository <T extends BaseEntity, ID>{
     @Deprecated
     T save(T entity);
 
+    @Deprecated
+    List<T> saveAll(List<T> entities);
+
     @Transactional
     T persist(T entity);
+
+    @Transactional
+    List<T> persistAll(List<T> entities);
 
     @Transactional
     T merge(T entity);

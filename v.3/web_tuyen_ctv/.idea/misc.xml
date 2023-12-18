@@ -6,6 +6,9 @@
       <item index="1" class="java.lang.String" itemvalue="javax.persistence.PrePersist" />
       <item index="2" class="java.lang.String" itemvalue="javax.persistence.PreUpdate" />
     </list>
+    <writeAnnotations>
+      <writeAnnotation name="org.springframework.beans.factory.annotation.Value" />
+    </writeAnnotations>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="MavenProjectsManager">

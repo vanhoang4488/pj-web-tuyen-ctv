@@ -4,6 +4,8 @@ import lombok.*;
 import vanhoang.project.entity.base.BaseEntity;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotEmpty;
 import java.util.Set;
 
 @Data
@@ -12,12 +14,15 @@ import java.util.Set;
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = false)
 public class CommentEntity extends BaseEntity {
+    public static final Integer PARENT_LEVEL = 0;
+    public static final Integer CHILD_LEVEL = 1;
 
     @Column
+    @NotEmpty(message = "comment.comment.empty")
+    @Max(value = 255, message = "comment.comment.max-length")
     private String comment;
     @Column
     private Integer commentLevel; // 0 hoặc 1 -> chỉ có trả lời comment không có trả lời của trả lời của comment.
-
     /**self join: thể hiện mối comment này là câu trả lời của comment khác*/
     @JoinColumn(name = "parentId")
     @ManyToOne(fetch = FetchType.LAZY)

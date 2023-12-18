@@ -8,6 +8,7 @@ import vanhoang.project.utils.LocalDateTimeUtils;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.Collections;
 import java.util.List;
 
 @Repository
@@ -27,9 +28,12 @@ public class BaseRepositoryImpl<T extends BaseEntity, ID> implements  BaseReposi
 
     @Override
     public T save(T entity) {
-        throw new UnsupportedOperationException(
-                "There's no such thing as a save method in JPA, so don't use this hack!"
-        );
+        return this.unsupportedSave();
+    }
+
+    @Override
+    public List<T> saveAll(List<T> etities) {
+        return Collections.singletonList(this.unsupportedSave());
     }
 
     @Override
@@ -42,9 +46,23 @@ public class BaseRepositoryImpl<T extends BaseEntity, ID> implements  BaseReposi
     }
 
     @Override
+    public List<T> persistAll(List<T> entities) {
+        for (T entity : entities) {
+            entityManager.persist(entity);
+        }
+        return entities;
+    }
+
+    @Override
     public T merge(T entity) {
         entity.setUpdateTime(LocalDateTimeUtils.getNow());
         entityManager.merge(entity);
         return entity;
+    }
+
+    private T unsupportedSave() {
+        throw new UnsupportedOperationException(
+                "There's no such thing as a save method in JPA, so don't use this hack!"
+        );
     }
 }

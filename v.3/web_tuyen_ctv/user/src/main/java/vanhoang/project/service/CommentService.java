@@ -2,14 +2,12 @@ package vanhoang.project.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.mapstruct.factory.Mappers;
-import org.springframework.dao.OptimisticLockingFailureException;
 import org.springframework.stereotype.Service;
-import vanhoang.project.convertor.CommentConvertor;
 import vanhoang.project.dto.CommentDTO;
+import vanhoang.project.entity.BlogEntity;
 import vanhoang.project.entity.CommentEntity;
-import vanhoang.project.entity.NotificationEntity;
 import vanhoang.project.entity.UserEntity;
+import vanhoang.project.repository.BlogRepository;
 import vanhoang.project.repository.CommentRepository;
 import vanhoang.project.service.base.AbstractService;
 import vanhoang.project.service.base.BaseService;
@@ -19,48 +17,51 @@ import vanhoang.project.service.base.BaseService;
 @RequiredArgsConstructor
 public class CommentService extends AbstractService<CommentDTO, CommentEntity> implements BaseService {
     private final CommentRepository commentRepository;
+    private final BlogRepository blogRepository;
     private final NotificationService notificationService;
 
-    public Boolean insertComment(Long blogId, Long userId, Long parentCommentId, CommentDTO commentDTO) {
-        commentDTO.setBlogId(blogId);
-        commentDTO.setUserId(userId);
-        commentDTO.setParentCommentId(parentCommentId);
+    public String insertComment(Long blogId, Long userId, Long parentCommentId, CommentEntity commentEntity) {
+        // do ta có khóa ngoại liên kết giữa bảng comments và blogs
+        // ==> nếu không kiểm tra blog có tồn tại hay không thì lúc thêm comment sẽ dẫn đến lỗi.
+        // ==> phải kiểm tra bài viết có tồn tại hay không
+        if (!blogRepository.existsById(blogId)) {
+            return "blog.id.notexists";
+        }
+        else if (parentCommentId != null && !commentRepository.existsById(parentCommentId)) {
+            return "comment.parentComment.notexists";
+        }
+        else {
+            BlogEntity blogEntity = new BlogEntity();
+            blogEntity.setId(blogId);
+            commentEntity.setBlog(blogEntity);
 
-        if (parentCommentId != null) commentDTO.setCommentLevel(1);
-        else commentDTO.setCommentLevel(0);
+            UserEntity userEntity = new UserEntity();
+            userEntity.setId(userId);
+            commentEntity.setCommentor(userEntity);
 
-        CommentConvertor commentConvertor = Mappers.getMapper(CommentConvertor.class);
-        CommentEntity commentEntity = commentConvertor.convert(commentDTO);
-        try {
+            if (parentCommentId != null) {
+                commentEntity.setCommentLevel(CommentEntity.CHILD_LEVEL);
+                CommentEntity parentComment = new CommentEntity();
+                parentComment.setId(parentCommentId);
+                commentEntity.setParentComment(parentComment);
+            }
+            else {
+                commentEntity.setCommentLevel(CommentEntity.PARENT_LEVEL);
+            }
+
             commentRepository.persist(commentEntity);
             this.addNotification(commentEntity);
-            return true;
+            return null;
         }
-        catch (IllegalArgumentException ex1) {
-            log.error("======> add comment was failed because entity was null");
-        }
-        catch (OptimisticLockingFailureException ex2) {
-            log.error("======> add comment was failed: {}", ex2.getMessage(), ex2);
-        }
-        return false;
     }
 
-    private Boolean addNotification(CommentEntity commentEntity) {
-        Long parentCommentId = commentEntity.getParentComment().getId();
-        if (parentCommentId != null) {
-            CommentEntity parentComment = commentRepository.findById(parentCommentId).orElse(null);
-            if (parentComment != null) {
-                Long targetId = parentComment.getCommentor().getId();
-                NotificationEntity notificationEntity = new NotificationEntity();
-                UserEntity source = new UserEntity();
-                source.setId(commentEntity.getCommentor().getId());
-                notificationEntity.setSource(source);
-                notificationEntity.setTargetId(targetId);
-                notificationEntity.setTitle(parentComment.getComment());
-                notificationEntity.setContent(commentEntity.getComment());
-                return notificationService.addNotification(notificationEntity);
-            }
-        }
-        return false;
+    private void addNotification(CommentEntity commentEntity) {
+        // thêm thông báo:
+        // 1. thông báo đến người đăng bài viết - trừ người viết blog.
+        // 2. nếu là trả lời bình luận thì thông báo thêm đến người được trả lời bình luận
+        // - trừ người chính bản thân người bình luận đó.
+        // 3. bình luận con trả lời bình luận con - trùng với trường hợp 2.
+        // 4. đến những người trong đoạn hội thoại bình luận đó (để sau).
+        notificationService.addNotification(commentEntity);
     }
 }

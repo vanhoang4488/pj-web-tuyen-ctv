@@ -7,4 +7,7 @@ import vanhoang.project.repository.base.BaseRepository;
 
 @Repository
 public interface UserRepository extends BaseRepository<UserEntity, Long>, JpaRepository<UserEntity, Long> {
+
+    Boolean existsByLoginName(String loginName);
+    Boolean existsByEmail(String email);
 }

@@ -9,7 +9,6 @@ import vanhoang.project.binlog.handle.base.BinLogHandle;
 import vanhoang.project.entity.NotificationEntity;
 import vanhoang.project.entity.UserEntity;
 import vanhoang.project.entity.statistic.UserNotitficationEntity;
-import vanhoang.project.redis.RedisTemplateHandle;
 import vanhoang.project.repository.NotificationRepository;
 import vanhoang.project.repository.statistic.UserNotificationRepository;
 
@@ -24,7 +23,6 @@ public class NotificationBinLogHandle implements BinLogHandle {
     private final static String TARGET_ID = "targetId";
     private final UserNotificationRepository userNotificationRepository;
     private final NotificationRepository notificationRepository;
-    private final RedisTemplateHandle redisTemplateHandle;
 
     @Override
     public void handle(BinlogItem binLogItem) {
@@ -55,7 +53,6 @@ public class NotificationBinLogHandle implements BinLogHandle {
                     userNotificationRepository.persist(userNotitficationEntity);
                     log.info("====> add user_notifications succeed: {}", userNotitficationEntity);
                 }
-                redisTemplateHandle.addCache(NotificationEntity.class, "" + userId, notReadTotal);
             }
         }
     }
