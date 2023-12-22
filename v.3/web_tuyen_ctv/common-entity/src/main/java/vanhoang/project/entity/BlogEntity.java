@@ -4,10 +4,9 @@ import lombok.*;
 import vanhoang.project.entity.base.BaseEntity;
 
 import javax.persistence.*;
-import javax.validation.constraints.Max;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import java.util.Set;
+import javax.validation.constraints.Size;
+import java.util.List;
 @Data
 @Entity
 @Table(name = "blogs")
@@ -15,26 +14,27 @@ import java.util.Set;
 @EqualsAndHashCode(callSuper = false)
 public class BlogEntity extends BaseEntity {
 
-    @Column
-    @NotNull(message = "blog.blogKey.empty")
+    private static final double MAX_RATE = 5.0;
+
+    @Column(columnDefinition = "varchar(12) not null unique")
     private String blogKey;
     @Column
     private String majorImgUrl; // đường dẫn của hình ảnh chính của bài viết.
     @Column
     @NotEmpty(message = "blog.title.empty")
-    @Max(value = 255, message = "blog.title.max-length")
+    @Size(max = 255, message = "blog.title.max-length")
     private String title;
     @Column
     @NotEmpty(message = "blog.thumbnail.empty")
-    @Max(value = 255, message = "blog.thumbnail.max-length")
+    @Size(max = 255, message = "blog.thumbnail.max-length")
     private String thumbnail;
     @Column
     @NotEmpty(message = "blog.content.empty")
     private String content;
     @Column
-    private Integer views; // số lượt xem
+    private Integer views = 0; // số lượt xem
     @Column
-    private Double rate; // đánh giá mức độ hay của bài viết
+    private Double rate = MAX_RATE; // đánh giá mức độ hay của bài viết
 
     /**ràng buộc: nhiều một với User*/
     @JoinColumn(name = "authorId")
@@ -44,10 +44,11 @@ public class BlogEntity extends BaseEntity {
     /**ràng buộc: n to n: User -> Comment*/
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE,
                 mappedBy = "blog")
-    private Set<CommentEntity> comments;
+    private List<CommentEntity> comments;
 
     /** ràng buộc: n to n: Tag -> Blogs_Tags*/
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE,
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL,
                 mappedBy = "blog")
-    private Set<BlogTagEntity> tags;
+    @NotEmpty(message = "blog.tags.empty")
+    private List<BlogTagEntity> tags;
 }

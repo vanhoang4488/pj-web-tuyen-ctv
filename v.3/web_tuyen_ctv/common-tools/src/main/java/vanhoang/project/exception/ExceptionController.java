@@ -3,6 +3,7 @@ package vanhoang.project.exception;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.LocaleUtils;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.context.support.MessageSourceAccessor;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindingResult;
@@ -22,6 +23,7 @@ import java.util.Set;
 @ControllerAdvice
 @ResponseBody
 @RequiredArgsConstructor
+@ConditionalOnBean(MessageSourceAccessor.class)
 public class ExceptionController {
     private final MessageSourceAccessor messageSourceAccessor;
     @Value("${language.paramName:lang}")

@@ -4,8 +4,8 @@ import lombok.*;
 import vanhoang.project.entity.base.BaseEntity;
 
 import javax.persistence.*;
-import javax.validation.constraints.Max;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 import java.util.Set;
 
 @Data
@@ -19,7 +19,7 @@ public class CommentEntity extends BaseEntity {
 
     @Column
     @NotEmpty(message = "comment.comment.empty")
-    @Max(value = 255, message = "comment.comment.max-length")
+    @Size(max = 255, message = "comment.comment.max-length")
     private String comment;
     @Column
     private Integer commentLevel; // 0 hoặc 1 -> chỉ có trả lời comment không có trả lời của trả lời của comment.

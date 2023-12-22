@@ -11,7 +11,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.event.ContextClosedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
-import org.springframework.util.ResourceUtils;
 import vanhoang.project.annotation.BinlogEntityListener;
 import vanhoang.project.binlog.handle.base.BinLogHandle;
 import vanhoang.project.entity.base.BaseEntity;
@@ -37,7 +36,8 @@ import java.util.concurrent.ThreadPoolExecutor;
 @ConfigurationProperties(prefix = "mysql-binlog.db")
 public class BinLogClientConfig {
     public final static String PACKAGE_ENTITY_NAME = "vanhoang.project.binlog.handle";
-    public final static String BINLOG_INFO_FILE = "classpath:binlog_info_file.txt";
+    public final static String BINLOG_INFO_FILE =
+            System.getProperty("user.dir") +  File.separator + "binlog_info_file.txt";
     public final static Map<String, BinLogHandle> BINLOG_ENTITY_LISTENER_MAP = new HashMap<>();
     public final static Map<String, Class<? extends BaseEntity>> BINLOG_ENTITY_MAP = new HashMap<>();
     public final static Map<String, List<String>> BINLOG_ENTITY_FIELD_MAP = new HashMap<>();
@@ -169,7 +169,7 @@ public class BinLogClientConfig {
         Thread thread = new Thread(() -> {
             BinaryLogClient binaryLogClient = BeanUtils.getBean(BinaryLogClient.class);
             try {
-                File file = ResourceUtils.getFile(BINLOG_INFO_FILE);
+                File file = new File(BINLOG_INFO_FILE);
                 FileReader fileReader = new FileReader(file);
                 BufferedReader bufferedReader = new BufferedReader(fileReader);
                 String binlogFileName = null;

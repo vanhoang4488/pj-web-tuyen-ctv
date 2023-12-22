@@ -2,7 +2,6 @@ package vanhoang.project.config;
 
 import com.github.shyiko.mysql.binlog.BinaryLogClient;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.util.ResourceUtils;
 import vanhoang.project.utils.LocalDateTimeUtils;
 
 import java.io.*;
@@ -31,7 +30,10 @@ public class CustomBinlogLifecycleListener implements BinaryLogClient.LifecycleL
     public void onDisconnect(BinaryLogClient client) {
         log.info("====> starting write binlog info ...");
         try {
-            File file = ResourceUtils.getFile(BinLogClientConfig.BINLOG_INFO_FILE);
+            File file = new File(BinLogClientConfig.BINLOG_INFO_FILE);
+            if (!file.exists()) {
+                file.createNewFile();
+            }
             FileWriter fileWriter = new FileWriter(file);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
             bufferedWriter.write("binlog_file=" + client.getBinlogFilename());

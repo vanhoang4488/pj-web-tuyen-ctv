@@ -7,7 +7,7 @@ import vanhoang.project.entity.statistic.UserNotitficationEntity;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.util.Date;
-import java.util.Set;
+import java.util.List;
 
 @Data
 @Entity
@@ -19,13 +19,13 @@ public class UserEntity extends BaseEntity {
     public static final Integer FEMALE_GENDER = 1;
     @Column
     @NotEmpty(message = "user.loginName.empty")
-    @Min(value = 8, message = "user.loginName.size")
-    @Max(value = 16, message = "user.loginName.size")
+    @Size(min = 8, message = "user.loginName.size")
+    @Size(max = 16, message = "user.loginName.size")
     private String loginName;
     @Column
     @NotEmpty(message = "user.password.empty")
-    @Min(value = 8, message = "user.password.size")
-    @Max(value = 16, message = "user.password.size")
+    @Size(min = 8, message = "user.password.size")
+    @Size(max = 16, message = "user.password.size")
     private String password;
     @Column
     @NotEmpty(message = "user.fullName.empty")
@@ -45,16 +45,16 @@ public class UserEntity extends BaseEntity {
     /**ràng buộc: 1 to n: Blog*/
     @OneToMany(fetch = FetchType.LAZY, cascade =  CascadeType.MERGE,
                 mappedBy = "author")
-    private Set<BlogEntity> blogs;
+    private List<BlogEntity> blogs;
 
     /**ràng buộc: n to n: Blog -> Comment*/
     @OneToMany(fetch = FetchType.LAZY,
                 mappedBy = "commentor")
-    private Set<CommentEntity> comments;
+    private List<CommentEntity> comments;
 
     @OneToMany(fetch = FetchType.LAZY,
                 mappedBy = "source")
-    private Set<NotificationEntity> notifications;
+    private List<NotificationEntity> notifications;
 
     @OneToOne(fetch = FetchType.LAZY, mappedBy = "user")
     private UserNotitficationEntity userNotitfication;

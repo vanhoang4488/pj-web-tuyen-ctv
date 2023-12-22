@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 @RestController
+@SuppressWarnings("unused")
 @RequiredArgsConstructor
 public class BlogController extends AbstractController implements BaseController {
 

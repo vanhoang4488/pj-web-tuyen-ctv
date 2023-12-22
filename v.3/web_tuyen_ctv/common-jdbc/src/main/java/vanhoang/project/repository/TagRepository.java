@@ -9,6 +9,4 @@ import java.util.List;
 
 @Repository
 public interface TagRepository extends BaseRepository<TagEntity, Long>, JpaRepository<TagEntity, Long> {
-
-    List<TagEntity> findTagByIdIn(List<Long> ids);
 }

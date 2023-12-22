@@ -6,9 +6,9 @@ import lombok.ToString;
 import vanhoang.project.entity.base.BaseEntity;
 
 import javax.persistence.*;
-import javax.validation.constraints.Max;
 import javax.validation.constraints.NotEmpty;
-import java.util.Set;
+import javax.validation.constraints.Size;
+import java.util.List;
 
 @Data
 @Entity
@@ -22,7 +22,7 @@ public class TagEntity extends BaseEntity {
      */
     @Column
     @NotEmpty(message = "tag.key.empty")
-    @Max(value = 8, message = "tag.key.size")
+    @Size(max = 8, message = "tag.key.size")
     private String key;
 
     /**
@@ -30,13 +30,13 @@ public class TagEntity extends BaseEntity {
      */
     @Column
     @NotEmpty(message = "tag.detail.empty")
-    @Max(value = 255, message = "tag.detail.size")
+    @Size(max = 255, message = "tag.detail.size")
     private String detail;
 
     /** ràng buộc: n to n: Blog -> Blogs_Tags*/
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE,
                 mappedBy = "tag")
-    private Set<BlogTagEntity> blogs;
+    private List<BlogTagEntity> blogs;
 
     /** ràng buộc: 1 to n: TagClass*/
     @JoinColumn(name = "classId")

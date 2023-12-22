@@ -10,5 +10,5 @@ import java.util.Optional;
 @Repository
 public interface BlogKeyRepository extends BaseRepository<BlogKeyEntity, Long>, JpaRepository<BlogKeyEntity, Long> {
 
-    Optional<BlogKeyEntity> findBlogKeyByKey(String key);
+    Optional<BlogKeyEntity> findBlogKeyByBlogKey(String key);
 }
