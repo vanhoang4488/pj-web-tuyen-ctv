@@ -2,6 +2,7 @@ package vanhoang.project.entity;
 
 import lombok.*;
 import vanhoang.project.entity.base.BaseEntity;
+import vanhoang.project.entity.base.BaseEntityId;
 
 import javax.persistence.*;
 @Data
@@ -9,7 +10,7 @@ import javax.persistence.*;
 @Table(name = "notifications")
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = false)
-public class NotificationEntity extends BaseEntity {
+public class NotificationEntity extends BaseEntityId {
 
     public final static Integer NOT_READ = 0;
     public final static Integer READ = 1;
@@ -28,7 +29,7 @@ public class NotificationEntity extends BaseEntity {
     @Column
     private Long targetId;
 
-    @JoinColumn(name = "sourceId")
+    @JoinColumn(name = "source_id")
     @ManyToOne(fetch = FetchType.LAZY)
     private UserEntity source;
 }

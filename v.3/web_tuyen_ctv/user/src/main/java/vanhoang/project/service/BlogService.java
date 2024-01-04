@@ -13,15 +13,15 @@ import vanhoang.project.entity.*;
 import vanhoang.project.entity.statistic.BlogKeyEntity;
 import vanhoang.project.repository.BlogRepository;
 import vanhoang.project.repository.TagClassRepository;
+import vanhoang.project.repository.TagRepository;
 import vanhoang.project.repository.statistic.BlogKeyRepository;
 import vanhoang.project.service.base.AbstractService;
 import vanhoang.project.service.base.BaseService;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -30,6 +30,7 @@ import java.util.stream.Collectors;
 public class BlogService extends AbstractService<BlogDTO, BlogEntity> implements BaseService {
 
     private final BlogRepository blogRepository;
+    private final TagRepository tagRepository;
     private final TagClassRepository tagClassRepository;
     private final BlogKeyRepository blogKeyRepository;
 
@@ -66,27 +67,75 @@ public class BlogService extends AbstractService<BlogDTO, BlogEntity> implements
         return null; // tạm thời chưa biết nên trả thêm message gì vì phần validate ở controller làm hết rồi
     }
 
+    public String updateBlog(BlogEntity blogEntity) {
+        Long blogId = blogEntity.getId();
+        if (blogId == null || blogId < 0) {
+            return "blog.id.notexists";
+        }
+        Optional<BlogEntity> jdbcBlogEntityOptional = blogRepository.findById(blogId);
+        if (jdbcBlogEntityOptional.isPresent()) {
+            BlogEntity jdbcBlogEntity = jdbcBlogEntityOptional.get();
+            // gán các trường không null hoặc rỗng của blogEntity(FE) sang jdbcBlogEntity
+            // ==> để cập nhật blog.
+            // không, không sai rồi! blogEntity gửi từ FE thì kiểu gì các thông tin liên quan như:
+            // id, create_time, update_time, blogKey, majorImgUrl, title, thumbnail, content, views, rate
+            // cũng đã có và các giá trị: title, thumbnail, content sẽ validate ở tầng controller, majorImgUrl thì không validate.
+            // ==> nhiệm vụ ở BE là đảm bảo các thông tin như:
+            // id, create_time, update_time, blogKey, views, rate không bị update
+            BlogConvertor blogConvertor = Mappers.getMapper(BlogConvertor.class);
+            blogConvertor.updateBlogEntity(blogEntity, jdbcBlogEntity);
+            blogRepository.merge(jdbcBlogEntity);
+            return null;
+        }
+        else {
+            return "blog.id.notexists";
+        }
+    }
+
     /**
+     * Ngày: 01/01/2024
+     * hiện tại ta chỉ tiến hành tìm kiếm bằng like còn tìm kiếm bằng elasticsearch sẽ xử lý sau.
+     * Giai đoạn này tập trung vào tìm hiểu tìm kiếm phân rõ a, á, à, ... của tiếng việt
+     */
+    public Page<BlogDTO> search(String search, Integer currentPage, Integer pageSize) {
+        Pageable pageable = PageRequest.of(currentPage, pageSize);
+        Page<BlogEntity> blogEntityPage = blogRepository.findBlogByTitleLike(search, pageable);
+        if (blogEntityPage.getTotalPages() > 0) {
+            BlogConvertor blogConvertor = Mappers.getMapper(BlogConvertor.class);
+            return blogEntityPage.map(blogConvertor::convert);
+        }
+        else
+            return null;
+    }
+
+    /**
+     * Tạo blogKey:
      * phức tạp quá, cần nghiên cứu lại thêm
      */
     private String createBlogKey(BlogEntity blogEntity) throws IOException {
         if (blogEntity.getTags() == null || blogEntity.getTags().isEmpty())
             throw new IOException("====> blogEntity must at least 1 tag");
         List<BlogTagEntity> tagIdSet = blogEntity.getTags();
-        List<Long> tagIds =
-                tagIdSet.stream().map(blogTagEntity -> blogTagEntity.getTag().getId()).collect(Collectors.toList());
-        List<TagClassEntity> tagClassEntities = tagClassRepository.findTagClassByTagsIdIn(tagIds);
-        if (!tagClassEntities.isEmpty()) {
+        List<String> tagKeys =
+                tagIdSet.stream().map(blogTagEntity -> blogTagEntity.getTag().getTagKey()).collect(Collectors.toList());
+        List<TagEntity> tagEntities = tagRepository.findAllById(tagKeys);
+        if (!tagEntities.isEmpty()) {
             StringBuilder blogKey = new StringBuilder();
-            List<String> chosenKeys = new ArrayList<>();
-            tagClassEntities.forEach(tagClass -> {
-                List<TagEntity> tagSet = tagClass.getTags();
-                Optional<TagEntity> optionalTagEntity = tagSet.stream().findAny();
-                chosenKeys.add(tagClass.getPriority(), optionalTagEntity.orElseThrow().getKey());
-            });
-            for (String key : chosenKeys) {
-                blogKey.append(key);
+
+            // lấy ra danh sách id của tagclassentity nhằm tối giảm số câu query
+            // còn nếu không sử dụng luôn trườn priority của tagClass làm key thì sẽ dẫn đến với
+            // mỗi tag ta sẽ thực hiện truy vấn tìm kiếm tagClassEntity 1 lần dẫn đến lặp lại nhiều query.
+            Map<Long, String> chosenKeyMap = tagEntities.stream()
+                    .collect(Collectors.toMap(tagEntity -> tagEntity.getClazz().getId(), TagEntity::getTagKey));
+
+            List<TagClassEntity> tagClassEntities = tagClassRepository.findAllById(chosenKeyMap.keySet());
+
+            for (TagClassEntity tagClassEntity : tagClassEntities) {
+                if (chosenKeyMap.containsKey(tagClassEntity.getId())) {
+                    blogKey.append(chosenKeyMap.get(tagClassEntity.getId()));
+                }
             }
+
             Optional<BlogKeyEntity> optionalBlogKeyEntity = blogKeyRepository.findBlogKeyByBlogKey(blogKey.toString());
             if (optionalBlogKeyEntity.isPresent()) {
                 blogKey.append(optionalBlogKeyEntity.get().getFrequency() + 1);

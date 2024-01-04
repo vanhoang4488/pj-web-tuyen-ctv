@@ -2,11 +2,11 @@ package vanhoang.project.dto;
 
 import lombok.Getter;
 import lombok.Setter;
-import vanhoang.project.dto.base.BaseDTO;
+import vanhoang.project.dto.base.BaseDTOId;
 
 @Getter
 @Setter
-public class CommentDTO extends BaseDTO {
+public class CommentDTO extends BaseDTOId {
 
     private Long userId;
     private String userFullName;

@@ -1,0 +1,11 @@
+vanhoang\project\entity\BlogEntity.class
+vanhoang\project\entity\NotificationEntity.class
+vanhoang\project\entity\statistic\BlogKeyEntity.class
+vanhoang\project\entity\UserEntity.class
+vanhoang\project\entity\TagEntity.class
+vanhoang\project\entity\base\BaseEntityId.class
+vanhoang\project\entity\CommentEntity.class
+vanhoang\project\entity\base\BaseEntity.class
+vanhoang\project\entity\statistic\UserNotitficationEntity.class
+vanhoang\project\entity\TagClassEntity.class
+vanhoang\project\entity\BlogTagEntity.class

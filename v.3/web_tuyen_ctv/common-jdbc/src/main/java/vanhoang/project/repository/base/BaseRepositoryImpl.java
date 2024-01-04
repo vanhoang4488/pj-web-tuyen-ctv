@@ -3,6 +3,7 @@ package vanhoang.project.repository.base;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import vanhoang.project.entity.base.BaseEntity;
+import vanhoang.project.entity.base.BaseEntityId;
 import vanhoang.project.utils.GenerationID;
 import vanhoang.project.utils.LocalDateTimeUtils;
 
@@ -23,13 +24,6 @@ public class BaseRepositoryImpl<T extends BaseEntity, ID> implements  BaseReposi
     private GenerationID generationId;
 
     @Override
-    public List<T> findAll() {
-        throw new UnsupportedOperationException(
-                "Fetching all records from a given database table is a terrible idea!"
-        );
-    }
-
-    @Override
     public T save(T entity) {
         return this.unsupportedSave();
     }
@@ -41,7 +35,9 @@ public class BaseRepositoryImpl<T extends BaseEntity, ID> implements  BaseReposi
 
     @Override
     public T persist(T entity) {
-        entity.setId(this.generationId.generationUUID());
+        if (entity instanceof BaseEntityId) {
+            ((BaseEntityId) entity).setId(generationId.generationUUID());
+        }
         entity.setCreateTime(LocalDateTimeUtils.getNow());
         entity.setUpdateTime(LocalDateTimeUtils.getNow());
         this.setRelationTableId(entity);
@@ -134,15 +130,17 @@ public class BaseRepositoryImpl<T extends BaseEntity, ID> implements  BaseReposi
             mappedByMethod.invoke(feignObject, entity);
 
             // set id
-            Method setIdMethod = feignClazz.getMethod("setId", Long.class);
-            setIdMethod.invoke(feignObject, this.generationId.generationUUID());
+            if (entity instanceof BaseEntityId) {
+                Method setIdMethod = feignClazz.getMethod("setId", Long.class);
+                setIdMethod.invoke(feignObject, this.generationId.generationUUID());
+            }
 
             // set create_time
-            Method setCreateTimeMethod = feignClazz.getMethod("setId", Date.class);
+            Method setCreateTimeMethod = feignClazz.getMethod("setCreateTime", Date.class);
             setCreateTimeMethod.invoke(feignObject, LocalDateTimeUtils.getNow());
 
             // set create_time
-            Method setUpdateTimeMethod = feignClazz.getMethod("setId", Date.class);
+            Method setUpdateTimeMethod = feignClazz.getMethod("setUpdateTime0", Date.class);
             setUpdateTimeMethod.invoke(feignObject, LocalDateTimeUtils.getNow());
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e){
             throw new RuntimeException(e);

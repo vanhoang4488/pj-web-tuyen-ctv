@@ -7,5 +7,4 @@ import vanhoang.project.entity.UserEntity;
 @Mapper
 public interface UserConvertor{
     UserDTO convert(UserEntity entity);
-    UserEntity convert(UserDTO dtO);
 }

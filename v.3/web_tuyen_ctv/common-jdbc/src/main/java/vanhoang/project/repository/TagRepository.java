@@ -8,5 +8,5 @@ import vanhoang.project.repository.base.BaseRepository;
 import java.util.List;
 
 @Repository
-public interface TagRepository extends BaseRepository<TagEntity, Long>, JpaRepository<TagEntity, Long> {
+public interface TagRepository extends BaseRepository<TagEntity, String>, JpaRepository<TagEntity, String> {
 }

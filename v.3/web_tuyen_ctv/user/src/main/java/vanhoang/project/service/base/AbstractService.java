@@ -11,6 +11,7 @@ import java.util.Optional;
 @Slf4j
 public abstract class AbstractService<O extends BaseDTO, I extends BaseEntity>{
 
+    @SuppressWarnings("all")
     public O convertToDTO(Optional<I> optionalEntity, Class<?> clazz) {
         return this.convertToDTO(optionalEntity.get(), clazz);
     }

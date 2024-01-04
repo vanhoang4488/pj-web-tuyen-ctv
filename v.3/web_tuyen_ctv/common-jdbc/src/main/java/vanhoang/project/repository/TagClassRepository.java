@@ -10,5 +10,4 @@ import java.util.List;
 @Repository
 public interface TagClassRepository extends BaseRepository<TagClassEntity, Long>, JpaRepository<TagClassEntity, Long> {
 
-    List<TagClassEntity> findTagClassByTagsIdIn(List<Long> tagIds);
 }

@@ -1,3 +1,3 @@
-binlog_file=mysql-bin.000015
-binlog_pos=15218
-now=Fri Dec 22 22:48:20 ICT 2023
+binlog_file=mysql-bin.000023
+binlog_pos=157
+now=Wed Jan 03 01:22:18 ICT 2024

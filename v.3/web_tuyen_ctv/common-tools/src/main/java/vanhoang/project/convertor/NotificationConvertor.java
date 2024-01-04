@@ -8,5 +8,4 @@ import vanhoang.project.entity.NotificationEntity;
 public interface NotificationConvertor {
 
     NotificationDTO convert(NotificationEntity entity);
-    NotificationEntity covert(NotificationDTO dto);
 }

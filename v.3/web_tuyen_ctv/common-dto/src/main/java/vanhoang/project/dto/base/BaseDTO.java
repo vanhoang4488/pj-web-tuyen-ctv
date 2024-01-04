@@ -14,7 +14,6 @@ import java.util.Date;
 @AllArgsConstructor
 public class BaseDTO implements Serializable {
 
-    private Long id;
     private Date createTime;
     private Date updateTime;
 }

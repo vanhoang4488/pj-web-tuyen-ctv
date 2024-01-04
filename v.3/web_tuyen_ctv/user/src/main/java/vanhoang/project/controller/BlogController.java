@@ -48,4 +48,25 @@ public class BlogController extends AbstractController implements BaseController
         Long userId = redisTemplateHandle.getUserId(request);
         return this.getResponseResult(blogService.addBlog(userId, blogEntity));
     }
+
+    /**
+     * Cập nhật bài viết
+     */
+    @PutMapping("/blogs")
+    public ResponseResult<Object> updateBlog(HttpServletRequest request,
+                                             @Valid @RequestBody BlogEntity blogEntity) {
+        return this.getResponseResult(blogService.updateBlog(blogEntity));
+    }
+
+    /**
+     * tìm kiếm danh sách bài viết dựa trên 'từ truy vấn' được nhập trong ô tìm kiếm
+     * từ truy vấn này sẽ được tiến hành so sánh với từng `title` của mỗi thực thể blog.
+     * Ngày 01/01/2024
+     */
+    @GetMapping("/blogs")
+    public ResponseResult<Page<BlogDTO>> search(@RequestParam(value = "search") String search,
+                                                @RequestParam(value = "currentPage", required = false, defaultValue = "0") Integer currentPage,
+                                                @RequestParam(value = "pageSize", required = false, defaultValue = "0") Integer pageSize) {
+        return this.getResponseResult(blogService.search(search, currentPage, pageSize));
+    }
 }

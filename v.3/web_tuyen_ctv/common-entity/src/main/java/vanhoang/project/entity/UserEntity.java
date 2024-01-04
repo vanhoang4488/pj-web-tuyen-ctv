@@ -1,8 +1,7 @@
 package vanhoang.project.entity;
 
 import lombok.*;
-import vanhoang.project.entity.base.BaseEntity;
-import vanhoang.project.entity.statistic.UserNotitficationEntity;
+import vanhoang.project.entity.base.BaseEntityId;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -14,7 +13,7 @@ import java.util.List;
 @Table(name = "users")
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = false)
-public class UserEntity extends BaseEntity {
+public class UserEntity extends BaseEntityId {
     public static final Integer MALE_GENDER = 0;
     public static final Integer FEMALE_GENDER = 1;
     @Column
@@ -41,7 +40,6 @@ public class UserEntity extends BaseEntity {
     @NotEmpty(message = "user.email.empty")
     @Email(message = "user.email.pattern")
     private String email;
-
     /**ràng buộc: 1 to n: Blog*/
     @OneToMany(fetch = FetchType.LAZY, cascade =  CascadeType.MERGE,
                 mappedBy = "author")
@@ -56,6 +54,15 @@ public class UserEntity extends BaseEntity {
                 mappedBy = "source")
     private List<NotificationEntity> notifications;
 
-    @OneToOne(fetch = FetchType.LAZY, mappedBy = "user")
-    private UserNotitficationEntity userNotitfication;
+    /*
+      Ở đây ta sẽ tiến hành loại bỏ liên kết 2 chiều giữa user và user_notifications ở thực thể cha
+      Vì:
+      1. Khi ta lần đầu thêm 1 đối tượng user ta cũng không cần bổ sung 1 đối tượng user_notifications
+      2. khi ta update user ta cũng không cần update user_notifications
+      3. Ta sẽ không bao giờ xóa user --> không bao giờ xóa user_notifications;
+      4. khi ta truy vấn user ta cũng không cần user_notifications. vì những nơi cần thông tin người dùng
+      thì không cần số lượng thông báo chưa đọc.
+        @OneToOne(fetch = FetchType.LAZY, mappedBy = "user")
+        private UserNotitficationEntity userNotitfication;
+    */
 }

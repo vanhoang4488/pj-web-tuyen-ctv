@@ -1,7 +1,7 @@
 package vanhoang.project.entity;
 
 import lombok.*;
-import vanhoang.project.entity.base.BaseEntity;
+import vanhoang.project.entity.base.BaseEntityId;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
@@ -13,7 +13,7 @@ import java.util.Set;
 @Table(name = "comments")
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = false)
-public class CommentEntity extends BaseEntity {
+public class CommentEntity extends BaseEntityId {
     public static final Integer PARENT_LEVEL = 0;
     public static final Integer CHILD_LEVEL = 1;
 
@@ -24,7 +24,7 @@ public class CommentEntity extends BaseEntity {
     @Column
     private Integer commentLevel; // 0 hoặc 1 -> chỉ có trả lời comment không có trả lời của trả lời của comment.
     /**self join: thể hiện mối comment này là câu trả lời của comment khác*/
-    @JoinColumn(name = "parentId")
+    @JoinColumn(name = "parent_id")
     @ManyToOne(fetch = FetchType.LAZY)
     private CommentEntity parentComment;
 
@@ -32,11 +32,11 @@ public class CommentEntity extends BaseEntity {
     private Set<CommentEntity> childenComments;
     /**Kết thúc self join*/
 
-    @JoinColumn(name = "userId")
+    @JoinColumn(name = "user_id")
     @ManyToOne(fetch = FetchType.LAZY)
     private UserEntity commentor;
 
-    @JoinColumn(name = "blogId")
+    @JoinColumn(name = "blog_id")
     @ManyToOne(fetch = FetchType.LAZY)
     private BlogEntity blog;
 }

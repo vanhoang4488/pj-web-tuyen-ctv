@@ -10,9 +10,6 @@ import java.util.List;
 public interface BaseRepository <T extends BaseEntity, ID>{
 
     @Deprecated
-    List<T> findAll();
-
-    @Deprecated
     T save(T entity);
 
     @Deprecated

@@ -3,18 +3,17 @@ package vanhoang.project.entity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import vanhoang.project.entity.base.BaseEntity;
+import vanhoang.project.entity.base.BaseEntityId;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Set;
 
 @Data
 @Entity
 @Table(name = "tag_classes")
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = false)
-public class TagClassEntity extends BaseEntity {
+public class TagClassEntity extends BaseEntityId {
     /**cho biết phân loại tag này là phân loại theo tiêu chí nào*/
     @Column
     private String detail;

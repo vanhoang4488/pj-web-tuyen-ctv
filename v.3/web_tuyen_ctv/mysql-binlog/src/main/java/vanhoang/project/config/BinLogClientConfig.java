@@ -15,16 +15,13 @@ import vanhoang.project.annotation.BinlogEntityListener;
 import vanhoang.project.binlog.handle.base.BinLogHandle;
 import vanhoang.project.entity.base.BaseEntity;
 import vanhoang.project.utils.BeanUtils;
+import vanhoang.project.utils.BinlogUtils;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.lang.reflect.Field;
 import java.net.URL;
 import java.util.*;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -78,10 +75,11 @@ public class BinLogClientConfig {
 
     @SuppressWarnings("unused")
     @EventListener(classes = {ApplicationStartedEvent.class})
-    public void scanBinLogEntity() {
+    public void scanBinLogEntityAndConnectBinLogMysql() {
         Set<File> files = new HashSet<>();
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         try{
+            // quét danh sách entity, entity handle
             Enumeration<URL> resources =
                     classLoader.getResources(PACKAGE_ENTITY_NAME.replaceAll("\\.", "/"));
             while(resources.hasMoreElements()) {
@@ -90,12 +88,12 @@ public class BinLogClientConfig {
             }
             for (File directory : files)
                 this.scan(directory, PACKAGE_ENTITY_NAME);
+            // quét danh sách entity field name
+            BinlogUtils.setColumnInfo(BINLOG_ENTITY_FIELD_MAP, BINLOG_ENTITY_MAP);
 
             this.connectBinlogMysql();
-        } catch (ClassNotFoundException e) {
-            log.error("====> scan file contain annotation binlogEntity: not find file", e);
-        } catch (IOException e) {
-            log.error("====> scan file contain annotation binlogEntity: not find package", e);
+        } catch (Exception e) {
+            log.error("====> scan file and connect binlog mysql failed: {}", e.getMessage(), e);
         }
     }
 
@@ -111,57 +109,12 @@ public class BinLogClientConfig {
                     String tableName = entityClazz.getAnnotation(Table.class).name();
                     BINLOG_ENTITY_MAP.put(tableName, entityClazz);
                     BINLOG_ENTITY_LISTENER_MAP.put(tableName, (BinLogHandle) BeanUtils.getBean(clazz));
-                    List<String> fieldNames = new ArrayList<>();
-                    this.getAllColumnName(fieldNames, entityClazz);
-                    BINLOG_ENTITY_FIELD_MAP.put(tableName, fieldNames);
                 }
             }
             else {
                 this.scan(file, packageName + "." + file.getName());
             }
         }
-    }
-
-    /**
-     * Có lẽ hiện tại cách lấy thông tin cột theo kiểu sắp xếp:
-     *  super class: lấy theo thứ tự khai báo
-     *  class: sắp xếp cột --> sắp xếp khóa ngoại.
-     *  Chứ lấy theo kiểu metadata thì câu lệnh trở lên rất phức tạp và chưa cần thiết.
-     *  Ngày 2023/12/07
-     * */
-    private void getAllColumnName(List<String> fields, Class<?> type) {
-        if (type.getSuperclass() != null) {
-            this.getAllSuperClassColumnName(fields, type.getSuperclass());
-        }
-        else return;
-
-        this.getAllClassColumnName(fields, type);
-    }
-
-    private void getAllSuperClassColumnName(List<String> fields, Class<?> type) {
-        for (Field field : type.getDeclaredFields()) {
-            if (field.isAnnotationPresent(Column.class) ||
-                    field.isAnnotationPresent(Id.class)) {
-                fields.add(field.getName());
-            }
-        }
-    }
-
-    private void getAllClassColumnName(List<String> fields, Class<?> type) {
-        Map<String, String> sortedFieldNameMap = new TreeMap<>();
-        Map<String, String> sortedJoinColumnMap = new TreeMap<>();
-        for (Field field : type.getDeclaredFields()) {
-            if (field.isAnnotationPresent(Column.class) ||
-                    field.isAnnotationPresent(Id.class)) {
-                sortedFieldNameMap.put(field.getName(), field.getName());
-            }
-            else if (field.isAnnotationPresent(JoinColumn.class)) {
-                JoinColumn joinColumn = field.getAnnotation(JoinColumn.class);
-                sortedJoinColumnMap.put(joinColumn.name(), joinColumn.name());
-            }
-        }
-        fields.addAll(sortedFieldNameMap.values());
-        fields.addAll(sortedJoinColumnMap.values());
     }
 
     private void connectBinlogMysql() {

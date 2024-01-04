@@ -1,7 +1,7 @@
 package vanhoang.project.entity;
 
 import lombok.*;
-import vanhoang.project.entity.base.BaseEntity;
+import vanhoang.project.entity.base.BaseEntityId;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
@@ -12,7 +12,7 @@ import java.util.List;
 @Table(name = "blogs")
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = false)
-public class BlogEntity extends BaseEntity {
+public class BlogEntity extends BaseEntityId {
 
     private static final double MAX_RATE = 5.0;
 

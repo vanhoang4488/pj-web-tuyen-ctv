@@ -5,26 +5,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a842e1f-a060-4ca9-9777-2c9ae0ae6eeb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/mysql-binlog/src/main/java/vanhoang/project/binlog/handle/BlogBinLogHandle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../tài liệu/tài_liệu_dự_án_v2.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../tài liệu/tài_liệu_dự_án_v2.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-dto/src/main/java/vanhoang/project/dto/TagDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-dto/src/main/java/vanhoang/project/dto/base/BaseDTOId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-entity/src/main/java/vanhoang/project/entity/base/BaseEntityId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-tools/src/main/java/vanhoang/project/convertor/TagConvertor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysql-binlog/src/main/java/vanhoang/project/utils/BinlogUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/src/main/java/vanhoang/project/controller/TagController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/src/main/java/vanhoang/project/service/TagService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tài liệu/những việc cần làm.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../tài liệu/những việc cần làm.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-config/src/main/resources/i18n/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/common-config/src/main/resources/i18n/messages.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binlog_info_file.txt" beforeDir="false" afterPath="$PROJECT_DIR$/binlog_info_file.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-dto/src/main/java/vanhoang/project/dto/BlogDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-dto/src/main/java/vanhoang/project/dto/BlogDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-dto/src/main/java/vanhoang/project/dto/CommentDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-dto/src/main/java/vanhoang/project/dto/CommentDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-dto/src/main/java/vanhoang/project/dto/NotificationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-dto/src/main/java/vanhoang/project/dto/NotificationDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-dto/src/main/java/vanhoang/project/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-dto/src/main/java/vanhoang/project/dto/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-dto/src/main/java/vanhoang/project/dto/base/BaseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-dto/src/main/java/vanhoang/project/dto/base/BaseDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common-entity/src/main/java/vanhoang/project/entity/BlogEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-entity/src/main/java/vanhoang/project/entity/BlogEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-entity/src/main/java/vanhoang/project/entity/BlogTagEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-entity/src/main/java/vanhoang/project/entity/BlogTagEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common-entity/src/main/java/vanhoang/project/entity/CommentEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-entity/src/main/java/vanhoang/project/entity/CommentEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-entity/src/main/java/vanhoang/project/entity/NotificationEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-entity/src/main/java/vanhoang/project/entity/NotificationEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common-entity/src/main/java/vanhoang/project/entity/TagClassEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-entity/src/main/java/vanhoang/project/entity/TagClassEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common-entity/src/main/java/vanhoang/project/entity/TagEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-entity/src/main/java/vanhoang/project/entity/TagEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common-entity/src/main/java/vanhoang/project/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-entity/src/main/java/vanhoang/project/entity/UserEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-entity/src/main/java/vanhoang/project/entity/base/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-entity/src/main/java/vanhoang/project/entity/base/BaseEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common-entity/src/main/java/vanhoang/project/entity/statistic/BlogKeyEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-entity/src/main/java/vanhoang/project/entity/statistic/BlogKeyEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-entity/src/main/java/vanhoang/project/entity/statistic/UserNotitficationEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-entity/src/main/java/vanhoang/project/entity/statistic/UserNotitficationEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/repository/BlogRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/repository/BlogRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/repository/TagClassRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/repository/TagClassRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/repository/TagRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/repository/TagRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/repository/base/BaseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/repository/base/BaseRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/repository/base/BaseRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/repository/base/BaseRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/repository/statistic/BlogKeyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-jdbc/src/main/java/vanhoang/project/repository/statistic/BlogKeyRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-tools/src/main/java/vanhoang/project/exception/ExceptionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-tools/src/main/java/vanhoang/project/exception/ExceptionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-tools/src/main/java/vanhoang/project/convertor/BlogConvertor.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-tools/src/main/java/vanhoang/project/convertor/BlogConvertor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-tools/src/main/java/vanhoang/project/convertor/CommentConvertor.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-tools/src/main/java/vanhoang/project/convertor/CommentConvertor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-tools/src/main/java/vanhoang/project/convertor/NotificationConvertor.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-tools/src/main/java/vanhoang/project/convertor/NotificationConvertor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-tools/src/main/java/vanhoang/project/convertor/UserConvertor.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-tools/src/main/java/vanhoang/project/convertor/UserConvertor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-tools/src/main/java/vanhoang/project/utils/BeanUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-tools/src/main/java/vanhoang/project/utils/BeanUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysql-binlog/src/main/java/vanhoang/project/config/BinLogClientConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/mysql-binlog/src/main/java/vanhoang/project/config/BinLogClientConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql-binlog/src/main/java/vanhoang/project/config/CustomBinlogLifecycleListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/mysql-binlog/src/main/java/vanhoang/project/config/CustomBinlogLifecycleListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql-binlog/src/main/resources/binlog_info_file.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysql-binlog/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mysql-binlog/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/src/main/java/vanhoang/project/controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/vanhoang/project/controller/BlogController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/src/main/java/vanhoang/project/service/BlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/vanhoang/project/service/BlogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/main/java/vanhoang/project/service/base/AbstractService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/vanhoang/project/service/base/AbstractService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,10 +55,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="AnnotationType" />
         <option value="package-info" />
-        <option value="Interface" />
+        <option value="AnnotationType" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -95,8 +115,8 @@
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn clean install" />
-      <command value="mvn clean compile" />
       <command value="mvn clean" />
+      <command value="mvn clean compile" />
     </option>
   </component>
   <component name="RunDashboard">
@@ -153,8 +173,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.UserApplication" />
         <item itemvalue="Application.MysqlBinlogApplication" />
+        <item itemvalue="Application.UserApplication" />
         <item itemvalue="Application.GatewayApplication" />
       </list>
     </recent_temporary>

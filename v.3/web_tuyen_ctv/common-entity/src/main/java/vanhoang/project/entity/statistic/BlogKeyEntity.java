@@ -3,7 +3,7 @@ package vanhoang.project.entity.statistic;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import vanhoang.project.entity.base.BaseEntity;
+import vanhoang.project.entity.base.BaseEntityId;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,7 +15,7 @@ import javax.persistence.Table;
 @Table(name="blog_keys")
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = false)
-public class BlogKeyEntity extends BaseEntity {
+public class BlogKeyEntity extends BaseEntityId {
     @Column(columnDefinition = "varchar(12) not null unique")
     private String blogKey;
     @Column
