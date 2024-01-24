@@ -140,7 +140,7 @@ public class BaseRepositoryImpl<T extends BaseEntity, ID> implements  BaseReposi
             setCreateTimeMethod.invoke(feignObject, LocalDateTimeUtils.getNow());
 
             // set create_time
-            Method setUpdateTimeMethod = feignClazz.getMethod("setUpdateTime0", Date.class);
+            Method setUpdateTimeMethod = feignClazz.getMethod("setUpdateTime", Date.class);
             setUpdateTimeMethod.invoke(feignObject, LocalDateTimeUtils.getNow());
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e){
             throw new RuntimeException(e);

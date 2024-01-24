@@ -31,12 +31,16 @@ public class BlogController extends AbstractController implements BaseController
     }
 
     /**
-     * Lấy danh sách bài viết và phân trang
+     * Lấy danh sách bài viết và phân trang,
+     * tìm kiếm danh sách bài viết dựa trên 'từ tìm kiếm' được nhập trong ô tìm kiếm
+     * từ tìm kiếm này sẽ được tiến hành so sánh với từng `title` của mỗi thực thể blog.
+     * Ngày 01/01/2024
      */
     @GetMapping("/blogs")
-    public ResponseResult<Page<BlogDTO>> getBlogPage(@RequestParam(value = "currentPage", required = false, defaultValue = "0") Integer currentPage,
-                                                     @RequestParam(value = "pageSize", required = false, defaultValue = "10") Integer pageSize) {
-        return this.getResponseResult(blogService.getBlogPage(currentPage, pageSize));
+    public ResponseResult<Page<BlogDTO>> search(@RequestParam(value = "search", required = false) String search,
+                                                @RequestParam(value = "currentPage", required = false, defaultValue = "0") Integer currentPage,
+                                                @RequestParam(value = "pageSize", required = false, defaultValue = "10") Integer pageSize) {
+        return this.getResponseResult(blogService.search(search, currentPage, pageSize));
     }
 
     /**
@@ -56,17 +60,5 @@ public class BlogController extends AbstractController implements BaseController
     public ResponseResult<Object> updateBlog(HttpServletRequest request,
                                              @Valid @RequestBody BlogEntity blogEntity) {
         return this.getResponseResult(blogService.updateBlog(blogEntity));
-    }
-
-    /**
-     * tìm kiếm danh sách bài viết dựa trên 'từ truy vấn' được nhập trong ô tìm kiếm
-     * từ truy vấn này sẽ được tiến hành so sánh với từng `title` của mỗi thực thể blog.
-     * Ngày 01/01/2024
-     */
-    @GetMapping("/blogs")
-    public ResponseResult<Page<BlogDTO>> search(@RequestParam(value = "search") String search,
-                                                @RequestParam(value = "currentPage", required = false, defaultValue = "0") Integer currentPage,
-                                                @RequestParam(value = "pageSize", required = false, defaultValue = "0") Integer pageSize) {
-        return this.getResponseResult(blogService.search(search, currentPage, pageSize));
     }
 }

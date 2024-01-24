@@ -32,9 +32,9 @@ public class BlogEntity extends BaseEntityId {
     @NotEmpty(message = "blog.content.empty")
     private String content;
     @Column
-    private Integer views = 0; // số lượt xem
+    private Integer views; // số lượt xem
     @Column
-    private Double rate = MAX_RATE; // đánh giá mức độ hay của bài viết
+    private Double rate; // đánh giá mức độ hay của bài viết
 
     /**ràng buộc: nhiều một với User*/
     @JoinColumn(name = "authorId")

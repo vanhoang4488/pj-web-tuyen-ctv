@@ -22,7 +22,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @BinlogEntityListener(listen = BlogEntity.class)
 public class BlogBinLogHandle implements BinLogHandle {
-    private static final String BLOG_KEY = "blogKey";
+    private static final String BLOG_KEY = "blog_key";
     private final BlogKeyRepository blogKeyRepository;
 
     @Override
@@ -52,7 +52,7 @@ public class BlogBinLogHandle implements BinLogHandle {
                     short frequency = (short) (blogKeyEntity.getFrequency() + entry.getValue());
                     blogKeyEntity.setFrequency(frequency);
                     blogKeyRepository.merge(blogKeyEntity);
-                    log.info("====> update blog_keys table with key: {}, frequency: {}", entry.getKey(), blogKeyEntity.getFrequency() + entry.getValue());
+                    log.info("====> update blog_keys table with key: {}, frequency: {}", entry.getKey(), frequency);
                 }
                 else {
                     BlogKeyEntity blogKeyEntity = new BlogKeyEntity();

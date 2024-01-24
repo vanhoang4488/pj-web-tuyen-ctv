@@ -9,6 +9,4 @@ import vanhoang.project.repository.base.BaseRepository;
 
 @Repository
 public interface BlogRepository extends BaseRepository<BlogEntity, Long>, JpaRepository<BlogEntity, Long> {
-
-    Page<BlogEntity> findBlogByTitleLike(String search, Pageable pageable);
 }

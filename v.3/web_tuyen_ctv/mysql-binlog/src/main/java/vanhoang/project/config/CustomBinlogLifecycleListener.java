@@ -10,7 +10,10 @@ import java.io.*;
 public class CustomBinlogLifecycleListener implements BinaryLogClient.LifecycleListener {
     @Override
     public void onConnect(BinaryLogClient client) {
-        log.info("====> connected binlog slave mysql success: {}, {}, {}",
+        log.info("====> connected binlog slave mysql success: \n" +
+                        "entity: {},\n" +
+                        "entity_fields: {},\n" +
+                        "entity_handle: {}",
                 BinLogClientConfig.BINLOG_ENTITY_MAP,
                 BinLogClientConfig.BINLOG_ENTITY_FIELD_MAP,
                 BinLogClientConfig.BINLOG_ENTITY_LISTENER_MAP);

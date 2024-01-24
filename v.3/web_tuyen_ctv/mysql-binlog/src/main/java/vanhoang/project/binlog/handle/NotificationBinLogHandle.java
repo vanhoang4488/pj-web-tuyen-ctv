@@ -20,7 +20,7 @@ import java.util.*;
 @RequiredArgsConstructor
 @BinlogEntityListener(listen = NotificationEntity.class)
 public class NotificationBinLogHandle implements BinLogHandle {
-    private final static String TARGET_ID = "targetId";
+    private final static String TARGET_ID = "target_id";
     private final UserNotificationRepository userNotificationRepository;
     private final NotificationRepository notificationRepository;
 
